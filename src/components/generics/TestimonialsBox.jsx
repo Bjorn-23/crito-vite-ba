@@ -1,6 +1,4 @@
 import React from 'react'
-// import CreateIcon from './CreateIcon'
-
 
 const TestimonialsBox = ({ img, altText, name, roleComp }) => {
     const stars = [1, 2, 3, 4, 5]

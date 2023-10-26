@@ -6,14 +6,25 @@ import img_square from '../assets/img/clients/square.svg'
 import img_gobona from '../assets/img/clients/gobona.svg'
 
 const Clients = () => {
+
+  const clients = [
+    {name: 'paperz', src: `${img_paperz}`, className: 'client-img, cl1', alt: 'paperz logotype'},
+    {name: 'dorfus', src: `${img_dorfus}`, className: 'client-img, cl2', alt: 'dorfus logotype'},
+    {name: 'martino', src: `${img_martino}`, className: 'client-img, cl3', alt: 'martino logotype'},
+    {name: 'square', src: `${img_square}`, className: 'client-img, cl4', alt: 'square logotype'},
+    {name: 'gobona', src: `${img_gobona}`, className: 'client-img, cl5', alt: 'gobona logotype'},
+  ]
+
   return (
     <section className="clients">
         <div id="client-container" className="container grid-container">
-            <img className="client-img cl1" src={img_paperz} alt="paperz Logotype" />
-            <img className="client-img cl2" src={img_dorfus} alt="dorfus Logotype" />
-            <img className="client-img cl3" src={img_martino} alt="martino Logotype" />
-            <img className="client-img cl4" src={img_square} alt="square Logotype" />
-            <img className="client-img cl5" src={img_gobona} alt="gobona Logotype" />
+
+            {
+            clients.map((clients, index) => (
+                <img key={index} name={clients.name} src={clients.src} className={clients.className} alt={clients.alt}  />
+            ))
+            }
+
         </div>
     </section>
   )
