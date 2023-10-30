@@ -2,6 +2,7 @@ import React from 'react'
 import Button from './generics/Button'
 import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import MobileNav from './generics/mobileNav'
 
 
 import img_critoLogo from '../assets/img/header/Logotype.svg'
@@ -12,6 +13,8 @@ const NavSection = () => {
         <div className="header">
             <div className="container">
                 <Link to="/"><img src={img_critoLogo} alt="Crito Logotype" /></Link>
+
+                <MobileNav />
 
                 <div className="menu">
                     <div className="top-menu">

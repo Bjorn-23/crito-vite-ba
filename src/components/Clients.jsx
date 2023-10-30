@@ -8,11 +8,11 @@ import img_gobona from '../assets/img/clients/gobona.svg'
 const Clients = () => {
 
   const clients = [
-    {name: 'paperz', src: `${img_paperz}`, className: 'client-img, cl1', alt: 'paperz logotype'},
-    {name: 'dorfus', src: `${img_dorfus}`, className: 'client-img, cl2', alt: 'dorfus logotype'},
-    {name: 'martino', src: `${img_martino}`, className: 'client-img, cl3', alt: 'martino logotype'},
-    {name: 'square', src: `${img_square}`, className: 'client-img, cl4', alt: 'square logotype'},
-    {name: 'gobona', src: `${img_gobona}`, className: 'client-img, cl5', alt: 'gobona logotype'},
+    {name: 'paperz', src: `${img_paperz}`, class: 'client-img, cl1', alt: 'paperz logotype'},
+    {name: 'dorfus', src: `${img_dorfus}`, class: 'client-img, cl2', alt: 'dorfus logotype'},
+    {name: 'martino', src: `${img_martino}`, class: 'client-img, cl3', alt: 'martino logotype'},
+    {name: 'square', src: `${img_square}`, class: 'client-img, cl4', alt: 'square logotype'},
+    {name: 'gobona', src: `${img_gobona}`, class: 'client-img, cl5', alt: 'gobona logotype'},
   ]
 
   return (
@@ -21,7 +21,7 @@ const Clients = () => {
 
             {
             clients.map((clients, index) => (
-                <img key={index} name={clients.name} src={clients.src} className={clients.className} alt={clients.alt}  />
+                <img key={clients.name} src={clients.src} className={clients.class} alt={clients.alt}  />
             ))
             }
 

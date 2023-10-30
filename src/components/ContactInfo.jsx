@@ -1,7 +1,7 @@
 import React from 'react'
 
 import ContactForm from './generics/ContactForm'
-import ContactMap from './ContactMap'
+import ContactMap from '@generics/ContactMap'
 
 const ContactInfo = () => {
     return (

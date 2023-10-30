@@ -85,7 +85,7 @@ const Footer = () => {
                             className="fa-brands fa-linkedin"></i></a></p>
                     </div>
                     <div className="left">
-                        <p className="copyright">&copy 2023 Crito - Consulting Company INC. All Rights Reserved</p>
+                        <p className="copyright">&copy; 2023 Crito - Consulting Company INC. All Rights Reserved</p>
                     </div>
 
                 </div>

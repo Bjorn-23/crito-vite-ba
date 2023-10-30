@@ -120,6 +120,14 @@ body .container {
     max-width: 1520px;
   }
 }
+.hideMenu {
+  display: none;
+}
+
+.showMenu {
+  display: block;
+}
+
 .overlay {
   height: 100%;
   width: 0;
@@ -2595,8 +2603,6 @@ body .container {
   border: 1px solid #f3f3f3;
   border-radius: 25px;
   margin: 10px;
-}
-.articles .grid-container .left .tags .tag a {
   text-decoration: none;
   color: #191919;
 }

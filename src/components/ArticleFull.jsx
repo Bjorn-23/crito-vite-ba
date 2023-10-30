@@ -6,9 +6,40 @@ import SectionTitle from '@generics/SectionTitle'
 import img_25mar from '../assets/img/articles-news/25mar.png'
 import img_17mar from '../assets/img/articles-news/17mar.png'
 import img_12mar from '../assets/img/articles-news/12mar.png'
+import RecentPost from './generics/RecentPost'
+import { Link } from 'react-router-dom'
 
 
 const ArticlesFull = () => {
+
+     //use {tags.class} as key value. class ie t1, t2, t3 etc also sets positioning in grid.
+    const tags = [
+        {class: 't1', url: '#', title: 'Digitalization'},
+        {class: 't2', url: '#', title: 'School'},
+        {class: 't3', url: '#', title: 'IT'},
+        {class: 't4', url: '#', title: 'Design'},
+        {class: 't5', url: '#', title: 'Work'},
+        {class: 't6', url: '#', title: 'Tech'},
+    ]
+
+    
+    const recentPosts = [
+        {id: 1, className: 'post-item no-border-top', url: '#', title: 'How To Blow Through Capital At An Incredible Rate', date: 'jan 14, 2019'},
+        {id: 2, className: 'post-item', url: '#', title: 'Design Studios That Everyone Should Know About?', date: 'jan 14, 2019'},
+        {id: 3, className: 'post-item', url: '#', title: 'How Did We Get 1M+ Visitors In 30 Days Without Anything?', date: 'jan 14, 2019'},
+        {id: 4, className: 'post-item', url: '#', title: 'Figma On Figma: How We Built Our Website Design System', date: 'jan 14, 2019'},
+    ]
+
+    //postCount should be a function of the total amount of posts in that particular category
+    const categories = [
+        {id: 1, url: '#', category: 'Technology', hyphen: '-', postCount:'20',  },
+        {id: 2, url: '#', category: 'Freelancing', hyphen: '-', postCount:'07',  },
+        {id: 3, url: '#', category: 'Writing', hyphen: '-', postCount:'16',  },
+        {id: 4, url: '#', category: 'Marketing', hyphen: '-', postCount:'11',  },
+        {id: 5, url: '#', category: 'Business', hyphen: '-', postCount:'35',  },
+        {id: 6, url: '#', category: 'Education', hyphen: '-', postCount:'14',  },
+    ]
+
     return (
         <>
             <article className="articles">
@@ -75,14 +106,11 @@ const ArticlesFull = () => {
                                 egestas.
                             </p>
 
+                            {/* map function for tags */}
                             <div className="tags">
-                                <div className="tag t1"><a href="#">Digitalization</a></div>
-                                <div className="tag t2"><a href="#">School</a></div>
-                                <div className="tag t3"><a href="#">IT</a></div>
-                                <div className="tag t4"><a href="#">Design</a></div>
-                                <div className="tag t5"><a href="#">Work</a></div>
-                                <div className="tag t6"><a href="#">Tech</a></div>
-
+                               {
+                               tags.map((tags) => <Link key={tags.class} className={'tag '+(tags.class)} to={tags.url}>{tags.title}</Link>)
+                               }
                             </div>
 
                         </div>
@@ -96,41 +124,21 @@ const ArticlesFull = () => {
                                 <i className="fa-sharp fa-solid fa-magnifying-glass"></i>
                             </form>
 
+                            {/* map function for recentPosts */}  
                             <div className="recent-posts">
                                 <h3><u>Rec</u>ent Posts</h3>
-                                <div className="post-item no-border-top">
-                                    <a href="#">How To Blow Through Capital At An Incredible Rate</a>
-                                    <p>Jan 14, 2020</p>
-                                </div>
-                                <div className="post-item">
-                                    <a href="#">Design Studios That Everyone Should Know About?</a>
-                                    <p>Jan 14, 2020</p>
-                                </div>
-                                <div className="post-item">
-                                    <a href="#">How Did We Get 1M+ Visitors In 30 Days Without Anything?</a>
-                                    <p>Jan 14, 2020</p>
-                                </div>
-                                <div className="post-item">
-                                    <a href="#">Figma On Figma: How We Built Our Website Design System</a>
-                                    <p>Jan 14, 2020</p>
-                                </div>
+                                {
+                                recentPosts.map ((recentPosts) => (<RecentPost key={recentPosts.id} className={recentPosts.className} url={recentPosts.url} title={recentPosts.title} date={recentPosts.date}   />))
+                                }
                             </div>
-
+                            
+                            {/* map function for categories */}
                             <div className="categories">
                                 <h3><u>Cat</u>egories</h3>
                                 <div className="cat-container">
-                                    <div className="cat-item"><a href="#">Technology</a>-<p>20 posts</p>
-                                    </div>
-                                    <div className="cat-item"><a href="#">Freelancing</a>-<p>07 posts</p>
-                                    </div>
-                                    <div className="cat-item"><a href="#">Writing</a>-<p>16 posts</p>
-                                    </div>
-                                    <div className="cat-item"><a href="#">Marketing</a>-<p>11 posts</p>
-                                    </div>
-                                    <div className="cat-item"><a href="#">Business</a>-<p>35 posts</p>
-                                    </div>
-                                    <div className="cat-item"><a href="#">Education</a>-<p>14 posts</p>
-                                    </div>
+                                {
+                                categories.map((categories) => <div key={categories.id} className='cat-item'><Link to={categories.url}>{categories.category}</Link>{categories.hyphen}<p>{(categories.postCount)+ ' posts'}</p></div>)
+                                }
                                 </div>
                             </div>
 
