@@ -1960,6 +1960,10 @@ body {
             }
 
             @media (min-width: rem(768)) {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            @media (min-width: rem(1200)) {
                 grid-template-columns: 1fr 1fr 1fr;
             }
 
@@ -1977,9 +1981,15 @@ body {
                 }
 
                 .img-wrapper {
+                    
                     .article-img {
+                        overflow: hidden;
                         width: 100%;
+                        max-width: 423px;
                         height: auto;
+                        max-height: 232px;
+                        object-fit: fill;
+                        object-position: 100% 50%;
                         border: 1px solid transparent;
                         border-radius: 10px;
 
