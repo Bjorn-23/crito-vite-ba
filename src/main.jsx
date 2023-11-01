@@ -13,7 +13,7 @@ import NotFound from '@views/NotFound'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -24,5 +24,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>,
+,
 )

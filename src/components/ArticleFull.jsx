@@ -15,57 +15,80 @@ import img_12mar from '../assets/img/articles-news/12mar.png'
 const ArticleFull = () => {
 
     const { id } = useParams()
-    const [news, setNews] = useState()
+    const [article, setArticle] = useState(null)
 
 
-    const getNews = async () => {
-        console.log('getnews() ran')
+    const getArticle = async () => {
+        if (id !== undefined)
+        console.log('getArticle() ran')
         const result = await fetch(`https://win23-assignment.azurewebsites.net/api/articles/${id}`)
         if (result.status === 200) {
-            setNews(await result.json())
+            setArticle(await result.json())
+            console.log('result logged')
         }      
     }
 
+    // useEffect(() => {
+    //     getArticle()
+    //     console.log('article fetched ok')  
+    // }, [])
+
     useEffect(() => {
-        getNews()
-        console.log('news fetched ok')
+        const interval = setInterval(() => {
+            getArticle()
+            console.log('article fetched')
+        }, 5000)
+
+        getArticle()
+        console.log('article fetched onMount')
+
+        return () => clearInterval(interval)
     }, [])
 
-    console.log(news)
+    console.log(article)
 
-    //use {tags.class} as key value --> t1, t2, t3 etc also sets positioning in grid.
-    const tags = [
-        { class: 't1', url: '#', title: 'Digitalization' },
-        { class: 't2', url: '#', title: 'School' },
-        { class: 't3', url: '#', title: 'IT' },
-        { class: 't4', url: '#', title: 'Design' },
-        { class: 't5', url: '#', title: 'Work' },
-        { class: 't6', url: '#', title: 'Tech' },
-    ]
 
-    const recentPosts = [
-        { id: 1, className: 'post-item no-border-top', url: '#', title: 'How To Blow Through Capital At An Incredible Rate', date: 'jan 14, 2019' },
-        { id: 2, className: 'post-item', url: '#', title: 'Design Studios That Everyone Should Know About?', date: 'jan 14, 2019' },
-        { id: 3, className: 'post-item', url: '#', title: 'How Did We Get 1M+ Visitors In 30 Days Without Anything?', date: 'jan 14, 2019' },
-        { id: 4, className: 'post-item', url: '#', title: 'Figma On Figma: How We Built Our Website Design System', date: 'jan 14, 2019' },
-    ]
+    
+    // //use {tags.class} as key value --> t1, t2, t3 etc also sets positioning in grid.
+    // const tags = [
+    //     { class: 't1', url: '#', title: 'Digitalization' },
+    //     { class: 't2', url: '#', title: 'School' },
+    //     { class: 't3', url: '#', title: 'IT' },
+    //     { class: 't4', url: '#', title: 'Design' },
+    //     { class: 't5', url: '#', title: 'Work' },
+    //     { class: 't6', url: '#', title: 'Tech' },
+    // ]
 
-    //postCount should be a function of the total amount of posts in that particular category
-    const categories = [
-        { id: 1, url: '#', category: 'Technology', hyphen: '-', postCount: '20', },
-        { id: 2, url: '#', category: 'Freelancing', hyphen: '-', postCount: '07', },
-        { id: 3, url: '#', category: 'Writing', hyphen: '-', postCount: '16', },
-        { id: 4, url: '#', category: 'Marketing', hyphen: '-', postCount: '11', },
-        { id: 5, url: '#', category: 'Business', hyphen: '-', postCount: '35', },
-        { id: 6, url: '#', category: 'Education', hyphen: '-', postCount: '14', },
-    ]
+    // const recentPosts = [
+    //     { id: 1, className: 'post-item no-border-top', url: '#', title: 'How To Blow Through Capital At An Incredible Rate', date: 'jan 14, 2019' },
+    //     { id: 2, className: 'post-item', url: '#', title: 'Design Studios That Everyone Should Know About?', date: 'jan 14, 2019' },
+    //     { id: 3, className: 'post-item', url: '#', title: 'How Did We Get 1M+ Visitors In 30 Days Without Anything?', date: 'jan 14, 2019' },
+    //     { id: 4, className: 'post-item', url: '#', title: 'Figma On Figma: How We Built Our Website Design System', date: 'jan 14, 2019' },
+    // ]
+
+    // //postCount should be a function of the total amount of posts in that particular category
+    // const categories = [
+    //     { id: 1, url: '#', category: 'Technology', hyphen: '-', postCount: '20', },
+    //     { id: 2, url: '#', category: 'Freelancing', hyphen: '-', postCount: '07', },
+    //     { id: 3, url: '#', category: 'Writing', hyphen: '-', postCount: '16', },
+    //     { id: 4, url: '#', category: 'Marketing', hyphen: '-', postCount: '11', },
+    //     { id: 5, url: '#', category: 'Business', hyphen: '-', postCount: '35', },
+    //     { id: 6, url: '#', category: 'Education', hyphen: '-', postCount: '14', },
+    // ]
 
 
 
     return (
     
 <>
-{/* {/*  */}
+
+
+<div>{article.title}</div>
+<div>{article.author}</div>
+<div>{article.category}</div>
+<img src={article.imageUrl} />
+
+{/* 
 <article className="articles">
             <div className="container grid-container">
 
@@ -133,9 +156,9 @@ const ArticleFull = () => {
 
 
                     <div className="tags">
-                        {
-                            tags.map((tags) => <Link key={tags.class} className={'tag ' + (tags.class)} to={tags.url}>{tags.title}</Link>)
-                        }
+                       {
+                        tags.map((tags) => <Link key={tags.class} className={'tag ' + (tags.class)} to={tags.url}>{tags.title}</Link>)
+                       }
                     </div>
 
                 </div>        
