@@ -14,6 +14,7 @@ const ArticleNewsAPI = () => {
         const result = await fetch('https://win23-assignment.azurewebsites.net/api/articles')
         // const data = await result.json()
         // setArticles(data) FÖRENKLAR NER TILL NÄSTA RAD
+        if( result.status === 200 )
         setArticles(await result.json())
     }
 
@@ -55,7 +56,7 @@ const ArticleNewsAPI = () => {
                 
                     {
                     articles.map(article => (
-                    <Link key={article.id} className="grid-item" to='#'>
+                    <Link key={article.id} className="grid-item" to={`/news/${article.id}`}>
                         <div className="img-wrapper">
                             <img className="article-img relative" src={article.imageUrl}
                                 alt='altText' />
@@ -73,7 +74,6 @@ const ArticleNewsAPI = () => {
                             <p className="lorem">{article.content}</p>
                     </Link>
                     ))
-
                     }
 
                 </div>

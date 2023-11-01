@@ -1832,11 +1832,11 @@ body .container {
 .articles-news .container .grid-container .grid-item .img-wrapper .article-img {
   overflow: hidden;
   width: 100%;
-  max-width: 423px;
+  max-width: 400px;
   height: auto;
-  max-height: 232px;
-  -o-object-fit: fill;
-     object-fit: fill;
+  max-height: 240px;
+  -o-object-fit: cover;
+     object-fit: cover;
   -o-object-position: 100% 50%;
      object-position: 100% 50%;
   border: 1px solid transparent;

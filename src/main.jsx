@@ -6,10 +6,10 @@ import './index.css'
 import Home from '@views/Home'
 import Services from '@views/Services'
 import News from '@views/News'
-import NewsTesting from '@views/NewsTesting'
 import NewsDetails from '@views/NewsDetails'
 import Contact from '@views/Contact'
 import NotFound from '@views/NotFound'
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -19,8 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
         <Route path="/news" element={<News />} />
-        <Route path="/newstesting" element={<NewsTesting />} />
-        <Route path="/newsdetails" element={<NewsDetails />} />
+        <Route path="/news/:id" element={<NewsDetails />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
