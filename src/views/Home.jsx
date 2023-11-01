@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 import Header from '@components/Header'
 import Showcase from '@components/Showcase'
 import Clients from '@components/Clients'
@@ -18,6 +19,7 @@ import ArticlesHome from '../components/ArticlesHome'
 
 
 const Home = () => {
+
   return (
     <div className="wrapper">
       <Header />

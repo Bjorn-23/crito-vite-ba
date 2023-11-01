@@ -9,7 +9,7 @@ import News from '@views/News'
 import NewsDetails from '@views/NewsDetails'
 import Contact from '@views/Contact'
 import NotFound from '@views/NotFound'
-
+import TestPage from '@views/TestPage'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -22,7 +22,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/news/:id" element={<NewsDetails />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/*" element={<NotFound />} />
+        <Route path="/testpage" element={<TestPage />} />
       </Routes>
     </BrowserRouter>
-,
+ ,
 )

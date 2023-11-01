@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { parseISO, format } from 'date-fns'
 
 import ArticlesBox from '@generics/ArticlesBox'
 import SectionTitle from '@generics/SectionTitle'
 import RecentPost from './generics/RecentPost'
 import Button from '@generics/Button'
+// import StringSplit from './generics/StringSplit'
 
 import img_25mar from '../assets/img/articles-news/25mar.png'
 import img_17mar from '../assets/img/articles-news/17mar.png'
@@ -15,103 +17,104 @@ import img_12mar from '../assets/img/articles-news/12mar.png'
 const ArticleFull = () => {
 
     const { id } = useParams()
+    // console.log(id)
     const [article, setArticle] = useState(null)
 
+      
+    useEffect(() => {
+        console.log('use effect ran')
+        getArticle()
+        console.log('use effect finished')
+    }, [])
 
     const getArticle = async () => {
         if (id !== undefined)
-        console.log('getArticle() ran')
+        console.log('getArticle ran')
         const result = await fetch(`https://win23-assignment.azurewebsites.net/api/articles/${id}`)
         if (result.status === 200) {
             setArticle(await result.json())
-            console.log('result logged')
-        }      
+            console.log('getArticle finished')
+            parseData(await article)
+         }      
     }
 
-    // useEffect(() => {
-    //     getArticle()
-    //     console.log('article fetched ok')  
-    // }, [])
+    //how to get the article.published in here?
+    function parseData() {
+        const isoDate = '2023-10-17T00:00:00'; //
+        const parsedDate = parseISO(isoDate)
+        const formattedDate = format(parsedDate, 'MMM, dd, yyyy')
+        let dateArr = formattedDate.split(',')
+        
+        return dateArr     
+    }
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            getArticle()
-            console.log('article fetched')
-        }, 5000)
+    let dateArray = parseData(); // Get the year from the first element of the array
+    console.log(dateArray)
 
-        getArticle()
-        console.log('article fetched onMount')
+    let month= dateArray[0]
+    let date = dateArray[1]
+    let year = dateArray[2]  
 
-        return () => clearInterval(interval)
-    }, [])
+    //use {tags.class} as key value --> t1, t2, t3 etc also sets positioning in grid.
+    const tags = [
+        { class: 't1', url: '#', title: 'Digitalization' },
+        { class: 't2', url: '#', title: 'School' },
+        { class: 't3', url: '#', title: 'IT' },
+        { class: 't4', url: '#', title: 'Design' },
+        { class: 't5', url: '#', title: 'Work' },
+        { class: 't6', url: '#', title: 'Tech' },
+    ]
 
-    console.log(article)
+    const recentPosts = [
+        { id: 1, className: 'post-item no-border-top', url: '#', title: 'How To Blow Through Capital At An Incredible Rate', date: 'jan 14, 2019' },
+        { id: 2, className: 'post-item', url: '#', title: 'Design Studios That Everyone Should Know About?', date: 'jan 14, 2019' },
+        { id: 3, className: 'post-item', url: '#', title: 'How Did We Get 1M+ Visitors In 30 Days Without Anything?', date: 'jan 14, 2019' },
+        { id: 4, className: 'post-item', url: '#', title: 'Figma On Figma: How We Built Our Website Design System', date: 'jan 14, 2019' },
+    ]
 
-
-    
-    // //use {tags.class} as key value --> t1, t2, t3 etc also sets positioning in grid.
-    // const tags = [
-    //     { class: 't1', url: '#', title: 'Digitalization' },
-    //     { class: 't2', url: '#', title: 'School' },
-    //     { class: 't3', url: '#', title: 'IT' },
-    //     { class: 't4', url: '#', title: 'Design' },
-    //     { class: 't5', url: '#', title: 'Work' },
-    //     { class: 't6', url: '#', title: 'Tech' },
-    // ]
-
-    // const recentPosts = [
-    //     { id: 1, className: 'post-item no-border-top', url: '#', title: 'How To Blow Through Capital At An Incredible Rate', date: 'jan 14, 2019' },
-    //     { id: 2, className: 'post-item', url: '#', title: 'Design Studios That Everyone Should Know About?', date: 'jan 14, 2019' },
-    //     { id: 3, className: 'post-item', url: '#', title: 'How Did We Get 1M+ Visitors In 30 Days Without Anything?', date: 'jan 14, 2019' },
-    //     { id: 4, className: 'post-item', url: '#', title: 'Figma On Figma: How We Built Our Website Design System', date: 'jan 14, 2019' },
-    // ]
-
-    // //postCount should be a function of the total amount of posts in that particular category
-    // const categories = [
-    //     { id: 1, url: '#', category: 'Technology', hyphen: '-', postCount: '20', },
-    //     { id: 2, url: '#', category: 'Freelancing', hyphen: '-', postCount: '07', },
-    //     { id: 3, url: '#', category: 'Writing', hyphen: '-', postCount: '16', },
-    //     { id: 4, url: '#', category: 'Marketing', hyphen: '-', postCount: '11', },
-    //     { id: 5, url: '#', category: 'Business', hyphen: '-', postCount: '35', },
-    //     { id: 6, url: '#', category: 'Education', hyphen: '-', postCount: '14', },
-    // ]
+    //postCount should be a function of the total amount of posts in that particular category
+    const categories = [
+        { id: 1, url: '#', category: 'Technology', hyphen: '-', postCount: '20', },
+        { id: 2, url: '#', category: 'Freelancing', hyphen: '-', postCount: '07', },
+        { id: 3, url: '#', category: 'Writing', hyphen: '-', postCount: '16', },
+        { id: 4, url: '#', category: 'Marketing', hyphen: '-', postCount: '11', },
+        { id: 5, url: '#', category: 'Business', hyphen: '-', postCount: '35', },
+        { id: 6, url: '#', category: 'Education', hyphen: '-', postCount: '14', },
+    ]
 
 
-
+if(!article) {
+    return <p>Loading...</p>
+}
     return (
-    
+
+
+
 <>
 
-
-<div>{article.title}</div>
-<div>{article.author}</div>
-<div>{article.category}</div>
-<img src={article.imageUrl} />
-
-{/* 
 <article className="articles">
             <div className="container grid-container">
 
                 <div className="top grid-item">
                     <div className="top-left">
                         <div>
-                            <h2 className="articles-title">{news.title}</h2> 
+                            <h2 className="articles-title">{article.title}</h2> 
                         </div>
                         <div className="flex-txt">
-                            <p className="date">{news.published}</p>
+                            <p className="date">{month} {date}, {year}</p>
                             <div className="yellow-dot"></div>
-                            <p className="category">{news.category}</p>
+                            <p className="category">{article.category}</p>
                             <div className="yellow-dot"></div>
-                            <p className="author">{news.author}</p>
+                            <p className="author">{article.author}</p>
                         </div>
                     </div>
                     <div className="top-right"></div>
                 </div>
 
                 <div className="left grid-item">
-                    <img src={news.imageUrl} alt="" />
+                    <img src={article.imageUrl} alt="" />
                     <p className="content">
-                        {news.content}
+                        {article.content}
                         <br /><br />
                     </p>
                     <p className="lorem">
@@ -214,13 +217,32 @@ const ArticleFull = () => {
                 </div>
 
                 <div className="middle grid-container">
+                        {
+                            first.map((article =>
+                                <Link key={article.id} className="grid-item" to={`/news/${article.id}`} >
+                                    <div className="img-wrapper">
+                                        <img className="article-img relative" src={article.imageUrl}
+                                            alt="" />
+                                        <div className="date-wrapper">
+                                            <div className="yellow-square absolute">
+                                                <div className="date">17</div>
+                                                <p className="month">Oct</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p className="subject">{article.subject}</p>
+                                    <h3 className="article-title">{article.title}</h3>
+                                    <p className="lorem">{article.content}</p>
+                                </Link>
+                            ))
+                        } 
 
-                    <ArticlesBox url="/news" img={img_25mar} altText="a woman in business suite sitting at a table in a classNameroom" date="25" month="Mar" category="Businees" title="How To Use Digitalization In The classroom" text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto sed hic
+                    {/* <ArticlesBox url="/news" img={img_25mar} altText="a woman in business suite sitting at a table in a classNameroom" date="25" month="Mar" category="Businees" title="How To Use Digitalization In The classroom" text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto sed hic
                     libero." />
                     <ArticlesBox url="/news" img={img_17mar} altText="a screen displaying 3 columns: examples, capabilities and limitations" date="25" month="Mar" category="Businees" title="How To Implement Chat GPT In Your Projects" text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto sed hic
                     libero." />
                     <ArticlesBox url="/news" img={img_12mar} altText="a smartphone on top of books about css and javascript" date="25" month="Mar" category="Businees" title="The Guide To Support Modern CSS Design" text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto sed hic
-                    libero." />
+                    libero." /> */}
                 </div>
 
                 <div className="bottom">
@@ -236,8 +258,12 @@ const ArticleFull = () => {
             </div>
 
         </section>
-                        */}                  
+       
+              
 </>
+
+    
+
 
     )
 }

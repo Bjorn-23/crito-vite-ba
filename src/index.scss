@@ -2767,6 +2767,9 @@ body {
             img {
                 width: 100%;
                 height: auto;
+                max-width: 722px;
+                max-height: 480px;
+                object-fit: cover;
                 margin-bottom: 20px;
 
                 @media (min-width: rem(992)) {

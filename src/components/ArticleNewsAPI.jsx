@@ -62,8 +62,8 @@ const ArticleNewsAPI = () => {
                                 alt='altText' />
                             <div className="date-wrapper">
                                 <div className="yellow-square absolute">   
-                                <div className="date">123</div>           
-                                <p className="month">Mar</p>           
+                                <div className="date">17</div>           
+                                <p className="month">Oct</p>           
                                     {/* <div className="date">{output.split(" ")[0]}</div>
                                     <p className="month">{output.split(" ")[1]}</p> */}
                                 </div>
