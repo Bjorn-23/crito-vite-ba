@@ -1,0 +1,124 @@
+// ---------------TEAM---------------
+
+
+.team {
+    background-color: #ECD28B;
+    padding: 30px 10px;
+
+    @media (min-width: rem(576)) {
+        padding: 40px 20px;
+    }
+
+    @media (min-width: rem(768)) {
+        padding: 60px 0;
+    }
+
+    @media (min-width: rem(1200)) {
+        padding: 70px 0;
+    }
+
+
+    .container {
+        .top-wrapper {
+            display: block;
+            text-align: center;
+
+            @media (min-width: rem(768)) {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                text-align: left;
+            }
+
+            .team-title {
+                p {
+                    margin-bottom: 10px;
+
+                    @media (min-width: rem(768)) {
+                        margin-bottom: 30px;
+                    }
+                }
+
+                h2 {
+                    margin-bottom: 30px;
+
+                    @media (min-width: rem(768)) {
+                        margin-bottom: 60px;
+                    }
+                }
+            }
+
+            .btn-team-wrapper {
+                margin-bottom: 10px;
+
+                @media (min-width: rem(768)) {
+                    margin-bottom: 0px;
+                }
+
+                .btn-team {
+                    border: 1px solid #191919;
+                    font-weight: 600;
+                    display: block;
+                    margin: 0 20px;
+
+                    @media (min-width: rem(768)) {
+                        display: inline-block;
+                        margin: 0;
+                    }
+
+                    &:focus {
+                        outline-color: #fff;
+                    }
+
+                }
+            }
+        }
+
+        .slide-wrapper {
+            padding-top: 30px;
+
+            .carousel {
+                .carousel-inner {
+                    .item {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        grid-area: auto auto 1fr;
+                        align-items: center;
+                        gap: 15px;
+                        text-decoration: none;
+
+                        @media (min-width: rem(768)) {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr 1fr 1fr;
+                            align-items: center;
+                            gap: 30px;
+                            text-decoration: none;
+                        }
+
+                        .img-wrap {
+                            img {
+                                width: 100%;
+                                margin-bottom: 30px;
+                            }
+
+                            .slide-bottom-text {
+                                p {
+                                    color: #626262;
+                                    font-size: rem(14);
+
+                                    @media (min-width: rem(768)) {
+                                        font-size: rem(16);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .slide-dots {
+            margin: 20px 0 0;
+        }
+    }
+}

@@ -1,0 +1,112 @@
+// ---------------SUBSCRIBE---------------
+
+
+.subscribe {
+    background-color: #F0EFE9;
+    position: relative;
+
+    .design-lines-right {
+        display: none;
+
+        @media (min-width: rem(1200)) {
+            display: inline-block;
+            position: absolute;
+            bottom: 20%;
+            right: 0;
+        }
+    }
+
+    .container {
+        padding: 40px 15px 30px 15px;
+
+        @media (min-width: rem(992)) {
+            padding: 50px 0 40px;
+        }
+
+        @media (min-width: rem(1200)) {
+            padding: 100px 100px 90px;
+        }
+
+        .flex-wrapper {
+            display: block;
+            text-align: center;
+
+            @media (min-width: rem(992)) {
+                display: flex;
+                align-items: baseline;
+                justify-content: space-between;
+                text-align: left;
+            }
+
+            .left {
+                h2 {
+                    padding: 0 50px 15px;
+                    font-size: rem(24);
+
+                    @media (min-width: rem(380)) {
+                        padding: 0 60 15px;
+                        font-size: rem(28);
+                    }
+
+                    @media (min-width: rem(576)) {
+                        padding: 0 0 15px;
+                        font-size: rem(28);
+                    }
+
+                    @media (min-width: rem(768)) {
+                        padding: 0 0 15px;
+                        font-size: rem(32);
+                    }
+
+                    @media (min-width: rem(1200)) {
+                        padding: 0px;
+                        font-size: rem(38);
+                    }
+
+                    @media (min-width: rem(1400)) {
+                        font-size: rem(45);
+                    }
+                }
+            }
+
+            .right {
+
+
+                @media (min-width: rem(768)) {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                }
+
+                @media (min-width: rem(992)) {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+
+                    @media (min-width: rem(768)) {
+                        flex-direction: row;
+                    }
+
+                    .email {
+                        border: 5px solid white;
+                        border-radius: 25px;
+                        padding: 8px 25px;
+                        margin: 0.5em;
+                    }
+
+                    .btn-yellow {
+                        display: inline-block;
+                        padding: 12px 25px;
+                        margin: 0.5em;
+                    }
+                }
+
+            }
+        }
+    }
+}

@@ -1,0 +1,129 @@
+// ---------------WHY--CHOOSE--US---------------
+
+
+.why-choose-us {
+    padding: 30px 10px;
+
+    @media (min-width: rem(1200)) {
+        padding: 60px 0;
+    }
+
+    .container {
+        position: relative;
+        z-index: 0;
+
+        .flex-wrapper {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+
+            @media (min-width: rem(1200)) {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .left-box {
+                flex: 1;
+
+                .wcu-title-container {
+                    text-align: center;
+
+                    @media (min-width: rem(1200)) {
+                        text-align: left;
+                        padding-right: 140px;
+                    }
+
+                    @media (min-width: rem(1400)) {
+                        padding-right: 230px;
+                    }
+
+                    h2 {
+                        @media (min-width: rem(1200)) {
+                            margin-bottom: 30px;
+                        }
+                    }
+                }
+
+                .wcu-points-container {
+                    .points {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        gap: 20px;
+                        padding: 10px 30px;
+
+                        @media (min-width: rem(768)) {
+                            justify-content: center;
+                        }
+
+                        @media (min-width: rem(1200)) {
+                            padding: 10px 0;
+                            align-items: first baseline;
+                            justify-content: flex-start;
+                        }
+
+                        .img-div {
+                            img {
+                                padding: 10px;
+                                border: 1px solid #b9b9bf;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .right-box {
+                position: relative;
+                flex: 1;
+
+                .image-wrapper {
+                    img {
+                        position: relative;
+                        width: 100%;
+                        height: auto;
+
+                        @media (min-width: rem(768)) {
+                            width: 95%;
+                            height: auto;
+                        }
+
+                        @media (min-width: rem(1200)) {
+                            position: absolute;
+                            width: 105%;
+                            top: 11%;
+                            right: 0;
+                            z-index: 2;
+                        }
+
+                        @media (min-width: rem(1400)) {
+                            position: absolute;
+                            width: 100%;
+                            top: 5%;
+                            right: 0;
+                        }
+                    }
+                }
+
+                .grey-box {
+                    display: none;
+
+                    @media (min-width: rem(1200)) {
+                        display: block;
+                        background-color: #F0EFE9;
+                        width: 3000px;
+                        height: 420px;
+                        position: absolute;
+                        top: 31%;
+                        left: -15%;
+                        z-index: 1;
+                    }
+
+                    @media (min-width: rem(1400)) {
+                        left: -10%;
+                    }
+                }
+            }
+        }
+    }
+}

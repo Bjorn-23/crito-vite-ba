@@ -1,0 +1,29 @@
+// ---------------NOT--FOUND---------------
+
+
+.wrapper {
+    .pageNotFound {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 10px 60px;
+        gap: 40px;
+
+        @media (min-width: rem(768)) {
+            padding: 30px;
+        }
+        
+        @media (min-width: rem(1200)) {
+            padding: 60px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+    }    
+}

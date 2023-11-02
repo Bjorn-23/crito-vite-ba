@@ -25,7 +25,7 @@ const FirstThreeArticles = () => {
 
     function createFirst() {
         console.log('create first')
-        setFirst(news.slice(0, 3))
+        setFirst(news.slice(5, 8))
         console.log('first created')
     }
 

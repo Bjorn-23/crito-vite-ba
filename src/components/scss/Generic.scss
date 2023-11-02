@@ -1,0 +1,550 @@
+// ---------------GENERIC--------------
+
+
+// scss string interpolation used to calculate rem from px on font-sizes and media-queries.
+@use "sass:math";
+
+@function rem($pixels, $context: 16) {
+    @return (math.div($pixels, $context)) * 1rem;
+}
+
+// google fonts.
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&family=Inter:wght@300;400;500;700;900&display=swap');
+
+//text styling + box-sizing.
+html,
+body {
+    box-sizing: border-box;
+
+    a {
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: rem(12);
+
+        @media (min-width: rem(576)) {
+            font-size: rem(14);
+        }
+
+        @media (min-width: rem(992)) {
+            font-size: rem(16);
+        }
+    }
+
+    p {
+        color: #191919;
+        font-family: 'Inter', sans-serif;
+        font-size: rem(12);
+        font-weight: 400;
+
+        @media (min-width: rem(576)) {
+            font-size: rem(14);
+        }
+
+        @media (min-width: rem(992)) {
+            font-size: rem(16);
+        }
+    }
+
+    h1 {
+        font-family: DM sans, sans-serif;
+        font-weight: 700;
+        font-size: rem(40);
+
+        @media (min-width: rem(768)) {
+            font-size: rem(70);
+        }
+
+        @media (min-width: rem(1200)) {
+            font-size: rem(73);
+        }
+
+        @media (min-width: rem(1400)) {
+            font-size: rem(86);
+        }
+    }
+
+    h2 {
+        font-family: 'DM sans', sans-serif;
+        font-weight: 700;
+        font-size: rem(32);
+
+        @media (min-width: rem(1200)) {
+            font-size: rem(45);
+        }
+    }
+
+    h3 {
+        font-family: 'DM sans', sans-serif;
+        font-weight: 700;
+        font-size: rem(14);
+        color: #191919;
+
+        @media (min-width: rem(768)) {
+            font-size: rem(18);
+        }
+
+        @media (min-width: rem(992)) {
+            font-size: rem(22);
+        }
+    }
+
+    .orange-txt {
+        color: #F94D1C;
+        font-size: rem(14);
+
+        @media (min-width: rem(1200)) {
+            font-size: rem(18);
+        }
+    }
+
+    .container {
+        padding: 0;
+    }
+}
+
+// expanding the #features and #testimonials ".container" at larger screen sizes.
+@media (min-width: rem(1660)) {
+    #features-container {
+        max-width: 1520px;
+    }
+
+    #testimonials-content {
+        max-width: 1520px;
+    }
+}
+
+// mobile menu up to 991px.
+.hideMenu {
+    display: none;
+}
+
+.showMenu {
+    display: block;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    background-color: #f0efe9;
+    background-color: rgb(240, 239, 233, 0.99);
+    overflow-x: hidden;
+    transition: 0.5s;
+
+    .overlay-content {
+        position: relative;
+        top: 10%;
+        width: 100%;
+        text-align: center;
+        font-family: 'DM sans', sans-serif;
+        font-weight: 400;
+        margin-top: 30px;
+    }
+
+    a {
+        padding: 16px;
+        text-decoration: none;
+        font-size: rem(32);
+        color: #191919;
+        border-top: 1px solid rgb(185, 185, 191, 0.75);
+        display: block;
+        transition: 0.4s;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 5px;
+        }
+    }
+
+    .btm {
+        border-bottom: 1px solid rgb(185, 185, 192, 0.75);
+    }
+
+    .active {
+        font-weight: 700;
+    }
+
+    .close-btn {
+        border: none;
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: rem(45);
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+
+    @media screen and (max-height: rem(450)) {
+        a {
+            font-size: rem(20);
+        }
+
+        .close-btn {
+            font-size: rem(40);
+            top: 15px;
+            right: 35px;
+        }
+    }
+}
+
+
+// changed cursor for hover on menu bars in mobile format
+.fa-bars:hover {
+    cursor: pointer;
+}
+
+
+// transitions on buttons.
+.btn-yellow,
+.btn-transparent,
+.btn-black,
+.btn-video,
+.btn-transparent-fat,
+.submit {
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+
+// button layout and functions.
+.btn-yellow {
+    background-color: #f9d783;
+    border: 1px solid #f9d783;
+    border-radius: 35px;
+    color: #191919;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-weight: 600;
+    font-size: rem(14);
+
+    @media (min-width: rem(992)) {
+        font-size: rem(16);
+    }
+
+    i {
+        margin-left: 8px;
+        font-size: 0.9em;
+    }
+
+    &:hover {
+        background-color: #191919;
+        border: 1px solid #191919;
+        color: white;
+        box-shadow: 0 9px 5px#d3d3d3;
+    }
+
+    &:active {
+        box-shadow: 0 5px 5px#6A6C71;
+        transform: translateY(4px);
+    }
+}
+
+
+.btn-transparent {
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 35px;
+    color: #191919;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-weight: 600;
+    font-size: rem(14);
+
+    @media (min-width: rem(992)) {
+        font-size: rem(16);
+    }
+
+    i {
+        margin-left: 8px;
+        font-size: 0.9em;
+    }
+
+    &:hover {
+        background-color: #191919;
+        border: 1px solid #191919;
+        color: white;
+        box-shadow: 0 9px 5px#d3d3d3;
+    }
+
+    &:active {
+        box-shadow: 0 5px 5px #6A6C71;
+        transform: translateY(4px);
+    }
+}
+
+
+.btn-transparent-fat {
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 35px;
+    color: #191919;
+    text-decoration: none;
+    padding: 20px 35px;
+    font-weight: 400;
+    font-size: rem(14);
+
+    @media (min-width: rem(992)) {
+        font-size: rem(16);
+    }
+
+    i {
+        margin-left: 8px;
+        font-size: 0.9em;
+    }
+
+    &:hover {
+        background-color: #191919;
+        border: 1px solid #191919;
+        color: white;
+        box-shadow: 0 9px 5px#d3d3d3;
+    }
+
+    &:active {
+        box-shadow: 0 5px 5px #6A6C71;
+        transform: translateY(4px);
+    }
+}
+
+
+.btn-black {
+    background-color: #191919;
+    border: 1px solid #191919;
+    border-radius: 35px;
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-weight: 600;
+    font-size: rem(14);
+
+    @media (min-width: rem(992)) {
+        font-size: rem(16);
+    }
+
+    i {
+        margin-left: 8px;
+        font-size: 0.9em;
+    }
+
+    &:hover {
+        background-color: #f9d783;
+        border: 1px solid #f9d783;
+        color: black;
+        box-shadow: 0 9px 5px#d3d3d3;
+    }
+
+    &:active {
+        transform: translateY(4px);
+        box-shadow: 0 5px 5px #626262;
+    }
+
+    &:focus {
+        outline-color: red;
+    }
+
+}
+
+
+.btn-video {
+    background-color: transparent;
+    color: #191919;
+    text-decoration: none;
+    padding: 15px 15px 15px 0;
+    font-weight: 600;
+    font-size: rem(12);
+
+    @media (min-width: rem(992)) {
+        font-size: rem(16);
+        padding: 15px 25px;
+    }
+
+    i {
+        padding: 18px 18px 18px 22px;
+        border: 1px solid #191919;
+        border-radius: 50%;
+        font-size: 0.9em;
+    }
+
+    i:hover {
+        background-color: #191919;
+        color: white;
+        box-shadow: 0 9px 5px#d3d3d3;
+        transition: 0.5s ease-in-out;
+    }
+
+    i:active {
+        transform: translateY(4px);
+        box-shadow: 0 5px 5px #626262;
+    }
+}
+
+
+// used inside "our-services"-boxes.
+.btn-arw-r {
+    text-decoration: none;
+    padding: 15px 25px;
+    font-weight: 600;
+    text-align: right;
+    font-size: rem(14);
+
+    @media (min-width: rem(992)) {
+        font-size: rem(16);
+    }
+
+    i {
+        background-color: black;
+        color: white;
+        padding: 20px;
+        align-items: center;
+        border: 1px solid #191919;
+        border-radius: 50%;
+        margin-left: 8px;
+        margin-right: -15px;
+        font-size: 0.9em;
+    }
+}
+
+
+// for "carousel" - currently non functioning.
+.slide-dots {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #C4AF75;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+    .dot:hover {
+        background-color: #191919;
+    }
+
+    &.dot:active {
+        background-color: #d3d3d3;
+    }
+
+    .active {
+        background-color: #191919;
+
+        &.active:hover {
+            background-color: #fff;
+        }
+    }
+}
+
+
+// page-selector buttons at bottom of news.html
+.page-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 0;
+    padding-left: 0;
+
+    @media (min-width: rem(1200)) {
+        margin-top: 50px;
+    }
+
+    .selector {
+        cursor: pointer;
+        padding: 10px 15px;
+        margin: 0 5px;
+        background-color: #fff;
+        border: 1px solid #7c7c7c;
+        border-radius: 10px;
+        transition: background-color 0.3s ease-in-out;
+        list-style: none;
+
+        @media (min-width: rem(576)) {
+            padding: 10px 20px;
+        }
+    }
+
+    .selector:hover {
+        background-color: #f9d783;
+        color: #191919;
+        // transform: rotateZ(360deg);
+        // transition: 0.25s ease-in-out;
+    }
+
+    .active {
+        background-color: #191919;
+        color: #fff;
+
+        &.active:hover {
+            background-color: #d3d3d3;
+            color: #191919;
+        }
+    }
+
+}
+
+
+// yellow square with published date, top left in article pictures.
+.yellow-square {
+    display: inline-block;
+    background-image: linear-gradient(to bottom right, #f9d783, #f8eed2 50%, #f9d783 75%);
+    color: #191919;
+    text-decoration: none;
+    text-align: center;
+    max-width: 25%;
+    max-height: auto;
+    padding: 5px 10px;
+
+    @media (min-width: rem(576)) {
+        max-width: 30%;
+        max-height: auto;
+    }
+
+    @media (min-width: rem(992)) {
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+    }
+
+    @media (min-width: rem(1200)) {
+        width: 60px;
+        height: 60px;
+    }
+
+    .date {
+        font-family: 'DM sans', sans-serif;
+        font-size: rem(12);
+        font-weight: 700;
+
+        @media (min-width: rem(992)) {
+            font-size: rem(16);
+            margin-top: -3px;
+        }
+
+        @media (min-width: rem(1200)) {
+            font-size: rem(22);
+        }
+    }
+
+    .month {
+        margin: 0px;
+        font-size: rem(10);
+
+        @media (min-width: rem(992)) {
+            font-size: rem(14);
+        }
+    }
+}
