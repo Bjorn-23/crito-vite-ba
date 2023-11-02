@@ -1,0 +1,111 @@
+.features {
+  padding: 0 10px;
+}
+.features .container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 20px;
+  border: 1px solid #d3d3d3;
+}
+@media (min-width: rem(992)) {
+  .features .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+    border: 1px solid #d3d3d3;
+    padding: 60px;
+  }
+}
+@media (min-width: rem(1400)) {
+  .features .container {
+    gap: 80px;
+    padding: 100px 100px 60px;
+  }
+}
+.features .container .box-left {
+  flex: 1.5;
+  text-align: center;
+}
+@media (min-width: rem(992)) {
+  .features .container .box-left {
+    text-align: start;
+  }
+}
+.features .container .box-left .btn-yellow {
+  display: block;
+  margin: 20px 10px 0;
+}
+@media (min-width: rem(768)) {
+  .features .container .box-left .btn-yellow {
+    margin: 40px 0 0;
+    display: inline-block;
+  }
+}
+@media (min-width: rem(992)) {
+  .features .container .box-left .btn-yellow {
+    display: block;
+  }
+}
+@media (min-width: rem(1600)) {
+  .features .container .box-left .btn-yellow {
+    margin: 50px 0;
+  }
+}
+.features .container .grid-container {
+  flex: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: "gi1 gi2" "gi3 gi4";
+  gap: 10px;
+  padding: 10px;
+}
+.features .container .grid-container .gi1 {
+  grid-area: gi1;
+}
+.features .container .grid-container .gi2 {
+  grid-area: gi2;
+}
+.features .container .grid-container .gi3 {
+  grid-area: gi3;
+}
+.features .container .grid-container .gi4 {
+  grid-area: gi4;
+}
+@media (min-width: rem(1400)) {
+  .features .container .grid-container {
+    padding: 40px;
+    gap: 40px 80px;
+  }
+}
+.features .container .grid-container .grid-item {
+  text-align: left;
+  padding: 0;
+  position: relative;
+}
+.features .container .grid-container .grid-item img {
+  padding: 0 0 20px;
+}
+.features .container .grid-container .grid-item .features-h3 {
+  padding: 0 0 20px;
+}
+.features .container .grid-container .grid-item .star1 {
+  font-size: rem(8);
+  position: absolute;
+  top: -10px;
+  left: 14px;
+}
+.features .container .grid-container .grid-item .star2 {
+  font-size: rem(8);
+  position: absolute;
+  top: -7px;
+  left: 36px;
+}
+.features .container .grid-container .grid-item .star3 {
+  font-size: rem(8);
+  position: absolute;
+  top: 8px;
+  left: 46px;
+}

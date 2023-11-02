@@ -1,0 +1,31 @@
+.services-page {
+  margin: 0;
+  border: none;
+}
+.services-page .design-lines-services {
+  display: none;
+}
+@media (min-width: rem(768)) {
+  .services-page .design-lines-services {
+    display: block;
+  }
+}
+.services-page .container {
+  position: relative;
+  z-index: 0;
+}
+.services-page .container .c-middle {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 20px;
+}
+@media (min-width: rem(768)) {
+  .services-page .container .c-middle {
+    padding-bottom: 100px;
+  }
+}
+@media (min-width: rem(1200)) {
+  .services-page .container .c-middle {
+    padding-bottom: 200px;
+  }
+}

@@ -1,0 +1,111 @@
+.testimonials {
+  background-color: #ECD28B;
+  padding: 0 10px 30px;
+}
+@media (min-width: rem(576)) {
+  .testimonials {
+    padding: 0 40px 20px;
+  }
+}
+@media (min-width: rem(768)) {
+  .testimonials {
+    padding: 0 0 60px;
+  }
+}
+@media (min-width: rem(1200)) {
+  .testimonials {
+    padding: 0 0 125px;
+  }
+}
+.testimonials .container {
+  background-color: white;
+  padding: 30px 0;
+}
+@media (min-width: rem(768)) {
+  .testimonials .container {
+    padding: 80px;
+  }
+}
+@media (min-width: rem(992)) {
+  .testimonials .container {
+    padding: 80px 125px;
+  }
+}
+@media (min-width: rem(1200)) {
+  .testimonials .container {
+    padding: 125px 0;
+  }
+}
+.testimonials .container .test-top-wrapper div {
+  text-align: center;
+}
+.testimonials .container .test-top-wrapper div p {
+  color: #F94D1C;
+  margin: 10px;
+}
+@media (min-width: rem(768)) {
+  .testimonials .container .test-top-wrapper div p {
+    margin-bottom: 35px;
+  }
+}
+.testimonials .container .test-grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-area: auto 1fr auto;
+  padding: 20px;
+}
+@media (min-width: rem(1200)) {
+  .testimonials .container .test-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+    padding: 100px;
+  }
+}
+.testimonials .container .test-grid-container .grid-item {
+  margin: 15px 0;
+  padding: 10px;
+  border: 1px solid #d3d3d3;
+  border-radius: 10px;
+}
+@media (min-width: rem(1200)) {
+  .testimonials .container .test-grid-container .grid-item {
+    margin: 0;
+    padding: 0 50px 0 0;
+    border: none;
+  }
+}
+.testimonials .container .test-grid-container .grid-item .stars {
+  letter-spacing: 3px;
+  color: #F94D1C;
+}
+.testimonials .container .test-grid-container .grid-item p {
+  color: #191919;
+  font-size: rem(18);
+}
+.testimonials .container .test-grid-container .grid-item .flex-wrapper {
+  display: flex;
+  align-items: center;
+}
+.testimonials .container .test-grid-container .grid-item .flex-wrapper div {
+  margin-left: 20px;
+}
+.testimonials .container .test-grid-container .grid-item .flex-wrapper div h3 {
+  margin-top: 15px;
+}
+.testimonials .container .test-grid-container .grid-item .flex-wrapper div p {
+  color: #F94D1C;
+}
+.testimonials .container .btn-black-div {
+  text-align: center;
+}
+.testimonials .container .btn-black-div a {
+  display: block;
+  margin: 0 20px;
+}
+@media (min-width: rem(768)) {
+  .testimonials .container .btn-black-div a {
+    display: inline-block;
+    margin: 0;
+  }
+}

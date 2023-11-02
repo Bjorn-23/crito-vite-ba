@@ -90,6 +90,7 @@
                 display: none;
 
                 @media (min-width: rem(1200)) {
+                    // overflow: hidden;
                     display: block;
                     position: absolute;
                     right: -5%;

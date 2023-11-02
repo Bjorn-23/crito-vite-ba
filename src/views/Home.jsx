@@ -21,6 +21,7 @@ import ArticlesHome from '../components/ArticlesHome'
 const Home = () => {
 
   return (
+
     <div className="wrapper">
       <Header />
       <Showcase />

@@ -1,0 +1,97 @@
+.projects {
+  padding: 30px 10px;
+}
+@media (min-width: rem(768)) {
+  .projects {
+    padding: 40px 0;
+  }
+}
+@media (min-width: rem(1200)) {
+  .projects {
+    padding: 60px 0 90px;
+  }
+}
+.projects .container .projects-wrapper .title-wrapper {
+  text-align: center;
+}
+.projects .container .projects-wrapper .title-wrapper .orange-txt {
+  margin-bottom: 10px;
+}
+@media (min-width: rem(768)) {
+  .projects .container .projects-wrapper .title-wrapper .orange-txt {
+    margin-bottom: 30px;
+  }
+}
+.projects .container .projects-wrapper .title-wrapper h2 {
+  margin: 0 20px;
+  margin-bottom: 60px;
+}
+@media (min-width: rem(768)) {
+  .projects .container .projects-wrapper .title-wrapper h2 {
+    margin-bottom: 100px;
+  }
+}
+.projects .container .projects-wrapper .grid-container-p {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.projects .container .projects-wrapper .grid-container-p .grid-item-p {
+  text-decoration: none;
+  color: #191919;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  opacity: 1;
+}
+.projects .container .projects-wrapper .grid-container-p .grid-item-p img {
+  margin-bottom: 40px;
+  width: 100%;
+  height: auto;
+}
+.projects .container .projects-wrapper .grid-container-p .grid-item-p h3 {
+  border-bottom: 2px solid #E8E8E8;
+  padding-bottom: 20px;
+}
+.projects .container .projects-wrapper .grid-container-p .grid-item-p h3 br {
+  display: inline;
+}
+@media (min-width: rem(992)) {
+  .projects .container .projects-wrapper .grid-container-p .grid-item-p h3 br {
+    display: none;
+  }
+}
+.projects .container .projects-wrapper .grid-container-p .grid-item-p .txt-arw {
+  text-align: right;
+  margin: 15px;
+}
+.projects .container .projects-wrapper .grid-container-p .grid-item-p:hover .txt-arw {
+  text-decoration: underline;
+}
+.projects .container .projects-wrapper .grid-container-p .grid-item-p:hover {
+  opacity: 0.4;
+  transition: 0.3s ease-in-out;
+}
+.projects .container .projects-wrapper .btn-projects {
+  text-align: center;
+  margin-top: 20px;
+}
+@media (min-width: rem(768)) {
+  .projects .container .projects-wrapper .btn-projects {
+    margin-top: 40px;
+  }
+}
+@media (min-width: rem(1200)) {
+  .projects .container .projects-wrapper .btn-projects {
+    margin-top: 60px;
+  }
+}
+.projects .container .projects-wrapper .btn-projects a {
+  display: block;
+  margin: 0 20px;
+}
+@media (min-width: rem(768)) {
+  .projects .container .projects-wrapper .btn-projects a {
+    display: inline-block;
+    margin: 0;
+  }
+}

@@ -1,0 +1,180 @@
+.articles-news {
+  padding: 20px 10px;
+}
+@media (min-width: rem(992)) {
+  .articles-news {
+    padding: 60px 0 30px;
+  }
+}
+@media (min-width: rem(1200)) {
+  .articles-news {
+    padding: 90px 0 60px;
+  }
+}
+@media (min-width: rem(1400)) {
+  .articles-news {
+    padding: 120px 0 90px;
+  }
+}
+.articles-news .container .top {
+  display: block;
+  text-align: center;
+}
+@media (min-width: rem(992)) {
+  .articles-news .container .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: last baseline;
+    text-align: left;
+  }
+}
+.articles-news .container .top .top-lft p {
+  margin-top: 30px;
+}
+.articles-news .container .top .top-lft h2 {
+  margin: 20px 20px 0;
+}
+@media (min-width: rem(992)) {
+  .articles-news .container .top .top-lft h2 {
+    margin: 20px 0 0;
+  }
+}
+.articles-news .container .top .top-rgt {
+  margin-top: 40px;
+}
+@media (min-width: rem(992)) {
+  .articles-news .container .top .top-rgt {
+    margin-top: 0;
+  }
+}
+.articles-news .container .top .top-rgt .articles-btn-container {
+  text-align: center;
+}
+.articles-news .container .top .top-rgt .articles-btn-container .btn-transparent-fat {
+  padding: 15px 35px;
+  display: block;
+  margin: 0 20px;
+}
+@media (min-width: rem(768)) {
+  .articles-news .container .top .top-rgt .articles-btn-container .btn-transparent-fat {
+    display: inline-block;
+    margin: 0;
+  }
+}
+.articles-news .container .grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 40px auto 20px;
+  gap: 15px;
+}
+@media (min-width: rem(768)) {
+  .articles-news .container .grid-container {
+    gap: 25px;
+  }
+}
+@media (min-width: rem(768)) {
+  .articles-news .container .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: rem(1200)) {
+  .articles-news .container .grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.articles-news .container .grid-container .grid-item {
+  border: 1px solid #d3d3d3;
+  border-radius: 10px;
+  padding: 10px;
+  position: relative;
+  width: 100%;
+  text-decoration: none;
+}
+@media (min-width: rem(992)) {
+  .articles-news .container .grid-container .grid-item {
+    border: none;
+    padding: 0;
+  }
+}
+.articles-news .container .grid-container .grid-item .img-wrapper .article-img {
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  max-height: 240px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 100% 50%;
+     object-position: 100% 50%;
+  border: 1px solid transparent;
+  border-radius: 10px;
+}
+@media (min-width: rem(992)) {
+  .articles-news .container .grid-container .grid-item .img-wrapper .article-img {
+    border: none;
+    border-radius: 0;
+  }
+}
+.articles-news .container .grid-container .grid-item .img-wrapper .date-wrapper {
+  position: absolute;
+  width: 100%;
+  top: 6%;
+  left: 6%;
+}
+.articles-news .container .grid-container .grid-item .img-wrapper .date-wrapper img {
+  width: 14%;
+}
+.articles-news .container .grid-container .grid-item .subject {
+  margin: 15px auto;
+  color: #6A6C71;
+}
+.articles-news .container .grid-container .grid-item h3 {
+  margin: 10px auto;
+}
+@media (min-width: rem(1400)) {
+  .articles-news .container .grid-container .grid-item h3 {
+    margin-right: 5px;
+  }
+}
+.articles-news .container .grid-container .grid-item:hover h3 {
+  text-decoration: underline;
+  transition: 0.15s ease-in-out;
+}
+.articles-news .container .grid-container .grid-item .lorem {
+  color: #6A6C71;
+}
+.articles-news .container .grid-container .grid-item:hover {
+  opacity: 0.4;
+  transition: 0.15s ease-in-out;
+}
+.articles-news .container .slide-dots {
+  text-align: center;
+  margin-top: 30px;
+}
+@media (min-width) {
+  .articles-news .container .slide-dots {
+    margin-top: 50px;
+  }
+}
+.articles-news .container .slide-dots .dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #d3d3d3;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.articles-news .container .slide-dots .dot:hover {
+  background-color: #f9d783;
+}
+.articles-news .container .slide-dots.dot:active {
+  background-color: #d3d3d3;
+}
+.articles-news .container .slide-dots .active {
+  background-color: #191919;
+}
+.articles-news .container .slide-dots .active.active:hover {
+  background-color: #f9d783;
+}

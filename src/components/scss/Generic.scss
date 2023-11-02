@@ -14,10 +14,16 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&family=Inter:wght@300;400;500;700;900&display=swap');
 
 //text styling + box-sizing.
+
 html,
 body {
+    height:100%;
+    width:100%;
+    margin:0%;
+    padding:0%;
+    overflow-x: hidden;
     box-sizing: border-box;
-
+    
     a {
         font-family: 'Inter', sans-serif;
         font-weight: 400;
@@ -133,7 +139,7 @@ body {
     top: 0;
     background-color: #f0efe9;
     background-color: rgb(240, 239, 233, 0.99);
-    overflow-x: hidden;
+    // overflow-x: hidden;
     transition: 0.5s;
 
     .overlay-content {
