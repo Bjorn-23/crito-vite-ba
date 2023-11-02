@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import img_FooterLogo from '../assets/img/footer/Logo-cs.svg'
-import img_DesignSquiggles from '../assets/img/footer/design-squiggles.svg'
+import img_FooterLogo from '@assets/img/footer/Logo-cs.svg'
+import img_DesignSquiggles from '@assets/img/footer/design-squiggles.svg'
 
 const Footer = () => {
     return (
@@ -11,8 +11,9 @@ const Footer = () => {
                 <div className="top container">
                     <div className="grid-container">
                         <div id="logotype" className="grid-item">
-                            <Link to="/"><img src={img_FooterLogo}
-                                alt="The logotype of Crito Consulting INC" /></Link>
+
+                            <Link to="/"><img src={img_FooterLogo} alt="The logotype of Crito Consulting INC" /></Link>
+
                             <p className="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat obcaecati
                                 voluptas voluptates!
                                 Voluptates laborum nam ratione minus necessitatibus, iure praesentium.</p>
@@ -64,8 +65,10 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="design"><img className=" absolute-f-t" src={img_DesignSquiggles}
-                    alt="two  wavy lines of grey color intersecting in a pattern" />
+                <div className="design">
+
+                    <img className=" absolute-f-t" src={img_DesignSquiggles} alt="two  wavy lines of grey color intersecting in a pattern" />
+                    
                 </div>
             </div>
 

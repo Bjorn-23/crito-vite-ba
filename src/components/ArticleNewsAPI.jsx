@@ -1,21 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import SectionTitle from './generics/SectionTitle'
 
+import SectionTitle from '@generics/SectionTitle'
 
-
-
+//This component fetches all the articles found in the API and via a map function on line 43 then renders them onto the "News.jsx" view.
 const ArticleNewsAPI = () => {
 
-      const [articles, setArticles] = useState([])
-    //   console.log(articles[0].id)
+    const [articles, setArticles] = useState([])
 
     const getArticles = async () => {
         const result = await fetch('https://win23-assignment.azurewebsites.net/api/articles')
-        // const data = await result.json()
-        // setArticles(data) FÖRENKLAR NER TILL NÄSTA RAD
-        if( result.status === 200 )
-        setArticles(await result.json())
+            if (result.status === 200)
+                setArticles(await result.json())
     }
 
     useEffect(() => {
@@ -23,17 +19,6 @@ const ArticleNewsAPI = () => {
         console.log('articles fetched safely')
     }, [])
 
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         getArticles()
-    //         console.log('articles fetched')
-    //     }, 60000)
-
-    //     getArticles()
-    //     console.log('articles fetched onMount')
-
-    //     return () => clearInterval(interval)
-    // }, [])
 
     return (
         <section className="articles-news">
@@ -41,7 +26,7 @@ const ArticleNewsAPI = () => {
                 <div className="top">
 
                     <div className="top-lft">
-                        <SectionTitle title="Our News & Articles" orangeText=""/>
+                        <SectionTitle title="Our News & Articles" orangeText="" />
                     </div>
 
                     <div className="top-rgt">
@@ -53,27 +38,25 @@ const ArticleNewsAPI = () => {
                 </div>
 
                 <div className="middle grid-container">
-                
+
                     {
-                    articles.map(article => (
-                    <Link key={article.id} className="grid-item" to={`/news/${article.id}`}>
-                        <div className="img-wrapper">
-                            <img className="article-img relative" src={article.imageUrl}
-                                alt='altText' />
-                            <div className="date-wrapper">
-                                <div className="yellow-square absolute">   
-                                <div className="date">17</div>           
-                                <p className="month">Oct</p>           
-                                    {/* <div className="date">{output.split(" ")[0]}</div>
-                                    <p className="month">{output.split(" ")[1]}</p> */}
+                        articles.map(article => (
+                            <Link key={article.id} className="grid-item" to={`/news/${article.id}`}>
+                                <div className="img-wrapper">
+                                    <img className="article-img relative" src={article.imageUrl}
+                                        alt='altText' />
+                                    <div className="date-wrapper">
+                                        <div className="yellow-square absolute">
+                                            <div className="date">17</div>
+                                            <p className="month">Oct</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                            <p className="subject">{article.category}</p>
-                            <h3 className="article-title">{article.title}</h3>
-                            <p className="lorem">{article.content}</p>
-                    </Link>
-                    ))
+                                <p className="subject">{article.category}</p>
+                                <h3 className="article-title">{article.title}</h3>
+                                <p className="lorem">{article.content}</p>
+                            </Link>
+                        ))
                     }
 
                 </div>

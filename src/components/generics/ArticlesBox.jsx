@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+//Generic currently in use in ArticlesNews - which is NOT in use.
 const ArticlesBox = ({url, img, altText, date, month, category, title, text}) => {
     return (
 

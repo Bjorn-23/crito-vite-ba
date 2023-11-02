@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
 
-import img_BreadcrumbSquiggle from '../assets/img/showcase/showcase-squiggle.svg'
+import img_BreadcrumbSquiggle from '@assets/img/showcase/showcase-squiggle.svg'
 
-const Breadcrumbs = ({url, page}) => {
+const Breadcrumbs = ({ url, page }) => {
     return (
         <section className="breadcrumbs">
 
@@ -14,7 +14,7 @@ const Breadcrumbs = ({url, page}) => {
 
             <div className="container">
 
-                <nav style={{bsBreadcrumbDivider: ''}} aria-label="breadcrumb">
+                <nav style={{ bsBreadcrumbDivider: '' }} aria-label="breadcrumb">
                     <ol className="breadcrumb">
                         <li className="breadcrumb-item inactive"><Link to="/">Home</Link></li>
                         <li className="breadcrumb-item active" aria-current="page"><NavLink to={url}>{page}</NavLink></li>

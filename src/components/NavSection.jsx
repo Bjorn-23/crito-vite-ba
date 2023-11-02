@@ -1,11 +1,12 @@
 import React from 'react'
-import Button from './generics/Button'
 import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import MobileNav from './generics/mobileNav'
+
+import MobileNav from '@generics/mobileNav'
+import Button from '@generics/Button'
 
 
-import img_critoLogo from '../assets/img/header/Logotype.svg'
+import img_critoLogo from '@assets/img/header/Logotype.svg'
 
 const NavSection = () => {
     return (

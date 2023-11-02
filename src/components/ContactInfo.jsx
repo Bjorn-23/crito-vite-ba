@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ContactForm from './generics/ContactForm'
+import ContactForm from '@generics/ContactForm'
 import ContactMap from '@generics/ContactMap'
 
 const ContactInfo = () => {
@@ -50,15 +50,15 @@ const ContactInfo = () => {
                         </div>
 
                     </div>
-                    
+
                     <ContactForm />
-                                     
+
 
                 </div>
             </section>
 
-            <ContactMap />  
-           
+            <ContactMap />
+
         </>
     )
 }

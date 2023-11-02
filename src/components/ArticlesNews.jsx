@@ -1,18 +1,18 @@
 import React from 'react'
-import ArticlesBox from './generics/ArticlesBox';
-import SectionTitle from './generics/SectionTitle'
+import ArticlesBox from '@generics/ArticlesBox';
+import SectionTitle from '@generics/SectionTitle'
 
-import img_25mar from '../assets/img/articles-news/25mar.png'
-import img_17mar from '../assets/img/articles-news/17mar.png'
-import img_13mar from '../assets/img/articles-news/13mar.png'
-import img_12mar from '../assets/img/articles-news/12mar.png'
-import img_07mar from '../assets/img/articles-news/07mar.png'
-import img_02mar from '../assets/img/articles-news/02mar.png'
-import img_Insight from '../assets/img/projects/bottom-rgt.png'
-import img_Responsive from '../assets/img/projects/top-rgt.png'
-import img_Educate from '../assets/img/projects/bottom-lft.png'
+import img_25mar from '@assets/img/articles-news/25mar.png'
+import img_17mar from '@assets/img/articles-news/17mar.png'
+import img_13mar from '@assets/img/articles-news/13mar.png'
+import img_12mar from '@assets/img/articles-news/12mar.png'
+import img_07mar from '@assets/img/articles-news/07mar.png'
+import img_02mar from '@assets/img/articles-news/02mar.png'
+import img_Insight from '@assets/img/projects/bottom-rgt.png'
+import img_Responsive from '@assets/img/projects/top-rgt.png'
+import img_Educate from '@assets/img/projects/bottom-lft.png'
 
-
+//Currently NOT in use - dependant on "ArticlesBox" to function properly.
 const ArticlesNews = () => {
     return (
         <section className="articles-news">
@@ -20,7 +20,7 @@ const ArticlesNews = () => {
                 <div className="top">
 
                     <div className="top-lft">
-                        <SectionTitle title="Our News & Articles" orangeText=""/>
+                        <SectionTitle title="Our News & Articles" orangeText="" />
                     </div>
 
                     <div className="top-rgt">

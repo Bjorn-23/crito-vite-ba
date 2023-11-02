@@ -1,9 +1,10 @@
 import React from 'react'
-import ServiceBox from './generics/ServiceBox'
-import SectionTitle from './generics/SectionTitle'
 
-import Button from './generics/Button'
-import img_ServiceLines from '../assets/img/services/white-squiggly-lines-services.svg'
+import SectionTitle from '@generics/SectionTitle'
+import ServiceBox from '@generics/ServiceBox'
+import Button from '@generics/Button'
+
+import img_ServiceLines from '@assets/img/services/white-squiggly-lines-services.svg'
 
 const ServicesComponent = () => {
     return (
@@ -30,7 +31,7 @@ const ServicesComponent = () => {
                         <ServiceBox title="Startup Business" url="/services" description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in nam possimus." />
                         <ServiceBox title="Financial Advice" url="/services" description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in nam possimus." />
                         <ServiceBox title="Risk Management" url="/services" description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in nam possimus." />
-                        
+
                     </div>
 
                     <div className="c-btm">
@@ -38,7 +39,7 @@ const ServicesComponent = () => {
                     </div>
 
                 </div>
-            </div>       
+            </div>
 
         </section>
     )
