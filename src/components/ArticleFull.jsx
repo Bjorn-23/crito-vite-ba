@@ -12,6 +12,7 @@ import Button from '@generics/Button'
 import img_25mar from '../assets/img/articles-news/25mar.png'
 import img_17mar from '../assets/img/articles-news/17mar.png'
 import img_12mar from '../assets/img/articles-news/12mar.png'
+import FirstThreeArticles from './generics/FirstThreeArticles'
 
 
 const ArticleFull = () => {
@@ -217,25 +218,8 @@ if(!article) {
                 </div>
 
                 <div className="middle grid-container">
-                        {
-                            first.map((article =>
-                                <Link key={article.id} className="grid-item" to={`/news/${article.id}`} >
-                                    <div className="img-wrapper">
-                                        <img className="article-img relative" src={article.imageUrl}
-                                            alt="" />
-                                        <div className="date-wrapper">
-                                            <div className="yellow-square absolute">
-                                                <div className="date">17</div>
-                                                <p className="month">Oct</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p className="subject">{article.subject}</p>
-                                    <h3 className="article-title">{article.title}</h3>
-                                    <p className="lorem">{article.content}</p>
-                                </Link>
-                            ))
-                        } 
+                    
+                    <FirstThreeArticles />
 
                     {/* <ArticlesBox url="/news" img={img_25mar} altText="a woman in business suite sitting at a table in a classNameroom" date="25" month="Mar" category="Businees" title="How To Use Digitalization In The classroom" text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto sed hic
                     libero." />

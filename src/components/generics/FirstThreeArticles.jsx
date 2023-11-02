@@ -1,36 +1,47 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 const FirstThreeArticles = () => {
 
-    const [articles, setArticles] = useState()
-    //   console.log(articles[].id)
-
-    const getArticles = async () => {
-        const result = await fetch(`https://win23-assignment.azurewebsites.net/api/articles/`)
-        // const data = await result.json()
-        // setArticles(data) FÖRENKLAR NER TILL NÄSTA RAD
-        if (result.status === 200)
-            setArticles(await result.json())
-    }
+    const [news, setNews] = useState(null)
+    const [first, setFirst] = useState(null)
 
     useEffect(() => {
-        getArticles()
-        console.log('articles fetched safely')
+        console.log('onMount')
+        getNews()
     }, [])
 
-    const first = articles.slice(0, 3)
+
+    const getNews = async () => {
+        console.log('getNews init')
+        const result = await fetch(`https://win23-assignment.azurewebsites.net/api/articles/`)
+        if (result.status === 200) {
+            setNews(await result.json())
+            console.log('getNews done')
+        }
+    }
+
+    console.log(news)
+
+    function createFirst() {
+        console.log('create first')
+        setFirst(news.slice(0, 3))
+        console.log('first created')
+    }
+
 
     console.log(first)
 
-    if (!first)
-        return <p>Loading...</p>
+    if (!news) {
+        return (<p>Loading...</p>)
+    }
+    else if (news && !first) {
+        createFirst()
+        return (<p>Still Loading...</p>)
+    }
     else
         return (
-
-            <section className="articles-news">
-                <div className="container">
-                    <div className="middle grid-container">
+                    <>
                         {
                             first.map((article =>
                                 <Link key={article.id} className="grid-item" to={`/news/${article.id}`} >
@@ -39,8 +50,8 @@ const FirstThreeArticles = () => {
                                             alt="" />
                                         <div className="date-wrapper">
                                             <div className="yellow-square absolute">
-                                                <div className="date">{ }</div>
-                                                <p className="month">{ }</p>
+                                                <div className="date">17</div>
+                                                <p className="month">Oct</p>
                                             </div>
                                         </div>
                                     </div>
@@ -50,14 +61,9 @@ const FirstThreeArticles = () => {
                                 </Link>
                             ))
                         }
-                    </div>
-
-                </div>
-
-            </section>
+                    </>    
 
         )
 }
-
 
 export default FirstThreeArticles
