@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import ScrollToArticle from './ScrollToArticle'
 
 const FirstThreeArticles = () => {
+    
+    <ScrollToArticle />
 
+    //----Fetching API-----
     const [news, setNews] = useState(null)
     const [first, setFirst] = useState(null)
 
@@ -10,7 +14,6 @@ const FirstThreeArticles = () => {
         console.log('onMount')
         getNews()
     }, [])
-
 
     const getNews = async () => {
         console.log('getNews init')
@@ -29,8 +32,8 @@ const FirstThreeArticles = () => {
         console.log('first created')
     }
 
-
     console.log(first)
+
 
     if (!news) {
         return (<p>Loading...</p>)
@@ -44,7 +47,7 @@ const FirstThreeArticles = () => {
                     <>
                         {
                             first.map((article =>
-                                <Link key={article.id} className="grid-item" to={`/news/${article.id}`} >
+                                <Link key={article.id} className="grid-item" to={`/news/${article.id}`} onClick={(ScrollToArticle)}> 
                                     <div className="img-wrapper">
                                         <img className="article-img relative" src={article.imageUrl}
                                             alt="" />

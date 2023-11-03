@@ -11,11 +11,13 @@ import NewsDetails from '@views/NewsDetails'
 import Contact from '@views/Contact'
 import NotFound from '@views/NotFound'
 import TestPage from '@views/TestPage'
+import AutoScrollToTop from '@generics/AutoScrollToTop'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 
   <BrowserRouter>
+  <AutoScrollToTop />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/services" element={<Services />} />
@@ -28,4 +30,3 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   </BrowserRouter>
   ,
 )
-

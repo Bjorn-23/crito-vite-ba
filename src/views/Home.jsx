@@ -16,8 +16,6 @@ import Footer from '@components/Footer'
 import ArticlesHome from '../components/ArticlesHome'
 
 
-
-
 const Home = () => {
 
   return (

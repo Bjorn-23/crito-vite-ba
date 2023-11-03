@@ -8,9 +8,14 @@ import RecentPost from '@generics/RecentPost'
 import Button from '@generics/Button'
 
 import FirstThreeArticles from '@generics/FirstThreeArticles'
+import ScrollToArticle from './generics/ScrollToArticle'
 
 //This component fetches and article clicked from any other page and with useParams takes the "id" found in the url to fetch the specific articles info. Also includes "FirstThreeArticles" which fetches all articles and slices the array keeping the first 3.
 const ArticleFull = () => {
+
+    useEffect (() => {
+        ScrollToArticle()
+    })
 
     const { id } = useParams()
     // console.log(id)
@@ -21,7 +26,7 @@ const ArticleFull = () => {
         console.log('use effect ran')
         getArticle()
         console.log('use effect finished')
-    }, [])
+    }, [id])
 
     const getArticle = async () => {
         if (id !== undefined)

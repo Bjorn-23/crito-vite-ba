@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+
+import AutoScrollToTop from '@components/generics/AutoScrollToTop'
+
+
+
 
 const TestPage = () => {
+
+    const location = useLocation()
 
     const [news, setNews] = useState(null)
     const [first, setFirst] = useState(null)
@@ -24,7 +31,6 @@ const TestPage = () => {
     console.log(news)
 
 
-
     function createFirst() {
         console.log('create first')
         setFirst(news.slice(0, 3))
@@ -43,10 +49,10 @@ const TestPage = () => {
     }
     else
         return (
-
+   
             <section className="articles-news">
                 <div className="container">
-                    <div className="middle grid-container">
+                    <div className="middle grid-container" style={{"height": "2000px"}}>
 
                         {
                             first.map((article =>
@@ -64,10 +70,10 @@ const TestPage = () => {
                                     <p className="subject">{article.subject}</p>
                                     <h3 className="article-title">{article.title}</h3>
                                     <p className="lorem">{article.content}</p>
-                                </Link>
+                                </Link>                          
                             ))
                         }
-
+                        <><p>{location.pathname}</p></>    
                     </div>
 
                 </div>

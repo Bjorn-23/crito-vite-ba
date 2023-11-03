@@ -3,8 +3,12 @@ import { Link } from 'react-router-dom'
 
 import img_FooterLogo from '@assets/img/footer/Logo-cs.svg'
 import img_DesignSquiggles from '@assets/img/footer/design-squiggles.svg'
+import ScrollToTop from './generics/ScrollToTop'
 
 const Footer = () => {
+
+    <ScrollToTop />
+
     return (
         <footer className="footer">
             <div className="footer-top relative-f-t">
@@ -12,7 +16,7 @@ const Footer = () => {
                     <div className="grid-container">
                         <div id="logotype" className="grid-item">
 
-                            <Link to="/"><img src={img_FooterLogo} alt="The logotype of Crito Consulting INC" /></Link>
+                            <Link to="/" onClick={(ScrollToTop)}><img src={img_FooterLogo} alt="The logotype of Crito Consulting INC" /></Link>
 
                             <p className="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat obcaecati
                                 voluptas voluptates!
