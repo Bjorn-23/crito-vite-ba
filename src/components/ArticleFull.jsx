@@ -10,51 +10,70 @@ import Button from '@generics/Button'
 import FirstThreeArticles from '@generics/FirstThreeArticles'
 import ScrollToArticle from './generics/ScrollToArticle'
 
-//This component fetches and article clicked from any other page and with useParams takes the "id" found in the url to fetch the specific articles info. Also includes "FirstThreeArticles" which fetches all articles and slices the array keeping the first 3.
+//This component fetches and article clicked from any other page and with useParams takes the "id" found in the url to fetch the specific articles info. Also includes "FirstThreeArticles" which fetches all articles and slices the array keeping the first 6-8.
 const ArticleFull = () => {
 
+    const { id } = useParams()
+    
     useEffect (() => {
         ScrollToArticle()
-    })
-
-    const { id } = useParams()
-    // console.log(id)
-    const [article, setArticle] = useState(null)
-
-
-    useEffect(() => {
-        console.log('use effect ran')
-        getArticle()
-        console.log('use effect finished')
     }, [id])
 
+    const [article, setArticle] = useState(null)
+
+    useEffect(() => {
+        getArticle()
+    }, [id])
+
+    useEffect(() => {
+        result()
+    }, [article])
+
+    const [convertedDate, setconvertedDate] = useState(false)
+
     const getArticle = async () => {
-        if (id !== undefined)
-            console.log('getArticle ran')
-        const result = await fetch(`https://win23-assignment.azurewebsites.net/api/articles/${id}`)
-        if (result.status === 200) {
-            setArticle(await result.json())
-            console.log('getArticle finished')
-            // parseData(await article)
+        if (id !== undefined) {
+            const result = await fetch(`https://win23-assignment.azurewebsites.net/api/articles/${id}`)
+                if (result.status === 200)
+                    setArticle(await result.json())
         }
     }
 
-    //Needs to be updated to work with 'article'
-    function parseData() {
-        const isoDate = '2023-10-17T00:00:00'; ////how to get the 'article.published' in here instead of just the string it would create?
-        const parsedDate = parseISO(isoDate)
-        const formattedDate = format(parsedDate, 'MMM, dd, yyyy')
-        let dateArr = formattedDate.split(',')
-
-        return dateArr
+    const result = async () => {
+        if (!article) {
+            return
+        }
+        else {
+            console.log(article.published)
+            const isoDate = article.published ////how to get the 'article.published' in here instead of just the string it would create? ('2023-10-17T00:00:00')
+            const parsedDate = parseISO(isoDate)
+            const formattedDate = format(parsedDate, 'MMM, dd, yyyy')
+            let result = formattedDate.split(',')
+            console.log(result)
+            console.log('where am i?')
+            setconvertedDate(result)
+        }
     }
 
-    let dateArray = parseData(); // Get the year from the first element of the array
-    console.log(dateArray)
-
+    let dateArray = convertedDate; // Get the year from the first element of the array
     let month = dateArray[0]
     let date = dateArray[1]
     let year = dateArray[2]
+  
+
+ 
+    //Needs to be updated to work with 'article'
+    // function parseData() {
+    //     const isoDate = '2023-10-17T00:00:00'////how to get the 'article.published' in here instead of just the string it would create? ('2023-10-17T00:00:00')
+    //     const parsedDate = parseISO(isoDate)
+    //     const formattedDate = format(parsedDate, 'MMM, dd, yyyy')
+    //     let dateArr = formattedDate.split(',')
+    //     console.log('where am i?')
+    //     return dateArr
+    // }
+
+ 
+
 
     //use {tags.class} as key value --> t1, t2, t3 etc also sets positioning in grid.
     const tags = [
@@ -84,9 +103,16 @@ const ArticleFull = () => {
     ]
 
 
+    // if (!article) {
+    //     return <p>Loading...</p>
+    // }
     if (!article) {
-        return <p>Loading...</p>
+        return (<p>Loading...</p>)
     }
+    else if(!month) {
+        return (<p>Still Loading...</p>)
+    }
+    else
     return (
 
         <>

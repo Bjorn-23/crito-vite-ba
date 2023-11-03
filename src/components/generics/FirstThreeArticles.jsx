@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import ScrollToArticle from './ScrollToArticle'
+
+import ScrollToArticle from '@generics/ScrollToArticle'
+
 
 const FirstThreeArticles = () => {
     
@@ -64,8 +66,7 @@ const FirstThreeArticles = () => {
                                 </Link>
                             ))
                         }
-                    </>    
-
+                    </> 
         )
 }
 

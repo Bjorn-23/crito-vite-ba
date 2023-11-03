@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 // import './index.css'
@@ -12,21 +12,23 @@ import Contact from '@views/Contact'
 import NotFound from '@views/NotFound'
 import TestPage from '@views/TestPage'
 import AutoScrollToTop from '@generics/AutoScrollToTop'
+import ScrollToTop from '@generics/ScrollToTop'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-
-  <BrowserRouter>
-  <AutoScrollToTop />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/services" element={<Services />} />
-      <Route path="/news" element={<News />} />
-      <Route path="/news/:id" element={<NewsDetails />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/*" element={<NotFound />} />
-      <Route path="/testpage" element={<TestPage />} />
-    </Routes>
-  </BrowserRouter>
-  ,
+  <StrictMode>
+    <BrowserRouter>
+      <AutoScrollToTop />
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/news/:id" element={<NewsDetails />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/*" element={<NotFound />} />
+        <Route path="/testpage" element={<TestPage />} />
+      </Routes>
+    </BrowserRouter>
+  </StrictMode>,
 )

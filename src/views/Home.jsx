@@ -20,7 +20,7 @@ const Home = () => {
 
   return (
 
-    <div className="wrapper">
+    <>
       <Header />
       <Showcase />
       <Clients />
@@ -34,7 +34,7 @@ const Home = () => {
       <ArticlesHome />
       <Subscribe />
       <Footer />
-    </div>
+    </>
   )
 }
 

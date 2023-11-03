@@ -124,26 +124,44 @@ body .container {
     max-width: 1520px;
   }
 }
-.hideMenu {
-  display: none;
+.mobile-nav-wrapper {
+  z-index: 1;
 }
-
-.showMenu {
-  display: block;
+.mobile-nav-wrapper .btn-mobile-nav {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  z-index: 10;
+  font-size: 2rem;
+  border: none;
 }
-
-.overlay {
+@media (min-width: 36rem) {
+  .mobile-nav-wrapper .btn-mobile-nav {
+    top: 30px;
+    right: 60px;
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 48rem) {
+  .mobile-nav-wrapper .btn-mobile-nav {
+    top: 50px;
+    right: 60px;
+    font-size: 2.5rem;
+  }
+}
+.mobile-nav-wrapper .overlay {
   height: 100%;
-  width: 0;
+  width: 100%;
   position: fixed;
-  z-index: 99;
+  z-index: 5;
   left: 0;
   top: 0;
   background-color: #f0efe9;
   background-color: rgba(240, 239, 233, 0.99);
-  transition: 0.5s;
+  overflow-x: hidden;
+  transition: 0.3s ease-out;
 }
-.overlay .overlay-content {
+.mobile-nav-wrapper .overlay .overlay-content {
   position: relative;
   top: 10%;
   width: 100%;
@@ -152,7 +170,7 @@ body .container {
   font-weight: 400;
   margin-top: 30px;
 }
-.overlay a {
+.mobile-nav-wrapper .overlay a {
   padding: 16px;
   text-decoration: none;
   font-size: 2rem;
@@ -161,35 +179,22 @@ body .container {
   display: block;
   transition: 0.4s;
 }
-.overlay a:hover, .overlay a:focus {
+.mobile-nav-wrapper .overlay a:hover, .mobile-nav-wrapper .overlay a:focus {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 5px;
 }
-.overlay .btm {
+.mobile-nav-wrapper .overlay .btm {
   border-bottom: 1px solid rgba(185, 185, 192, 0.75);
 }
-.overlay .active {
-  font-weight: 700;
-}
-.overlay .close-btn {
-  border: none;
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 2.8125rem;
-}
-.overlay .close-btn:hover, .overlay .close-btn:focus {
-  text-decoration: none;
-}
 @media screen and (max-height: 28.125rem) {
-  .overlay a {
+  .mobile-nav-wrapper .overlay a {
     font-size: 1.25rem;
   }
-  .overlay .close-btn {
-    font-size: 2.5rem;
-    top: 15px;
-    right: 35px;
+}
+@media (min-width: 62rem) {
+  .mobile-nav-wrapper {
+    display: none;
   }
 }
 
@@ -202,8 +207,14 @@ body .container {
 .btn-black,
 .btn-video,
 .btn-transparent-fat,
+.btn-scroll-to-top,
 .submit {
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+.hide-btn {
+  display: none;
+  transition: 0.3s ease-in;
 }
 
 .btn-yellow {
@@ -384,6 +395,32 @@ body .container {
   font-size: 0.9em;
 }
 
+.btn-scroll-to-top {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 10;
+  background-color: #f9d783;
+  border: 1px solid #f9d783;
+  border-radius: 35px;
+  color: #191919;
+  text-decoration: none;
+  width: 60px;
+  height: 60px;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+.btn-scroll-to-top:hover {
+  background-color: #191919;
+  border: 1px solid #191919;
+  color: white;
+  box-shadow: 0 9px 5px #d3d3d3;
+}
+.btn-scroll-to-top:active {
+  box-shadow: 0 5px 5px #6A6C71;
+  transform: translateY(4px);
+}
+
 .slide-dots {
   text-align: center;
   margin: 0;
@@ -509,42 +546,53 @@ body .container {
   }
 }
 
-.wrapper .header {
+.header {
   background-color: #f0efe9;
   padding: 16px 0 0;
 }
-.wrapper .header .container {
+.header .container {
   display: flex;
   justify-content: space-between;
   position: relative;
   z-index: 1;
+  padding: 20px;
+}
+@media (min-width: 36rem) {
+  .header .container {
+    padding: 20px 0;
+  }
+}
+@media (min-width: 48rem) {
+  .header .container {
+    padding: 40px;
+  }
 }
 @media (min-width: 62rem) {
-  .wrapper .header .container {
+  .header .container {
     align-items: center;
     gap: 30px;
   }
 }
-.wrapper .header .container span {
+.header .container span {
   display: flex;
   align-items: center;
   font-size: 2rem;
 }
 @media (min-width: 62rem) {
-  .wrapper .header .container span {
+  .header .container span {
     display: none;
   }
 }
-.wrapper .header .container .menu {
+.header .container .menu {
   display: none;
   flex: 1 1 0;
 }
 @media (min-width: 62rem) {
-  .wrapper .header .container .menu {
+  .header .container .menu {
     display: block;
   }
 }
-.wrapper .header .container .menu .top-menu {
+.header .container .menu .top-menu {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -552,20 +600,20 @@ body .container {
   padding-bottom: 10px;
 }
 @media (min-width: 75rem) {
-  .wrapper .header .container .menu .top-menu {
+  .header .container .menu .top-menu {
     justify-content: space-between;
   }
 }
-.wrapper .header .container .menu .top-menu .contact-information {
+.header .container .menu .top-menu .contact-information {
   display: none;
   align-items: center;
 }
 @media (min-width: 75rem) {
-  .wrapper .header .container .menu .top-menu .contact-information {
+  .header .container .menu .top-menu .contact-information {
     display: flex;
   }
 }
-.wrapper .header .container .menu .top-menu .contact-information .content-box {
+.header .container .menu .top-menu .contact-information .content-box {
   padding-right: 30px;
   margin-right: 30px;
   border-right: 1px solid #dad9d3;
@@ -574,50 +622,50 @@ body .container {
   font-weight: 300;
 }
 @media (min-width: 75rem) {
-  .wrapper .header .container .menu .top-menu .contact-information .content-box {
+  .header .container .menu .top-menu .contact-information .content-box {
     justify-content: space-between;
     display: flex;
   }
 }
-.wrapper .header .container .menu .top-menu .contact-information .content-box i {
+.header .container .menu .top-menu .contact-information .content-box i {
   margin-right: 5px;
   font-size: 1.2em;
 }
-.wrapper .header .container .menu .top-menu .contact-information .content-box a {
+.header .container .menu .top-menu .contact-information .content-box a {
   text-decoration: none;
   color: #191919;
 }
-.wrapper .header .container .menu .top-menu .contact-information .content-box a:hover {
+.header .container .menu .top-menu .contact-information .content-box a:hover {
   text-decoration: underline;
 }
-.wrapper .header .container .menu .top-menu .contact-information .content-box.last {
+.header .container .menu .top-menu .contact-information .content-box.last {
   border: none;
 }
-.wrapper .header .container .menu .top-menu .social-media a {
+.header .container .menu .top-menu .social-media a {
   color: #191919;
   font-size: 1.3rem;
   margin-left: 10px;
 }
-.wrapper .header .container .menu .top-menu .social-media a:hover {
+.header .container .menu .top-menu .social-media a:hover {
   color: #7c7c7c;
 }
-.wrapper .header .container .main-menu {
+.header .container .main-menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 10px;
 }
-.wrapper .header .container .main-menu nav a {
+.header .container .main-menu nav a {
   display: inline-block;
   color: #191919;
   text-decoration: none;
   margin-right: 35px;
   position: relative;
 }
-.wrapper .header .container .main-menu nav a.active {
+.header .container .main-menu nav a.active {
   font-weight: 500;
 }
-.wrapper .header .container .main-menu nav a.active::after, .wrapper .header .container .main-menu nav a:hover::after {
+.header .container .main-menu nav a.active::after, .header .container .main-menu nav a:hover::after {
   content: "";
   position: absolute;
   font-weight: 500;
@@ -629,18 +677,18 @@ body .container {
   transform: translate(calc(50% - 15px));
 }
 
-.wrapper .showcase {
+.showcase {
   background-color: #F0EFE9;
   padding: 0 10px;
   position: relative;
   z-index: 0;
 }
 @media (min-width: 62rem) {
-  .wrapper .showcase {
+  .showcase {
     padding: 75px 0 0;
   }
 }
-.wrapper .showcase .showcase-lines {
+.showcase .showcase-lines {
   display: none;
   position: absolute;
   bottom: 0;
@@ -648,86 +696,86 @@ body .container {
   z-index: 0;
 }
 @media (min-width: 62rem) {
-  .wrapper .showcase .showcase-lines {
+  .showcase .showcase-lines {
     display: block;
   }
 }
-.wrapper .showcase .container {
+.showcase .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
   z-index: 2;
 }
-.wrapper .showcase .container .content {
+.showcase .container .content {
   text-align: center;
   padding: 30px 0 20px;
 }
 @media (min-width: 48rem) {
-  .wrapper .showcase .container .content {
+  .showcase .container .content {
     padding: 80px 0 80px;
   }
 }
 @media (min-width: 75rem) {
-  .wrapper .showcase .container .content {
+  .showcase .container .content {
     text-align: left;
   }
 }
-.wrapper .showcase .container .content p {
+.showcase .container .content p {
   font-size: 1rem;
   padding: 20px 10px 40px;
 }
 @media (min-width: 48rem) {
-  .wrapper .showcase .container .content p {
+  .showcase .container .content p {
     font-size: 1.25rem;
     padding: 20px 0 40px;
   }
 }
-.wrapper .showcase .container .content a {
+.showcase .container .content a {
   margin: 0 20px 20px;
   display: block;
 }
 @media (min-width: 48rem) {
-  .wrapper .showcase .container .content a {
+  .showcase .container .content a {
     display: inline-block;
     margin: 0 10px 0 0;
   }
 }
-.wrapper .showcase .container img {
+.showcase .container img {
   display: none;
 }
 @media (min-width: 75rem) {
-  .wrapper .showcase .container img {
+  .showcase .container img {
     margin-right: -50px;
     display: block;
     width: 100%;
   }
 }
 
-.wrapper .clients {
+.clients {
   padding: 30px 10px;
 }
 @media (min-width: 75rem) {
-  .wrapper .clients {
+  .clients {
     padding: 0;
   }
 }
-.wrapper .clients .cl1 {
+.clients .cl1 {
   grid-area: cl1;
 }
-.wrapper .clients .cl2 {
+.clients .cl2 {
   grid-area: cl2;
 }
-.wrapper .clients .cl3 {
+.clients .cl3 {
   grid-area: cl3;
 }
-.wrapper .clients .cl4 {
+.clients .cl4 {
   grid-area: cl4;
 }
-.wrapper .clients .cl5 {
+.clients .cl5 {
   grid-area: cl5;
 }
-.wrapper .clients .grid-container {
+.clients .grid-container {
   display: grid;
   align-items: center;
   align-content: center;
@@ -738,7 +786,7 @@ body .container {
   gap: 10px;
 }
 @media (min-width: 30rem) {
-  .wrapper .clients .grid-container {
+  .clients .grid-container {
     grid-template-columns: repeat(6, auto [row-start]);
     grid-template-rows: auto;
     grid-template-areas: " cl1 cl1  cl2 cl2 cl3 cl3" " . cl4 cl4 cl5 cl5 .";
@@ -746,7 +794,7 @@ body .container {
   }
 }
 @media (min-width: 48rem) {
-  .wrapper .clients .grid-container {
+  .clients .grid-container {
     grid-template-columns: repeat(5, auto [row-start]);
     grid-template-rows: auto;
     grid-template-areas: " cl1 cl2 cl3 cl4 cl5";
@@ -755,35 +803,35 @@ body .container {
   }
 }
 @media (min-width: 75rem) {
-  .wrapper .clients .grid-container {
+  .clients .grid-container {
     margin: 0 auto;
     padding: 60px 0px;
     gap: 30px;
   }
 }
 @media (min-width: 87.5rem) {
-  .wrapper .clients .grid-container {
+  .clients .grid-container {
     margin: 0 auto;
     padding: 60px 0px;
     gap: 60px;
   }
 }
-.wrapper .clients .grid-container img {
+.clients .grid-container img {
   width: 100%;
   padding: 10px;
 }
 @media (min-width: 30rem) {
-  .wrapper .clients .grid-container img {
+  .clients .grid-container img {
     padding: 15px;
   }
 }
 @media (min-width: 62rem) {
-  .wrapper .clients .grid-container img {
+  .clients .grid-container img {
     padding: 30px;
   }
 }
 @media (min-width: 75rem) {
-  .wrapper .clients .grid-container img {
+  .clients .grid-container img {
     width: 100%;
     padding: 40px;
   }
@@ -1297,6 +1345,7 @@ body .container {
 
 .why-choose-us {
   padding: 30px 10px;
+  overflow-x: hidden;
 }
 @media (min-width: 75rem) {
   .why-choose-us {
@@ -1403,7 +1452,7 @@ body .container {
   .why-choose-us .container .flex-wrapper .right-box .grey-box {
     display: block;
     background-color: #F0EFE9;
-    width: 3000px;
+    width: 5000px;
     height: 420px;
     position: absolute;
     top: 31%;
@@ -1833,6 +1882,7 @@ body .container {
   }
 }
 .articles-news .container .grid-container .grid-item .img-wrapper .article-img {
+  overflow: hidden;
   width: 100%;
   max-width: 400px;
   height: auto;
@@ -2026,6 +2076,7 @@ body .container {
   background-color: #0E1021;
   position: relative;
   z-index: auto;
+  overflow-x: hidden;
 }
 .footer .footer-top {
   position: relative;

@@ -5,17 +5,18 @@ import { Link } from 'react-router-dom'
 import MobileNav from '@generics/mobileNav'
 import Button from '@generics/Button'
 
-
 import img_critoLogo from '@assets/img/header/Logotype.svg'
 
+
 const NavSection = () => {
+
     return (
 
         <div className="header">
             <div className="container">
                 <Link to="/"><img src={img_critoLogo} alt="Crito Logotype" /></Link>
 
-                <MobileNav />
+                {/* <MobileNav /> */}
 
                 <div className="menu">
                     <div className="top-menu">
@@ -26,13 +27,12 @@ const NavSection = () => {
                             </div>
                             <div className="content-box">
                                 <i className="fa-light fa-envelope"></i>
-                                <a
-                                    href="mailto:info@crito.com?subject=Hello%20World!&body=All%20your%20base%20are%20belong%20to%20us...">info@crito.com</a>
+                                <a href="mailto:info@crito.com?subject=Hello%20World!&body=All%20your%20base%20are%20belong%20to%20us...">info@crito.com</a>
                             </div>
                             <div className="content-box last">
                                 <i className="fa-light fa-location-dot"></i>
-                                <a href="https://maps.app.goo.gl/JUjns7mUxx5Q5QEL8" target="_blank" rel="noreferrer">Sveavägen 31 111 34
-                                    Stockholm</a>
+                                <Link to="https://maps.app.goo.gl/JUjns7mUxx5Q5QEL8" target="_blank" rel="noreferrer">Sveavägen 31 111 34 Stockholm</Link>
+
                             </div>
                         </div>
                         <div className="social-media">
