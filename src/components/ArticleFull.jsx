@@ -25,9 +25,17 @@ const ArticleFull = () => {
         getArticle()
     }, [id])
 
-    useEffect(() => {
-        result()
-    }, [article])
+    const formatDate = (isoDate) => {
+        const parsedDate = parseISO(isoDate);
+        const year = format(parsedDate, 'yyyy');
+        const month = format(parsedDate, 'MMM');
+        const date = format(parsedDate, 'dd');
+        return { year, month, date };
+    };
+
+    // useEffect(() => {
+    //     result()
+    // }, [article])
 
     const [convertedDate, setconvertedDate] = useState(false)
 
@@ -39,42 +47,27 @@ const ArticleFull = () => {
         }
     }
 
-    const result = async () => {
-        if (!article) {
-            return
-        }
-        else {
-            console.log(article.published)
-            const isoDate = article.published ////how to get the 'article.published' in here instead of just the string it would create? ('2023-10-17T00:00:00')
-            const parsedDate = parseISO(isoDate)
-            const formattedDate = format(parsedDate, 'MMM, dd, yyyy')
-            let result = formattedDate.split(',')
-            console.log(result)
-            console.log('where am i?')
-            setconvertedDate(result)
-        }
-    }
-
-    let dateArray = convertedDate; // Get the year from the first element of the array
-    let month = dateArray[0]
-    let date = dateArray[1]
-    let year = dateArray[2]
-  
-
- 
-    //Needs to be updated to work with 'article'
-    // function parseData() {
-    //     const isoDate = '2023-10-17T00:00:00'////how to get the 'article.published' in here instead of just the string it would create? ('2023-10-17T00:00:00')
-    //     const parsedDate = parseISO(isoDate)
-    //     const formattedDate = format(parsedDate, 'MMM, dd, yyyy')
-    //     let dateArr = formattedDate.split(',')
-    //     console.log('where am i?')
-    //     return dateArr
+    // const result = async () => {
+    //     if (!article) {
+    //         return
+    //     }
+    //     else {
+    //         console.log(article.published)
+    //         const isoDate = article.published ////how to get the 'article.published' in here instead of just the string it would create? ('2023-10-17T00:00:00')
+    //         const parsedDate = parseISO(isoDate)
+    //         const formattedDate = format(parsedDate, 'MMM, dd, yyyy')
+    //         let result = formattedDate.split(',')
+    //         console.log(result)
+    //         console.log('where am i?')
+    //         setconvertedDate(result)
+    //     }
     // }
 
- 
-
-
+    // let dateArray = convertedDate; // Get the year from the first element of the array
+    // let month = dateArray[0]
+    // let date = dateArray[1]
+    // let year = dateArray[2]
+  
     //use {tags.class} as key value --> t1, t2, t3 etc also sets positioning in grid.
     const tags = [
         { class: 't1', url: '#', title: 'Digitalization' },
@@ -109,10 +102,10 @@ const ArticleFull = () => {
     if (!article) {
         return (<p>Loading...</p>)
     }
-    else if(!month) {
-        return (<p>Still Loading...</p>)
-    }
-    else
+    // else if(!month) {
+    //     return (<p>Still Loading...</p>)
+    // }
+    // else
     return (
 
         <>
@@ -126,7 +119,8 @@ const ArticleFull = () => {
                                 <h2 className="articles-title">{article.title}</h2>
                             </div>
                             <div className="flex-txt">
-                                <p className="date">{month} {date}, {year}</p>
+                                {/* <p className="date">{month} {date}, {year}</p> */}
+                                <p className="date">{formatDate(article.published).month} {formatDate(article.published).date}, {formatDate(article.published).year}</p>
                                 <div className="yellow-dot"></div>
                                 <p className="category">{article.category}</p>
                                 <div className="yellow-dot"></div>
