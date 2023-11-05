@@ -8,7 +8,7 @@ import ScrollToArticle from '@generics/ScrollToArticle'
 
 const FirstThreeArticles = () => {
 
-    <ScrollToArticle />
+    // <ScrollToArticle />
 
     //----Fetching API-----
     const [news, setNews] = useState(null) //---news = the fetched value from API

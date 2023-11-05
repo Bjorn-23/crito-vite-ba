@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { parseISO, format } from 'date-fns';
 import SectionTitle from '@generics/SectionTitle';
 
+
 const ArticleNewsAPI = () => {
   const [articles, setArticles] = useState(null);
 
@@ -45,7 +46,7 @@ const ArticleNewsAPI = () => {
 
                 {articles &&
           articles.map((article) => (
-            <Link key={article.id} className="grid-item" to={`/news/${article.id}?scrollTarget=500`}>
+            <Link key={article.id} className="grid-item" to={`/news/${article.id}`}>
               <div className="img-wrapper">
                 <img className="article-img relative" src={article.imageUrl} alt="altText" />
                 <div className="date-wrapper">

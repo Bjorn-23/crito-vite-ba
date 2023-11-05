@@ -29,7 +29,7 @@ const Testimonials = () => {
                 </div>
 
                 <div className="btn-black-div">
-                    <Button type='black' title='All Reviews' url='#' />
+                    <Button type='black' title='All Reviews' url='/reviews' />
                 </div>
 
             </div>

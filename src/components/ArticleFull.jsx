@@ -14,11 +14,7 @@ import ScrollToArticle from './generics/ScrollToArticle'
 const ArticleFull = () => {
 
     const { id } = useParams()
-    
-    useEffect (() => {
-        ScrollToArticle()
-    }, [id])
-
+   
     const [article, setArticle] = useState(null)
 
     useEffect(() => {
@@ -40,7 +36,11 @@ const ArticleFull = () => {
                     setArticle(await result.json())
         }
     }
-
+    
+    useEffect (() => {
+        ScrollToArticle()
+    }, [id])
+    
     // const [convertedDate, setconvertedDate] = useState(false)
 
     // useEffect(() => {

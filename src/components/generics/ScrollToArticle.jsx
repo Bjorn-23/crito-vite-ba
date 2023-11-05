@@ -1,5 +1,7 @@
 
 const ScrollToArticle = () => {
+  
+  window.addEventListener('resize', ScrollToArticle);
 
   if (window.innerWidth < 992) {
     window.scrollTo(0, 0);
@@ -9,7 +11,6 @@ const ScrollToArticle = () => {
     window.scrollTo({ top: 500, behavior: 'smooth' })
   }
 
-  window.addEventListener('resize', ScrollToArticle);
 
   return null
 }

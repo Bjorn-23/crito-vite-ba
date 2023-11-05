@@ -27,7 +27,7 @@ const Team = () => {
                         <SectionTitle title='Experienced Team Members' orangeText="Meet Our Team" />
                     </div>
                     <div className="btn-team-wrapper">
-                        <Button type='team' title='Browse Team' url='#' className="btn-team" />
+                        <Button type='team' title='Browse Team' url='/team' className="btn-team" />
                     </div>
                 </div>
 

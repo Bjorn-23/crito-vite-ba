@@ -611,17 +611,7 @@ body {
             align-items: center;
             gap: 30px;
         }
-
-        span {
-            display: flex;
-            align-items: center;
-            font-size: rem(32);
-
-            @media (min-width: rem(992)) {
-                display: none;
-            }
-        }
-
+  
         .menu {
             display: none;
             flex: 1 1 0;
@@ -694,11 +684,6 @@ body {
                     }
                 }
             }
-
-            // .btn-login {
-            //     padding-top: 12px;
-            //     padding-bottom: 12px;
-            // }
         }
 
         .main-menu {

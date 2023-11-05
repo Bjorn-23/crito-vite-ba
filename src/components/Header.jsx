@@ -7,8 +7,8 @@ const Header = () => {
   return (
 
     <>
-      <NavSection />
       <MobileNav />
+      <NavSection />
     </>
 
   )

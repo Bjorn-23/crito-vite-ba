@@ -14,9 +14,7 @@ const NavSection = () => {
 
         <div className="header">
             <div className="container">
-                <Link to="/"><img src={img_critoLogo} alt="Crito Logotype" /></Link>
-
-                {/* <MobileNav /> */}
+                <Link to="/"><img className="crito-logo-top" src={img_critoLogo} alt="Crito Logotype" /></Link>
 
                 <div className="menu">
                     <div className="top-menu">

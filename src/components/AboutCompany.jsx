@@ -38,7 +38,7 @@ const AboutCompany = () => {
 
                     <div className="ci-buttons">
 
-                        <Button type="black" title="Learn More" url="#" />
+                        <Button type="black" title="Learn More" url="/services" />
                         <div>
                             <a href="https://www.youtube.com/watch?v=XBM4HES9aAY&t=1s" className="btn-video" target="_blank" rel="noreferrer"><i
                                 className="fa-sharp fa-solid fa-play"></i></a>

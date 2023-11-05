@@ -575,16 +575,6 @@ body .container {
     gap: 30px;
   }
 }
-.header .container span {
-  display: flex;
-  align-items: center;
-  font-size: 2rem;
-}
-@media (min-width: 62rem) {
-  .header .container span {
-    display: none;
-  }
-}
 .header .container .menu {
   display: none;
   flex: 1 1 0;
