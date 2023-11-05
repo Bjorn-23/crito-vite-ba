@@ -159,45 +159,47 @@ body {
             position: relative;
             top: 10%;
             width: 100%;
-            text-align: center;
-            font-family: 'DM sans', sans-serif;
-            font-weight: 400;
             margin-top: 30px;
+            text-align: center;
         }
-    
-        a {
-            padding: 16px;
-            text-decoration: none;
-            font-size: rem(32);
-            color: #191919;
-            border-top: 1px solid rgb(185, 185, 191, 0.75);
+        
+        a {            
             display: block;
+            text-decoration: none;
+            font-family: 'DM sans', sans-serif;
+            font-size: rem(32);
+            font-weight: 400;
+            color: #191919;
+            padding: 16px;
+            border-top: 1px solid rgb(185, 185, 191, 0.75);
             transition: 0.4s;
             &:hover,
             &:focus {
                 text-decoration: underline;
                 text-decoration-thickness: 1px;
                 text-underline-offset: 5px;
-            }
+            }    
+        }
+        
+        .active {
+            font-weight: 700;
         }
     
         .btm {
             border-bottom: 1px solid rgb(185, 185, 192, 0.75);
         }
-    
-    
-        @media screen and (max-height: rem(450)) {
-            a {
-                font-size: rem(20);
-            }
-        }
+
+    }
+
+    .hide-overlay {
+        width: 0;
+        transition: 0.3s ease-in;
     }
 
     @media (min-width: rem(992)) {
         display: none;
     }
 }
-
 
 // changed cursor for hover on menu bars in mobile format
 .fa-bars:hover {
@@ -213,12 +215,6 @@ body {
 .btn-scroll-to-top,
 .submit {
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
-}
-
-.hide-btn {
-display: none;
-transition: 0.3s ease-in;
-
 }
 
 // button layout and functions.
@@ -446,6 +442,11 @@ transition: 0.3s ease-in;
         transform: translateY(4px);
     }
 }
+//---hides scroll-to-top-btn
+.hide-btn {
+    display: none;
+    transition: 0.3s ease-in;
+    }
 
 // for "carousel" - currently non functioning.
 .slide-dots {

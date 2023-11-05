@@ -23,21 +23,7 @@ const ArticlesHome = () => {
 
                 </div>
 
-                <div className="middle grid-container">
-
-                    <FirstThreeArticles />
-
-                </div>
-
-                <div className="bottom">
-                    <ol className="slide-dots">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" className="dot active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1" className="dot"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2" className="dot"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="3" className="dot"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="4" className="dot"></li>
-                    </ol>
-                </div>
+                <FirstThreeArticles />
 
             </div>
 

@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom'
 const MobileNav = () => {
 
     const [menu, setMenu] = useState(false)
-    console.log(menu)
 
     const openNav = () => {
         setMenu(!menu)
@@ -13,12 +12,12 @@ const MobileNav = () => {
 
     return (
         <div className='mobile-nav-wrapper'>
-            <div className={(menu ? 'overlay' : 'overlay hide-btn' )}>
+            <div className={(menu ? 'overlay' : 'overlay hide-overlay' )}>
 
                 <div className="overlay-content">
                     <NavLink tabIndex="-1" to="/">Home</NavLink>
+                    <NavLink tabIndex="-1" to="/services">Services</NavLink>
                     <NavLink tabIndex="-1" to="/news">News</NavLink>
-                    <NavLink tabIndex="-1" to="/services">Articles</NavLink>
                     <NavLink tabIndex="-1" to="/contact" >Contact</NavLink>
                 </div>
 

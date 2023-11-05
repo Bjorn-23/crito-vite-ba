@@ -165,18 +165,18 @@ body .container {
   position: relative;
   top: 10%;
   width: 100%;
-  text-align: center;
-  font-family: "DM sans", sans-serif;
-  font-weight: 400;
   margin-top: 30px;
+  text-align: center;
 }
 .mobile-nav-wrapper .overlay a {
-  padding: 16px;
-  text-decoration: none;
-  font-size: 2rem;
-  color: #191919;
-  border-top: 1px solid rgba(185, 185, 191, 0.75);
   display: block;
+  text-decoration: none;
+  font-family: "DM sans", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #191919;
+  padding: 16px;
+  border-top: 1px solid rgba(185, 185, 191, 0.75);
   transition: 0.4s;
 }
 .mobile-nav-wrapper .overlay a:hover, .mobile-nav-wrapper .overlay a:focus {
@@ -184,13 +184,15 @@ body .container {
   text-decoration-thickness: 1px;
   text-underline-offset: 5px;
 }
+.mobile-nav-wrapper .overlay .active {
+  font-weight: 700;
+}
 .mobile-nav-wrapper .overlay .btm {
   border-bottom: 1px solid rgba(185, 185, 192, 0.75);
 }
-@media screen and (max-height: 28.125rem) {
-  .mobile-nav-wrapper .overlay a {
-    font-size: 1.25rem;
-  }
+.mobile-nav-wrapper .hide-overlay {
+  width: 0;
+  transition: 0.3s ease-in;
 }
 @media (min-width: 62rem) {
   .mobile-nav-wrapper {
@@ -210,11 +212,6 @@ body .container {
 .btn-scroll-to-top,
 .submit {
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
-}
-
-.hide-btn {
-  display: none;
-  transition: 0.3s ease-in;
 }
 
 .btn-yellow {
@@ -419,6 +416,11 @@ body .container {
 .btn-scroll-to-top:active {
   box-shadow: 0 5px 5px #6A6C71;
   transform: translateY(4px);
+}
+
+.hide-btn {
+  display: none;
+  transition: 0.3s ease-in;
 }
 
 .slide-dots {

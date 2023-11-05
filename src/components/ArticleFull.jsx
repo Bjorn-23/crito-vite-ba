@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import { parseISO, format } from 'date-fns'
 
 import SectionTitle from '@generics/SectionTitle'
@@ -33,12 +33,6 @@ const ArticleFull = () => {
         return { year, month, date };
     };
 
-    // useEffect(() => {
-    //     result()
-    // }, [article])
-
-    const [convertedDate, setconvertedDate] = useState(false)
-
     const getArticle = async () => {
         if (id !== undefined) {
             const result = await fetch(`https://win23-assignment.azurewebsites.net/api/articles/${id}`)
@@ -47,20 +41,24 @@ const ArticleFull = () => {
         }
     }
 
-    // const result = async () => {
+    // const [convertedDate, setconvertedDate] = useState(false)
+
+    // useEffect(() => {
     //     if (!article) {
+    //     console.log('nope')
     //         return
     //     }
-    //     else {
-    //         console.log(article.published)
-    //         const isoDate = article.published ////how to get the 'article.published' in here instead of just the string it would create? ('2023-10-17T00:00:00')
-    //         const parsedDate = parseISO(isoDate)
-    //         const formattedDate = format(parsedDate, 'MMM, dd, yyyy')
-    //         let result = formattedDate.split(',')
-    //         console.log(result)
-    //         console.log('where am i?')
-    //         setconvertedDate(result)
-    //     }
+    //     else{
+    //         formatDate()
+    //     console.log('yup') }
+    // }, [article])
+
+    // const formatDate = () => {
+    //     const isoDate = article.published
+    //     const parsedDate = parseISO(isoDate)
+    //     const formattedDate = format(parsedDate, 'MMM, dd, yyyy')
+    //     let result = formattedDate.split(',')
+    //     setconvertedDate(result)
     // }
 
     // let dateArray = convertedDate; // Get the year from the first element of the array
@@ -96,16 +94,10 @@ const ArticleFull = () => {
     ]
 
 
-    // if (!article) {
-    //     return <p>Loading...</p>
-    // }
     if (!article) {
-        return (<p>Loading...</p>)
+        return <p>Loading...</p>
     }
-    // else if(!month) {
-    //     return (<p>Still Loading...</p>)
-    // }
-    // else
+    else
     return (
 
         <>
@@ -119,8 +111,8 @@ const ArticleFull = () => {
                                 <h2 className="articles-title">{article.title}</h2>
                             </div>
                             <div className="flex-txt">
-                                {/* <p className="date">{month} {date}, {year}</p> */}
                                 <p className="date">{formatDate(article.published).month} {formatDate(article.published).date}, {formatDate(article.published).year}</p>
+                                {/* <p className="date">{month} {date}, {year}</p> */}
                                 <div className="yellow-dot"></div>
                                 <p className="category">{article.category}</p>
                                 <div className="yellow-dot"></div>
@@ -230,22 +222,8 @@ const ArticleFull = () => {
                         </div>
 
                     </div>
-
-                    <div className="middle grid-container">
-
-                        <FirstThreeArticles />
-
-                    </div>
-
-                    <div className="bottom">
-                        <ol className="slide-dots">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" className="dot active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1" className="dot"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2" className="dot"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="3" className="dot"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="4" className="dot"></li>
-                        </ol>
-                    </div>
+                    
+                    <FirstThreeArticles />
 
                 </div>
 
