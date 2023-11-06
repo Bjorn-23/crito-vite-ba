@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { NavLink, Link } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { parseISO, format } from 'date-fns'
+import { useArticles } from '../contexts/ArticlesContext'
 
 import SectionTitle from '@generics/SectionTitle'
 import RecentPost from '@generics/RecentPost'
@@ -14,11 +14,13 @@ import ScrollToArticle from './generics/ScrollToArticle'
 const ArticleFull = () => {
 
     const { id } = useParams()
-   
-    const [article, setArticle] = useState(null)
+
+    const { article, getArticle, clearArticle } = useArticles()
 
     useEffect(() => {
-        getArticle()
+        getArticle(id)
+
+        return () => clearArticle
     }, [id])
 
     const formatDate = (isoDate) => {
@@ -29,43 +31,10 @@ const ArticleFull = () => {
         return { year, month, date };
     };
 
-    const getArticle = async () => {
-        if (id !== undefined) {
-            const result = await fetch(`https://win23-assignment.azurewebsites.net/api/articles/${id}`)
-                if (result.status === 200)
-                    setArticle(await result.json())
-        }
-    }
-    
-    useEffect (() => {
+    useEffect(() => {
         ScrollToArticle()
     }, [id])
-    
-    // const [convertedDate, setconvertedDate] = useState(false)
 
-    // useEffect(() => {
-    //     if (!article) {
-    //     console.log('nope')
-    //         return
-    //     }
-    //     else{
-    //         formatDate()
-    //     console.log('yup') }
-    // }, [article])
-
-    // const formatDate = () => {
-    //     const isoDate = article.published
-    //     const parsedDate = parseISO(isoDate)
-    //     const formattedDate = format(parsedDate, 'MMM, dd, yyyy')
-    //     let result = formattedDate.split(',')
-    //     setconvertedDate(result)
-    // }
-
-    // let dateArray = convertedDate; // Get the year from the first element of the array
-    // let month = dateArray[0]
-    // let date = dateArray[1]
-    // let year = dateArray[2]
-  
     //use {tags.class} as key value --> t1, t2, t3 etc also sets positioning in grid.
     const tags = [
         { class: 't1', url: '#', title: 'Digitalization' },
@@ -94,14 +63,13 @@ const ArticleFull = () => {
     ]
 
 
-    if (!article) {
-        return <p>Loading...</p>
-    }
-    else
+if (!article) {
+    return <p>Loading...</p>
+}
+else
     return (
 
         <>
-
             <article className="articles">
                 <div className="container grid-container">
 
@@ -112,7 +80,6 @@ const ArticleFull = () => {
                             </div>
                             <div className="flex-txt">
                                 <p className="date">{formatDate(article.published).month} {formatDate(article.published).date}, {formatDate(article.published).year}</p>
-                                {/* <p className="date">{month} {date}, {year}</p> */}
                                 <div className="yellow-dot"></div>
                                 <p className="category">{article.category}</p>
                                 <div className="yellow-dot"></div>
@@ -183,14 +150,12 @@ const ArticleFull = () => {
                             <i className="fa-sharp fa-solid fa-magnifying-glass"></i>
                         </form>
 
-
                         <div className="recent-posts">
                             <h3><u>Rec</u>ent Posts</h3>
                             {
                                 recentPosts.map((recentPosts) => (<RecentPost key={recentPosts.id} className={recentPosts.className} url={recentPosts.url} title={recentPosts.title} date={recentPosts.date} />))
                             }
                         </div>
-
 
                         <div className="categories">
                             <h3><u>Cat</u>egories</h3>
@@ -205,7 +170,6 @@ const ArticleFull = () => {
 
                 </div>
             </article>
-
 
             <section className="articles-news">
                 <div className="container">
@@ -222,15 +186,12 @@ const ArticleFull = () => {
                         </div>
 
                     </div>
-                    
+
                     <FirstThreeArticles />
 
                 </div>
-
             </section>
-
         </>
-
     )
 }
 

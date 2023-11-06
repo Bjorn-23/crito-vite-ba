@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { parseISO, format } from 'date-fns'
 import { useArticles } from '../contexts/ArticlesContext'
-import { useParams } from 'react-router-dom'
 
 
 import SectionTitle from '@generics/SectionTitle'
@@ -16,8 +16,12 @@ const TestPage = () => {
         const { id } = useParams()
         const { article } = useArticles()
         
-
         console.log(article)
+        
+        useEffect(() => {
+                ScrollToArticle()
+        }, [id])
+
 
         const formatDate = (isoDate) => {
                 const parsedDate = parseISO(isoDate);
@@ -27,24 +31,6 @@ const TestPage = () => {
                 return { year, month, date };
         };
 
-        const getArticle = async () => {
-                if (id !== undefined) {
-                        const result = await fetch(`https://win23-assignment.azurewebsites.net/api/articles/${id}`)
-                        if (result.status === 200)
-                                setArticle(await result.json())
-                }
-        }
-
-        // useEffect(() => {
-        //         ScrollToArticle()
-        // }, [id])
-
-        useEffect(() => {
-                getArticle()
-        }, [id])
-
-
-        console.log(article)
 
         //use {tags.class} as key value --> t1, t2, t3 etc also sets positioning in grid.
         const tags = [

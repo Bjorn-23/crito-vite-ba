@@ -17,22 +17,24 @@ import { ArticlesProvider } from './contexts/ArticlesContext'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+
   <StrictMode>
     <BrowserRouter>
-    <AutoScrollToTop />
-    <ScrollToTop />
+      <AutoScrollToTop />
+      <ScrollToTop />
       <ArticlesProvider>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/news/:id" element={<NewsDetails />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/*" element={<NotFound />} />
-          <Route path="/testpage/:id" element={<TestPage/>} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/news/:id" element={<NewsDetails />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/*" element={<NotFound />} />
+            <Route path="/testpage/:id" element={<TestPage />} />
+          </Routes>
       </ArticlesProvider>
 
     </BrowserRouter>
   </StrictMode>,
+  
 )
