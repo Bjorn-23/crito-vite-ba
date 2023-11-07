@@ -12,8 +12,6 @@ export const ArticlesProvider = ({children}) => {
     const [article, setArticle] = useState(null)
     const { id } = useParams()
 
-console.log(id)
-
     useEffect(()=> {
         getArticles()
     }, [])
@@ -22,10 +20,8 @@ console.log(id)
     useEffect(() => {
         if (id !== undefined) {
         getArticle()
-        console.log('article found')
         return
         }
-        else console.log('no article 26')
     }, [id])
     
 

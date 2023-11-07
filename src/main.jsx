@@ -33,8 +33,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="/testpage/:id" element={<TestPage />} />
           </Routes>
       </ArticlesProvider>
-
     </BrowserRouter>
   </StrictMode>,
-  
+
 )

@@ -14,14 +14,14 @@ import ScrollToArticle from './generics/ScrollToArticle'
 const ArticleFull = () => {
 
     const { id } = useParams()
-
     const { article, getArticle, clearArticle } = useArticles()
+
 
     useEffect(() => {
         getArticle(id)
-
         return () => clearArticle
     }, [id])
+
 
     const formatDate = (isoDate) => {
         const parsedDate = parseISO(isoDate);

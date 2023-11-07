@@ -18,12 +18,14 @@ const MobileNav = () => {
                     <NavLink tabIndex="-1" to="/">Home</NavLink>
                     <NavLink tabIndex="-1" to="/services">Services</NavLink>
                     <NavLink tabIndex="-1" to="/news">News</NavLink>
-                    <NavLink tabIndex="-1" to="/contact" >Contact</NavLink>
+                    <NavLink className="btm-border" tabIndex="-1" to="/contact" >Contact</NavLink>
                 </div>
 
             </div>
 
-            <button className="btn-mobile-nav" onClick={(openNav)}><i className="fa-solid fa-bars"></i></button>
+            <button className="btn-mobile-nav" onClick={(openNav)}>
+                { menu ? <i className="fa-solid fa-xmark"></i> : <i className="fa-solid fa-bars"></i>}
+            </button>
         </div>
     )
 }
