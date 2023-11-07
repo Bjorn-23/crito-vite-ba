@@ -2620,7 +2620,12 @@ body {
                 //     width: 150px;
                 // }
 
-               div {
+                .errorMessage {
+                    text-align: center;
+                    color: #e72e2e;
+                }
+
+                div {
                     display: flex;                
 
                     input {
@@ -2637,7 +2642,7 @@ body {
                         resize: none;
                         padding-left: 5px;
                     }
-               }
+                }
 
                 .button {
                     border: none;

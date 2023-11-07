@@ -2424,6 +2424,10 @@ body .container {
   flex-direction: column;
   gap: 30px;
 }
+.contact .container .message-us form .errorMessage {
+  text-align: center;
+  color: #e72e2e;
+}
 .contact .container .message-us form div {
   display: flex;
 }
