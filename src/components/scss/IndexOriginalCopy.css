@@ -2402,16 +2402,23 @@ body .container {
 }
 .contact .container .message-us .form-feedback {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 2000px;
   max-width: 100%;
   overflow-x: hidden;
   background-color: rgba(126, 223, 138, 0.7137254902);
-  padding: 20px;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
 }
 .contact .container .message-us .form-feedback p {
   text-align: center;
+  font-family: "DM sans", sans-serif;
+  font-weight: 700;
+  font-size: 45px;
+  margin: 0;
 }
 .contact .container .message-us .form-feedback-error {
   position: absolute;
@@ -2421,10 +2428,14 @@ body .container {
   max-width: 100%;
   overflow-x: hidden;
   background-color: rgba(231, 46, 46, 0.2862745098);
-  padding: 20px;
+  padding: 10px;
 }
 .contact .container .message-us .form-feedback-error p {
   text-align: center;
+  font-family: "DM sans", sans-serif;
+  font-weight: 700;
+  font-size: 45px;
+  margin: 0;
 }
 .contact .container .message-us h2 {
   text-align: center;

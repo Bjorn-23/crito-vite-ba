@@ -2590,15 +2590,24 @@ body {
 
             .form-feedback {
                 position: absolute;
-                top: 0;
+                bottom: 0;
                 left:0;
                 width: 2000px;
                 max-width: 100%;
                 overflow-x: hidden;
                 background-color: #7edf8ab6;
-                padding: 20px;
+                padding: 10px;
+                align-items: center;
+                justify-content: center;
+                align-content: center;
                   
-                p {text-align: center;}
+                p {
+                    text-align: center;
+                    font-family: 'DM sans', sans-serif;
+                    font-weight: 700;
+                    font-size: 45px;
+                    margin: 0;
+                }
             }
             
             .form-feedback-error {
@@ -2609,9 +2618,15 @@ body {
                 max-width: 100%;
                 overflow-x: hidden;
                 background-color: #e72e2e49;
-                padding: 20px;
+                padding: 10px;
                                  
-                p {text-align: center;}
+                p {
+                    text-align: center;
+                    font-family: 'DM sans', sans-serif;
+                    font-weight: 700;
+                    font-size: 45px;
+                    margin: 0;
+                }
             }
 
             

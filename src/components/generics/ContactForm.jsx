@@ -71,7 +71,7 @@ const ContactForm = () => {
         <div className="message-us" id="#message-us">
             <h2 className="message-title">Leave us a message for any information.</h2>
             
-            <div className={feedback === true ? "form-feedback" : '' }><p>{feedback === true ? 'message sent' : '' }</p></div>
+            <div className={feedback === true ? "form-feedback" : '' }><p>{feedback === true ? 'Message Sent - We Will Be In Touch!' : '' }</p></div>
             <div className={feedback === false ? "form-feedback-error" : '' }><p>{feedback === false ? 'Something went wrong' : '' }</p></div>
 
             <Formik
