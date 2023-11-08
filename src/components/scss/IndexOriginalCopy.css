@@ -2378,6 +2378,7 @@ body .container {
   text-decoration: underline;
 }
 .contact .container .message-us {
+  position: relative;
   background-color: #F0EFE9;
   padding: 30px 15px;
 }
@@ -2398,6 +2399,32 @@ body .container {
     margin: 80px 0;
     padding: 100px 150px;
   }
+}
+.contact .container .message-us .form-feedback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2000px;
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: rgba(126, 223, 138, 0.7137254902);
+  padding: 20px;
+}
+.contact .container .message-us .form-feedback p {
+  text-align: center;
+}
+.contact .container .message-us .form-feedback-error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2000px;
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: rgba(231, 46, 46, 0.2862745098);
+  padding: 20px;
+}
+.contact .container .message-us .form-feedback-error p {
+  text-align: center;
 }
 .contact .container .message-us h2 {
   text-align: center;
@@ -2424,9 +2451,6 @@ body .container {
   flex-direction: column;
   gap: 30px;
 }
-.contact .container .message-us form .error {
-  color: #e72e2e;
-}
 .contact .container .message-us form .errorMessage {
   text-align: center;
   color: #e72e2e;
@@ -2436,16 +2460,10 @@ body .container {
   flex-direction: column;
   gap: 5px;
 }
-.contact .container .message-us form div .terms {
-  padding-left: 18px;
-  margin-bottom: 0;
-}
 .contact .container .message-us form div label {
   flex: 1;
-  padding-left: 18px;
-}
-.contact .container .message-us form div label a {
-  text-decoration: none;
+  margin-left: 18px;
+  position: relative;
 }
 .contact .container .message-us form div input {
   flex: 1;
@@ -2453,13 +2471,12 @@ body .container {
   border-radius: 25px;
   padding: 12px 8px 12px 18px;
 }
-.contact .container .message-us form div .errorInputField {
-  background-color: rgba(231, 46, 46, 0.1294117647);
-  border: 1px solid rgba(231, 46, 46, 0.1294117647);
-  border-radius: 25px;
-  padding: 12px 8px 12px 18px;
+.contact .container .message-us form div .error {
+  color: #e72e2e;
+  position: absolute;
+  top: -24px;
 }
-.contact .container .message-us form div #formTerms {
+.contact .container .message-us form div .formTerms {
   align-self: flex-start;
   margin-left: 18px;
 }
@@ -2469,6 +2486,10 @@ body .container {
   border-radius: 25px;
   resize: none;
   padding-left: 5px;
+}
+.contact .container .message-us form div a {
+  text-underline-offset: 3px;
+  color: #191919;
 }
 .contact .container .message-us form .button {
   border: none;

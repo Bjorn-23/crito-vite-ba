@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Formik, Form, Field, ErrorMessage } from 'formik'
+import { Formik, Form, Field, ErrorMessage, useFormik } from 'formik'
 import * as Yup from 'yup'
 
 import FormError from './FormError'
 
+//-----FIX SO THAT ERROR MESSAGES CAN BE DISPLAYD INSTEAD OF LABEL TEXT
+
 
 const ContactForm = () => {
+    const [feedback, setFeedback] = useState(undefined)
     const emailRegxp = new RegExp(/^\w+([\.-]?w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/)
 
     const initialValues = {
@@ -28,51 +31,57 @@ const ContactForm = () => {
             .min(5, 'Message needs to be at least 5 characters long')
             .max(1000, 'Message maixumum length is 1000 characters'),
         terms: Yup.boolean()
-            // .required('Terms & Conditions have to be accepted')              
             .oneOf([true], 'Terms & Conditions have to be accepted')
     })
 
-    const onSubmit = async (values) => {
-        console.log(form.errors)
+    const onSubmit = async (values, onSubmitProps) => {
 
-        // const result = await fetch('https://win23-assignment.azurewebsites.net/api/contactform', {
-        //     method: 'post',
-        //     headers: {
-        //         'content-type' : 'application/json'
-        //     },
-        //     body: JSON.stringify(values)
+        const result = await fetch('https://win23-assignment.azurewebsites.net/api/contactform', {
+            method: 'post',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(values)
 
-        // })
+        })
 
-        // switch (result.status) {
-        //     case 200:
-        //         form.resetForm()
-        //         alert('Message sent')
-        //         setErrorMessage('')
-        //         break;
-        //     case 400:
-        //         setErrorMessage('Invalid input - please make sure all fields are filled in')
-        //         break;
-        // }
+        switch (result.status) {
+            case 200:
+                onSubmitProps.setSubmitting(false)
+                onSubmitProps.resetForm()
+                setFeedback(true)
+                clearFeedback()
+                break;
+            case 400:
+                setFeedback(false)
+                break;
+        }
     }
 
-    console.log()
-
-
+    const clearFeedback = () => {
+        setInterval(() => {
+            setFeedback(undefined)
+        }, 5000);
+    }
+    
+   
     return (
-
+<>
+        
         <div className="message-us" id="#message-us">
             <h2 className="message-title">Leave us a message for any information.</h2>
-
+            
+            <div className={feedback === true ? "form-feedback" : '' }><p>{feedback === true ? 'message sent' : '' }</p></div>
+            <div className={feedback === false ? "form-feedback-error" : '' }><p>{feedback === false ? 'Something went wrong' : '' }</p></div>
 
             <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
-                onSubmit={onSubmit}>
+                onSubmit={onSubmit} >
 
-                <Form>
+                <Form noValidate>
                     <div>
-                        <label htmlFor="formName"><ErrorMessage name='name' component={FormError} /></label>
+                        <label htmlFor="formName"><ErrorMessage name='name' component={FormError}/></label>
                         <Field id="formName" type="text" name="name" placeholder="Your Full Name...*" />
                     </div>
 
@@ -87,17 +96,19 @@ const ContactForm = () => {
                     </div>
 
                     <div>
-                        <span><ErrorMessage name='terms' component={FormError} /></span>
-                        <label htmlFor="formTerms">I have read and agree to the <Link to="#">terms & conditions</Link>.</label>
-                        <Field id="formTerms" type="checkbox" name="terms" />
+                        <label htmlFor="formTerms"><ErrorMessage name='terms' component={FormError} /></label>
+                        <span className="formTerms">I have read and agree to the <Link to="#">terms & conditions</Link>.</span>
+                        <Field id="formTerms" className="formTerms" type="checkbox" name="terms" />
                     </div>
 
                     <button type="submit" className="submit btn-yellow">Send Message<i
                         className="fa-solid fa-arrow-up-right"></i></button>
                 </Form>
+
             </Formik>
 
         </div>
+</>
     )
 
 }
