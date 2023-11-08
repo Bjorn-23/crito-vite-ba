@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
-
+//Hidden at sizes larger than 991px
 const MobileNav = () => {
 
     const [menu, setMenu] = useState(false)
-
     const openNav = () => {
         setMenu(!menu)
     }

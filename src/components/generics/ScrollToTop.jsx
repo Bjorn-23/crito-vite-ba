@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
+  //Scrolls to to top of page - hidden until window is scrolled down 600px from top
 const ScrollToTop = () => {
 
   const location = useLocation()

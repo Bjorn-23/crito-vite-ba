@@ -39,7 +39,7 @@ export const ArticlesProvider = ({children}) => {
             setArticle(await result.json())
             console.log('article exists')
         }
-        else console.log('no article 44')
+        else console.log('no article exists')
     }
 
     const clearArticle =  () => {

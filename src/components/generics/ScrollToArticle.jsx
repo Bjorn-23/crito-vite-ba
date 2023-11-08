@@ -1,6 +1,7 @@
-
+  //Scrolls to start of article on clicking a not already selected article.
 const ScrollToArticle = () => {
-  
+
+ 
   window.addEventListener('resize', ScrollToArticle);
 
   if (window.innerWidth < 992) {
@@ -10,7 +11,6 @@ const ScrollToArticle = () => {
   } else {
     window.scrollTo({ top: 500, behavior: 'smooth' })
   }
-
 
   return null
 }

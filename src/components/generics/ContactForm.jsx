@@ -5,9 +5,6 @@ import * as Yup from 'yup'
 
 import FormError from './FormError'
 
-//-----FIX SO THAT ERROR MESSAGES CAN BE DISPLAYD INSTEAD OF LABEL TEXT
-
-
 const ContactForm = () => {
     const [feedback, setFeedback] = useState(undefined)
     const emailRegxp = new RegExp(/^\w+([\.-]?w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/)
@@ -19,8 +16,8 @@ const ContactForm = () => {
         terms: false,
     }
 
-    const validationSchema = Yup.object({
-        name: Yup.string()
+    const validationSchema = Yup.object({ 
+        name: Yup.string() // Comment this and the following 2 lines out to test the error message for 400 bad request.
             .required(`Name is required`)
             .min(2, 'Name must be at least 2 characters long'),
         email: Yup.string()
@@ -61,7 +58,9 @@ const ContactForm = () => {
     const clearFeedback = () => {
         setInterval(() => {
             setFeedback(undefined)
-        }, 5000);
+        }, 6000);
+
+        clearInterval()
     }
     
    
@@ -72,7 +71,7 @@ const ContactForm = () => {
             <h2 className="message-title">Leave us a message for any information.</h2>
             
             <div className={feedback === true ? "form-feedback" : '' }><p>{feedback === true ? 'Message Sent - We Will Be In Touch!' : '' }</p></div>
-            <div className={feedback === false ? "form-feedback-error" : '' }><p>{feedback === false ? 'Something went wrong' : '' }</p></div>
+            <div className={feedback === false ? "form-feedback-error" : '' }><p>{feedback === false ? 'Form not submitted - contact support if problem persists' : '' }</p></div>
 
             <Formik
                 initialValues={initialValues}

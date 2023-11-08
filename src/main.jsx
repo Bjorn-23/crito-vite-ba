@@ -1,8 +1,8 @@
 import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-// import './index.css'
-import '@scss/IndexOriginalCopy.css'
+// import './index.css' //USE THIS AFTER SORTING THROUGH CODE
+import './components/scss/backup/indexOriginalCopy.css'
 
 import Home from '@views/Home'
 import Services from '@views/Services'
