@@ -1,19 +1,19 @@
 import React from 'react'
 
 
-import Header from '@components/Header'
-import Showcase from '@components/Showcase'
-import Clients from '@components/Clients'
-import Features from '@components/Features'
-import AboutCompany from '@components/AboutCompany'
-import ServicesComponent from '@components/ServicesComponent'
-import WhyChooseUs from '@components/WhyChooseUs'
-import Projects from '@components/Projects'
-import Team from '@components/Team'
-import Testimonials from '@components/Testimonials'
-import Subscribe from '@components/Subscribe'
+import Header from '../components/Header'
+import ShowcaseSection from '@components/ShowcaseSection'
+import ClientsSection from '@components/ClientsSection'
+import FeaturesSection from '@components/FeaturesSection'
+import AboutCompanySection from '@components/AboutCompanySection'
+import ServicesSection from '@components/ServicesSection'
+import WhyChooseUsSection from '@components/WhyChooseUsSection'
+import ProjectsSection from '@components/ProjectsSection'
+import TeamSection from '@components/TeamSection'
+import TestimonialsSection from '@components/TestimonialsSection'
+import ArticlesSection from '../components/ArticlesSection'
+import SubscribeSection from '@components/SubscribeSection'
 import Footer from '@components/Footer'
-import ArticlesHome from '../components/ArticlesHome'
 
 
 const Home = () => {
@@ -22,17 +22,17 @@ const Home = () => {
 
     <>
       <Header />
-      <Showcase />
-      <Clients />
-      <Features />
-      <AboutCompany />
-      <ServicesComponent />
-      <WhyChooseUs />
-      <Projects />
-      <Team />
-      <Testimonials />
-      <ArticlesHome />
-      <Subscribe />
+      <ShowcaseSection />
+      <ClientsSection />
+      <FeaturesSection />
+      <AboutCompanySection />
+      <ServicesSection />
+      <WhyChooseUsSection />
+      <ProjectsSection />
+      <TeamSection />
+      <TestimonialsSection />
+      <ArticlesSection />
+      <SubscribeSection />
       <Footer />
     </>
   )

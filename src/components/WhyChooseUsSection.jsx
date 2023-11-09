@@ -9,7 +9,9 @@ import img_Design from '@assets/img/choose-us/design.svg'
 import img_Ai from '@assets/img/choose-us/ai.svg'
 import img_TwoWomen from '@assets/img/choose-us/wmn-meeting.png'
 
-const WhyChooseUs = () => {
+const WhyChooseUsSection = () => {
+
+
     return (
 
         <section className="why-choose-us">
@@ -21,10 +23,10 @@ const WhyChooseUs = () => {
                         </div>
 
                         <div className="wcu-points-container">
-                            <ChooseUsPointsBox img={img_Thumbs} altText="a thumbs up" title="Process Excellence" text="Lorem, ipsum dolor sit amet consectetur." />
-                            <ChooseUsPointsBox img={img_Penta} altText="a pentagon" title="Strategic planning" text="Lorem, ipsum dolor sit amet consectetur." />
-                            <ChooseUsPointsBox img={img_Design} altText="a pencil drawing a sketch" title="Experience Design" text="Lorem, ipsum dolor sit amet consectetur." />
-                            <ChooseUsPointsBox img={img_Ai} altText="a cog inside of head, indicating AI" title="Artificial Intelligence" text="Lorem, ipsum dolor sit amet consectetur." />
+                            <ChooseUsPointsBox img={img_Thumbs} altText="a thumbs up" title="Process Excellence" />
+                            <ChooseUsPointsBox img={img_Penta} altText="a pentagon" title="Strategic planning" />
+                            <ChooseUsPointsBox img={img_Design} altText="a pencil drawing a sketch" title="Experience Design" />
+                            <ChooseUsPointsBox img={img_Ai} altText="a cog inside of head, indicating AI" title="Artificial Intelligence" />
                         </div>
                     </div>
 
@@ -42,4 +44,4 @@ const WhyChooseUs = () => {
     )
 }
 
-export default WhyChooseUs
+export default WhyChooseUsSection

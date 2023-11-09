@@ -9,7 +9,7 @@ import img_Mark from '@assets/img/team/m-aubri.png'
 import img_Kimberley from '@assets/img/team/k-hansen.png'
 import img_Justin from '@assets/img/team/j-willoman.png'
 
-const Team = () => {
+const TeamSection = () => {
 
     const members = [
         { img: `${img_Kristine}`, altText: 'Kristine Palmer, the chief operations officer at Crito', name: 'Kristine Palmer', role: 'Chief Operations Officer' },
@@ -64,4 +64,4 @@ const Team = () => {
     )
 }
 
-export default Team
+export default TeamSection

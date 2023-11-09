@@ -6,12 +6,14 @@ import SectionTitle from '@generics/SectionTitle'
 import Button from '@generics/Button'
 
 
-const AboutCompany = () => {
+const AboutCompanySection = () => {
     return (
         <section className="company-intro">
             <div className="container">
+                
                 <div className="sam-b-wrapper"><img src={img_SamB}
                     alt="Samantha Brown, Crito's founder" />
+
                     <div className="blue-hover-wrapper">
                         <div className="blue-hover-box">
                             <div className="bh-inline-txt">
@@ -21,10 +23,11 @@ const AboutCompany = () => {
                             <div className="bh-lorem">
                                 <p>"Lorem ipsum dolor, sit amet consectetur adipisicing elit."</p>
                             </div>
-
                         </div>
                     </div>
+
                     <img src={img_SquigglyLines} alt="" className="white-squiggles-sam-b" />
+
                 </div>
 
                 <div className="about-company">
@@ -55,4 +58,4 @@ const AboutCompany = () => {
     )
 }
 
-export default AboutCompany
+export default AboutCompanySection

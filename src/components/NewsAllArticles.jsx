@@ -4,7 +4,7 @@ import { parseISO, format } from 'date-fns'
 import { useArticles } from '../contexts/ArticlesContext'
 import SectionTitle from '@generics/SectionTitle'
 
-const TestPage = () => {
+const NewsAllArticles = () => {
   const { articles } = useArticles()
 
   const formatDate = (isoDate) => {
@@ -39,7 +39,7 @@ const TestPage = () => {
 
             {articles &&
               articles.map((article) => (
-                <Link key={article.id} className="grid-item" to={`/news/${article.id}`}>
+                <Link key={article.id} className="grid-item" to={`/news/${article.id}`} >
                   <div className="img-wrapper">
                     <img className="article-img relative" src={article.imageUrl} alt="altText" />
                     <div className="date-wrapper">
@@ -75,4 +75,4 @@ const TestPage = () => {
     )
 }
 
-export default TestPage
+export default NewsAllArticles

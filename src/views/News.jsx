@@ -1,8 +1,9 @@
 import React from 'react'
 
-import Header from '@components/Header'
-import Breadcrumbs from '@components/Breadcrumbs'
-import ArticleNewsAPI from '@components/ArticleNewsAPI'
+import Header from '../components/Header'
+
+import BreadcrumbsSection from '@components/BreadcrumbsSection'
+import NewsAllArticles from '@components/NewsAllArticles'
 import Footer from '@components/Footer'
 
 
@@ -11,8 +12,8 @@ const News = () => {
 
     <div className="wrapper">
       <Header />
-      <Breadcrumbs url="/News" page="News" />
-      <ArticleNewsAPI />
+      <BreadcrumbsSection url="/News" page="News" />
+      <NewsAllArticles />
       <Footer />
     </div>
   )

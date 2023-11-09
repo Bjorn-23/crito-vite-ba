@@ -1,9 +1,9 @@
 import React from 'react'
 
-import ContactForm from '@generics/ContactForm'
-import ContactMap from '@generics/ContactMap'
+import ContactForm from '@components/ContactForm'
+import ContactMap from '@components/ContactMap'
 
-const ContactInfo = () => {
+const ContactContainer = () => {
     return (
         <>
             <section className="contact">
@@ -63,4 +63,4 @@ const ContactInfo = () => {
     )
 }
 
-export default ContactInfo
+export default ContactContainer

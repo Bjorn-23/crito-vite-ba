@@ -9,7 +9,7 @@ import img_Responsive from '@assets/img/projects/top-rgt.png'
 import img_Educate from '@assets/img/projects/bottom-lft.png'
 import img_Insight from '@assets/img/projects/bottom-rgt.png'
 
-const Projects = () => {
+const ProjectsSection = () => {
     return (
         <section className="projects">
             <div className="container">
@@ -39,4 +39,4 @@ const Projects = () => {
     )
 }
 
-export default Projects
+export default ProjectsSection

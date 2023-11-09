@@ -2,8 +2,8 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
-import MobileNav from '@generics/mobileNav'
 import Button from '@generics/Button'
+import SocialMediaIcons from './generics/SocialMediaIcons'
 
 import img_critoLogo from '@assets/img/header/Logotype.svg'
 
@@ -34,10 +34,10 @@ const NavSection = () => {
                             </div>
                         </div>
                         <div className="social-media">
-                            <a href="https://facebook.com" target="_blank" rel="noreferrer"><i className="fa-brands fa-facebook"></i></a>
-                            <a href="https://twitter.com" target="_blank" rel="noreferrer"><i className="fa-brands fa-x-twitter"></i></a>
-                            <a href="https://instagram.com" target="_blank" rel="noreferrer"><i className="fa-brands fa-instagram"></i></a>
-                            <a href="https://linkedin.com" target="_blank" rel="noreferrer"><i className="fa-brands fa-linkedin"></i></a>
+                            <SocialMediaIcons url="https://facebook.com" iconClass="fa-brands fa-facebook"  />
+                            <SocialMediaIcons url="https://twitter.com"iconClass="fa-brands fa-x-twitter"  />
+                            <SocialMediaIcons url="https://instagram.com" iconClass="fa-brands fa-instagram"  />
+                            <SocialMediaIcons url="https://linkedin.com" iconClass="fa-brands fa-linkedin"  />
                         </div>
                     </div>
 

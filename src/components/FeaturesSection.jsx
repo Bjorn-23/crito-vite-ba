@@ -9,7 +9,7 @@ import img_Lightbulb from '@assets/img/features/lightbulb.svg'
 import img_Graph from '@assets/img/features/graph.svg'
 import img_Factory from '@assets/img/features/factory.svg'
 
-const Features = () => {
+const FeaturesSection = () => {
   return (
     <section className="features">
         <div id="features-container" className="container">
@@ -33,4 +33,4 @@ const Features = () => {
   )
 }
 
-export default Features
+export default FeaturesSection

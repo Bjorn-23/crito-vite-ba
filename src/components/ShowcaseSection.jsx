@@ -6,7 +6,7 @@ import img_manInSuit from '@assets/img/showcase/man-in-suit.png'
 import img_showcaseLines from '@assets/img/showcase/showcase-squiggle.svg'
 
 
-const Showcase = () => {
+const ShowcaseSection = () => {
   return (
 
     <section className="showcase">
@@ -31,4 +31,4 @@ const Showcase = () => {
   )
 }
 
-export default Showcase
+export default ShowcaseSection

@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Header from '@components/Header'
-import Breadcrumbs from '@components/Breadcrumbs'
-import ServicesComponent from '@components/ServicesComponent'
+import Header from '../components/Header'
+import BreadcrumbsSection from '@components/BreadcrumbsSection'
+import ServicesSection from '@components/ServicesSection'
 import Footer from '@components/Footer'
 
 
@@ -11,8 +11,8 @@ const Services = () => {
     
     <div className="wrapper">
       <Header />
-      <Breadcrumbs url="/services" end page="Services" />
-      <ServicesComponent />
+      <BreadcrumbsSection url="/services" page="Services" />
+      <ServicesSection />
       <Footer />
     </div>
   )

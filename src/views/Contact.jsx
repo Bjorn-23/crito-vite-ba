@@ -1,9 +1,10 @@
 import React from 'react'
 
-import Header from '@components/Header'
-import Breadcrumbs from '@components/Breadcrumbs'
+import Header from '../components/Header'
+
+import BreadcrumbsSection from '@components/BreadcrumbsSection'
 import Footer from '@components/Footer'
-import ContactInfo from '@components/ContactInfo'
+import ContactContainer from '@components/ContactContainer'
 
 
 const Contact = () => {
@@ -11,8 +12,8 @@ const Contact = () => {
 
     <div className="wrapper">
       <Header />
-      <Breadcrumbs url="/contact" end page="Contact" />
-      <ContactInfo />
+      <BreadcrumbsSection url="/contact" page="Contact" />
+      <ContactContainer />
       <Footer />
     </div>
   )

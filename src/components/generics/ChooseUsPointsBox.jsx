@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ChooseUsPointsBox = ({img, altText, title, text}) => {
+const ChooseUsPointsBox = ({img, altText, title}) => {
   return (
     <div className="points">
         <div className="img-div">
@@ -8,7 +8,7 @@ const ChooseUsPointsBox = ({img, altText, title, text}) => {
         </div>
         <div className="txt-div">
             <h3>{title}</h3>
-            <p>{text}</p>
+            <p>"Lorem, ipsum dolor sit amet consectetur."</p>
         </div>
     </div>
   )

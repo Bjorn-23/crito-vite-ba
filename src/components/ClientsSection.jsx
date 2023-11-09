@@ -5,7 +5,7 @@ import img_martino from '@assets/img/clients/martino.svg'
 import img_square from '@assets/img/clients/square.svg'
 import img_gobona from '@assets/img/clients/gobona.svg'
 
-const Clients = () => {
+const ClientsSection = () => {
 
   const clients = [
     { name: 'paperz', src: `${img_paperz}`, class: 'client-img, cl1', alt: 'paperz logotype' },
@@ -30,4 +30,4 @@ const Clients = () => {
   )
 }
 
-export default Clients
+export default ClientsSection

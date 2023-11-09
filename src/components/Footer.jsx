@@ -1,9 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import ScrollToTop from './generics/ScrollToTop'
+import SocialMedia from './generics/SocialMediaIcons'
+
 import img_FooterLogo from '@assets/img/footer/Logo-cs.svg'
 import img_DesignSquiggles from '@assets/img/footer/design-squiggles.svg'
-import ScrollToTop from './generics/ScrollToTop'
+import SocialMediaIcons from './generics/SocialMediaIcons'
+
 
 const Footer = () => {
 
@@ -72,7 +76,7 @@ const Footer = () => {
                 <div className="design">
 
                     <img className=" absolute-f-t" src={img_DesignSquiggles} alt="two  wavy lines of grey color intersecting in a pattern" />
-                    
+
                 </div>
             </div>
 
@@ -82,14 +86,10 @@ const Footer = () => {
                 <div className="bottom container relative">
 
                     <div className="right">
-                        <p><a className="soc-med-footer" href="https://facebook.com" target="_blank" rel="noreferrer"><i
-                            className="fa-brands fa-facebook"></i></a></p>
-                        <p><a className="soc-med-footer" href="https://twitter.com" target="_blank" rel="noreferrer"><i
-                            className="fa-brands fa-x-twitter"></i></a></p>
-                        <p><a className="soc-med-footer" href="https://instagram.com" target="_blank" rel="noreferrer"><i
-                            className="fa-brands fa-instagram"></i></a></p>
-                        <p><a className="soc-med-footer" href="https://linkedin.com" target="_blank" rel="noreferrer"><i
-                            className="fa-brands fa-linkedin"></i></a></p>
+                        <p><SocialMediaIcons linkClass="soc-med-footer" url="https://facebook.com" iconClass="fa-brands fa-facebook" /></p>
+                        <p><SocialMediaIcons linkClass="soc-med-footer" url="https://twitter.com"iconClass="fa-brands fa-x-twitter"  /></p>
+                        <p><SocialMediaIcons linkClass="soc-med-footer" url="https://instagram.com" iconClass="fa-brands fa-instagram"  /></p>
+                        <p><SocialMediaIcons linkClass="soc-med-footer" url="https://linkedin.com" iconClass="fa-brands fa-linkedin"  /></p>
                     </div>
                     <div className="left">
                         <p className="copyright">&copy; 2023 Crito - Consulting Company INC. All Rights Reserved</p>

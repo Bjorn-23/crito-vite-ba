@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-import Button from '@components/generics/Button'
 import Footer from '@components/Footer'
 
 import img_lost from '@assets/img/not-found/lost-1.jpg'

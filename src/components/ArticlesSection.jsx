@@ -2,10 +2,10 @@ import React from 'react'
 
 import SectionTitle from '@generics/SectionTitle'
 import Button from '@generics/Button'
-import FirstThreeArticles from '@generics/FirstThreeArticles'
+import ThreeRandomArticles from '@generics/ThreeRandomArticles'
 
 //This component includes the "FirstThreeArticles" generic which fetches all articles from API then slices the array keeping only the first three, this component renders onto "Home" view.
-const ArticlesHome = () => {
+const ArticlesSection = () => {
     return (
         <section className="articles-news">
             <div className="container">
@@ -23,7 +23,7 @@ const ArticlesHome = () => {
 
                 </div>
 
-                <FirstThreeArticles />
+                <ThreeRandomArticles />
 
             </div>
 
@@ -31,4 +31,4 @@ const ArticlesHome = () => {
     )
 }
 
-export default ArticlesHome
+export default ArticlesSection

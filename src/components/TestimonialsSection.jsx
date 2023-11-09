@@ -8,7 +8,7 @@ import img_C from '@assets/img/testimonials/c-warren.png'
 import img_A from '@assets/img/testimonials/a-tulling.png'
 import img_J from '@assets/img/testimonials/j-mcdogglas.png'
 
-const Testimonials = () => {
+const TestimonialsSection = () => {
     return (
         <section className="testimonials">
 
@@ -39,4 +39,4 @@ const Testimonials = () => {
     )
 }
 
-export default Testimonials
+export default TestimonialsSection

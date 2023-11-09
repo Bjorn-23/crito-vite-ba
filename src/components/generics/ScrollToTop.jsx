@@ -12,8 +12,7 @@ const ScrollToTop = () => {
       window.addEventListener('scroll', () => {
         setPosition(window.scrollY)
       })
-    })
-  
+    })  
 
     const scrollTo = () => {
       window.scrollTo({top: 0, behavior: 'smooth'})

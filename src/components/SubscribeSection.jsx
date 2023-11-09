@@ -2,7 +2,7 @@ import React from 'react'
 
 import img_LinesSubscribe from '@assets/img/subscribe/design.svg'
 
-const Subscribe = () => {
+const SubscribeSection = () => {
     return (
         <section className="subscribe">
             <div className="container">
@@ -30,4 +30,4 @@ const Subscribe = () => {
     )
 }
 
-export default Subscribe
+export default SubscribeSection

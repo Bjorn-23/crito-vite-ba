@@ -1,9 +1,10 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
-import Header from '@components/Header'
-import Breadcrumbs from '@components/Breadcrumbs'
-import ArticleFull from '@components/ArticleFull'
+import Header from '../components/Header'
+
+import BreadcrumbsSection from '@components/BreadcrumbsSection'
+import NewsDetailsArticleFull from '@components/NewsDetailsArticleFull'
 import Footer from '@components/Footer'
 
 const NewsDetails = () => {
@@ -13,8 +14,8 @@ const NewsDetails = () => {
   return (
     <div className="wrapper">
       <Header />
-      <Breadcrumbs url="/news" page="NewsDetails" />
-      <ArticleFull />
+      <BreadcrumbsSection url="/news" page="NewsDetails" />
+      <NewsDetailsArticleFull />
       <Footer />
     </div>
   )

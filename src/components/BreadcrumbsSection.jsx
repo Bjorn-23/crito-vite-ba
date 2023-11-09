@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 import img_BreadcrumbSquiggle from '@assets/img/showcase/showcase-squiggle.svg'
 
-const Breadcrumbs = ({ url, page }) => {
+const BreadcrumbsSection = ({ url, page }) => {
     return (
         <section className="breadcrumbs">
 
@@ -28,4 +28,4 @@ const Breadcrumbs = ({ url, page }) => {
     )
 }
 
-export default Breadcrumbs
+export default BreadcrumbsSection

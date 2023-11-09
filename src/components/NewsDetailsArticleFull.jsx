@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { parseISO, format } from 'date-fns'
 import { useArticles } from '../contexts/ArticlesContext'
@@ -7,35 +7,12 @@ import SectionTitle from '@generics/SectionTitle'
 import RecentPost from '@generics/RecentPost'
 import Button from '@generics/Button'
 
-import FirstThreeArticles from '@generics/FirstThreeArticles'
-import ScrollToArticle from './generics/ScrollToArticle'
+import ThreeRandomArticles from '@generics/ThreeRandomArticles'
+import ScrollToArticle from '@generics/ScrollToArticle'
 
 //This component fetches and article clicked from any other page and with useParams takes the "id" found in the url to fetch the specific articles info. Also includes "FirstThreeArticles" which fetches all articles and slices the array keeping the first 6-8.
-const ArticleFull = () => {
+const NewsDetailsArticleFull = () => {
 
-    const { id } = useParams()
-    const { article, getArticle, clearArticle } = useArticles()
-
-
-    useEffect(() => {
-        getArticle(id)
-        return () => clearArticle
-    }, [id])
-
-
-    const formatDate = (isoDate) => {
-        const parsedDate = parseISO(isoDate);
-        const year = format(parsedDate, 'yyyy');
-        const month = format(parsedDate, 'MMM');
-        const date = format(parsedDate, 'dd');
-        return { year, month, date };
-    };
-
-    useEffect(() => {
-        ScrollToArticle()
-    }, [id])
-
-    //use {tags.class} as key value --> t1, t2, t3 etc also sets positioning in grid.
     const tags = [
         { class: 't1', url: '#', title: 'Digitalization' },
         { class: 't2', url: '#', title: 'School' },
@@ -52,7 +29,6 @@ const ArticleFull = () => {
         { id: 4, className: 'post-item', url: '#', title: 'Figma On Figma: How We Built Our Website Design System', date: 'jan 14, 2019' },
     ]
 
-    //postCount should be a function of the total amount of posts in that particular category
     const categories = [
         { id: 1, url: '#', category: 'Technology', hyphen: '-', postCount: '20', },
         { id: 2, url: '#', category: 'Freelancing', hyphen: '-', postCount: '07', },
@@ -61,6 +37,26 @@ const ArticleFull = () => {
         { id: 5, url: '#', category: 'Business', hyphen: '-', postCount: '35', },
         { id: 6, url: '#', category: 'Education', hyphen: '-', postCount: '14', },
     ]
+
+    const { id } = useParams()
+    const { article, getArticle, clearArticle } = useArticles(null)
+
+    useEffect(() => {
+        getArticle(id)
+        return () => clearArticle
+    }, [id])
+
+    const formatDate = (isoDate) => {
+        const parsedDate = parseISO(isoDate);
+        const year = format(parsedDate, 'yyyy');
+        const month = format(parsedDate, 'MMM');
+        const date = format(parsedDate, 'dd');
+        return { year, month, date };
+    };    
+
+    useEffect(() => {
+        ScrollToArticle()
+    }, [id])
 
 
 if (!article) {
@@ -76,7 +72,7 @@ else
                     <div className="top grid-item">
                         <div className="top-left">
                             <div>
-                                <h2 className="articles-title">{article.title}</h2>
+                                <SectionTitle title={article.title} />
                             </div>
                             <div className="flex-txt">
                                 <p className="date">{formatDate(article.published).month} {formatDate(article.published).date}, {formatDate(article.published).year}</p>
@@ -187,7 +183,7 @@ else
 
                     </div>
 
-                    <FirstThreeArticles />
+                    <ThreeRandomArticles />
 
                 </div>
             </section>
@@ -195,4 +191,4 @@ else
     )
 }
 
-export default ArticleFull
+export default NewsDetailsArticleFull

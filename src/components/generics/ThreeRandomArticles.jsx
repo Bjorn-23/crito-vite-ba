@@ -6,7 +6,7 @@ import { useArticles } from '../../contexts/ArticlesContext'
 import ScrollToArticle from '@generics/ScrollToArticle' //used as onClick event on Link element
 
 
-const FirstThreeArticles = () => {
+const ThreeRandomArticles = () => {
   
     //----Fetching API-----
     const { articles } = useArticles()//---articles = the fetched value from API - derived from ArticlesContext.jsx
@@ -90,4 +90,4 @@ const FirstThreeArticles = () => {
         )
 }
 
-export default FirstThreeArticles
+export default ThreeRandomArticles

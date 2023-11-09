@@ -2661,6 +2661,7 @@ body .container {
 .articles .grid-container .top .top-left .flex-txt {
   display: flex;
   justify-content: center;
+  align-items: baseline;
   gap: 10px;
 }
 @media (min-width: 48rem) {
@@ -2670,7 +2671,7 @@ body .container {
     gap: 20px;
   }
 }
-.articles .grid-container .top .top-left .flex-txt div {
+.articles .grid-container .top .top-left .flex-txt .yellow-dot {
   background-color: #f9d783;
   height: 2px;
   width: 2px;

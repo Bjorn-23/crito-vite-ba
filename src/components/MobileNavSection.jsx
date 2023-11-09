@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 //Hidden at sizes larger than 991px
-const MobileNav = () => {
+const MobileNavSection = () => {
 
     const [menu, setMenu] = useState(false)
     const openNav = () => {
@@ -29,4 +29,4 @@ const MobileNav = () => {
     )
 }
 
-export default MobileNav
+export default MobileNavSection
