@@ -1269,6 +1269,7 @@ body {
     position: relative;
     background-color: #F0EFE9;
     padding: 30px 20px 30px;
+    z-index: 1;
 
     @media (min-width: rem(576)) {
         padding: 40px 0;
@@ -1291,6 +1292,7 @@ body {
         bottom: 0;
         right: 0;
         display: none;
+        z-index: 2;
 
         @media (min-width: rem(768)) {
             display: block;
@@ -1410,8 +1412,10 @@ body {
             }
 
             a {
+                position: relative;
                 display: block;
                 margin: 0 20px;
+                z-index: 3;
 
                 @media (min-width: rem(768)) {
                     display: inline-block;

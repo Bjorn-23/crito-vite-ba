@@ -30,7 +30,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="/news/:id" element={<NewsDetails />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/*" element={<NotFound />} />
-            <Route path="/testpage/:id" element={<TestPage />} />
+            <Route path="/testpage" element={<TestPage />} />
           </Routes>
       </ArticlesProvider>
     </BrowserRouter>

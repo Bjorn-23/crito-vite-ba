@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Formik, Form, Field, ErrorMessage, useFormik } from 'formik'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 
 import FormError from './generics/FormError'
@@ -26,7 +26,7 @@ const ContactForm = () => {
         message: Yup.string()
             .required(`Message can't be empty`)
             .min(5, 'Message needs to be at least 5 characters long')
-            .max(1000, 'Message maixumum length is 1000 characters'),
+            .max(400, 'Message maixumum length is 1000 characters'),
         terms: Yup.boolean()
             .oneOf([true], 'Terms & Conditions have to be accepted')
     })
@@ -62,6 +62,7 @@ const ContactForm = () => {
 
         clearInterval()
     }
+    
     
    
     return (

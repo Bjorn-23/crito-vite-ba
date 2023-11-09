@@ -2,7 +2,7 @@ import React from 'react'
 
 import SectionTitle from '@generics/SectionTitle'
 import ServiceBox from '@generics/ServiceBox'
-import Button from '@generics/Button'
+import Button from './generics/Button'
 
 import img_ServiceLines from '@assets/img/services/white-squiggly-lines-services.svg'
 
@@ -35,7 +35,7 @@ const ServicesComponent = () => {
                     </div>
 
                     <div className="c-btm">
-                        <Button type="transparent-fat" title="Browse Services" url="/services" />
+                        <Button type="transparentFat" title="Browse Services" url="/services" />
                     </div>
 
                 </div>
