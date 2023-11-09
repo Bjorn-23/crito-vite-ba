@@ -2014,13 +2014,20 @@ body {
                     .article-img {
                         overflow: hidden;
                         width: 100%;
-                        max-width: 400px;
                         height: auto;
-                        max-height: 240px;
+                        max-width:  350px;
+                        max-height: 233px;
                         object-fit: cover;
                         object-position: 100% 50%;
                         border: 1px solid transparent;
                         border-radius: 10px;
+
+
+                        @media (min-width: rem(576)) {
+                        max-width: 400px;                        
+                        max-height: 240px;
+                                              
+                        }
 
                         @media (min-width: rem(992)) {
                             border: none;
@@ -2920,10 +2927,15 @@ body {
             img {
                 width: 100%;
                 height: auto;
-                max-width: 722px;
-                max-height: 480px;
+                max-width:  350px;
+                max-height: 233px;
                 object-fit: cover;
-                margin-bottom: 20px;
+                margin-bottom: 20px;                
+
+                @media (min-width: rem(768)) {
+                    max-width: 722px;
+                    max-height: 480px;
+                }
 
                 @media (min-width: rem(992)) {
                     margin-bottom: 50px;
