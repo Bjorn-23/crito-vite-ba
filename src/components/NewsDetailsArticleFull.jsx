@@ -30,13 +30,14 @@ const NewsDetailsArticleFull = () => {
     ]
 
     const categories = [
-        { id: 1, url: '#', category: 'Technology', hyphen: '-', postCount: '20', },
+        { id: 1, url: '#', category: 'Technology', hyphen: '-', postCount: '20', },         
         { id: 2, url: '#', category: 'Freelancing', hyphen: '-', postCount: '07', },
         { id: 3, url: '#', category: 'Writing', hyphen: '-', postCount: '16', },
         { id: 4, url: '#', category: 'Marketing', hyphen: '-', postCount: '11', },
         { id: 5, url: '#', category: 'Business', hyphen: '-', postCount: '35', },
         { id: 6, url: '#', category: 'Education', hyphen: '-', postCount: '14', },
     ]
+
 
     const { id } = useParams()
     const { article, getArticle, clearArticle } = useArticles(null)
