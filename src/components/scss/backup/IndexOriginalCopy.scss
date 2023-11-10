@@ -3281,11 +3281,14 @@ body {
         
     }
     .prev {
-        left: 45%;
+        left: 43%;
+    }
+    .auto-play {
+        left: 50%;
+        transform: translateX(-50%)
     }
     .next {
-        right: 45%;
-
+        right: 43%;
     }
    
    

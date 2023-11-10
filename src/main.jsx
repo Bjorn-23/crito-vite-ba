@@ -34,6 +34,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           </Routes>
       </ArticlesProvider>
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
+  ,
 
 )

@@ -2988,10 +2988,14 @@ body .container {
   outline: 1px solid black;
 }
 .carousel .prev {
-  left: 45%;
+  left: 43%;
+}
+.carousel .auto-play {
+  left: 50%;
+  transform: translateX(-50%);
 }
 .carousel .next {
-  right: 45%;
+  right: 43%;
 }
 .carousel ul {
   margin: 0;
