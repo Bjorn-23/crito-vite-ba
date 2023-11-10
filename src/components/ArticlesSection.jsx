@@ -2,7 +2,8 @@ import React from 'react'
 
 import SectionTitle from '@generics/SectionTitle'
 import Button from '@generics/Button'
-import ThreeRandomArticles from '@generics/ThreeRandomArticles'
+// import ThreeRandomArticles from '@generics/ThreeRandomArticles'
+import MyCarousel from './Carousel/MyCarousel'
 
 //This component includes the "FirstThreeArticles" generic which fetches all articles from API then slices the array keeping only the first three, this component renders onto "Home" view.
 const ArticlesSection = () => {
@@ -23,7 +24,8 @@ const ArticlesSection = () => {
 
                 </div>
 
-                <ThreeRandomArticles />
+                {/* <ThreeRandomArticles /> */}
+                <MyCarousel />
 
             </div>
 

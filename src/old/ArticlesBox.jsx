@@ -1,25 +1,30 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-//Generic currently in use in ArticlesNews - which is NOT in use.
-const ArticlesBox = ({url, img, altText, date, month, category, title, text}) => {
+const ArticlesBox = () => {
     return (
 
-        <Link className="grid-item" to={url}>
-            <div className="img-wrapper">
-                <img className="article-img relative" src={img}
-                    alt={altText} />
-                <div className="date-wrapper">
-                    <div className="yellow-square absolute">
-                        <div className="date">{date}</div>
-                        <p className="month">{month}</p>
-                    </div>
-                </div>
-            </div>
-            <p className="subject">{category}</p>
-            <h3 className="article-title">{title}</h3>
-            <p className="lorem">{text}</p>
-        </Link>
+        <div className="middle grid-container">
+            {
+                articles.slice(6,9).map((article =>
+                    <Link key={article.id} className="grid-item" to={`/news/${article.id}`} onClick={(ScrollToArticle)}>
+                        <div className="img-wrapper">
+                            <img className="article-img relative" src={article.imageUrl}
+                                alt="" />
+                            <div className="date-wrapper">
+                                <div className="yellow-square absolute">
+                                    <div className="date">{formatDate(article.published).date}</div>
+                                    <p className="month">{formatDate(article.published).month}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p className="subject">{article.subject}</p>
+                        <h3 className="article-title">{article.title}</h3>
+                        <p className="lorem">{article.content}</p>
+                    </Link>
+                ))
+            }
+        </div>
 
     )
 }

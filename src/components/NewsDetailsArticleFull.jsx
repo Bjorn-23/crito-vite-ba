@@ -7,8 +7,9 @@ import SectionTitle from '@generics/SectionTitle'
 import RecentPost from '@generics/RecentPost'
 import Button from '@generics/Button'
 
-import ThreeRandomArticles from '@generics/ThreeRandomArticles'
+// import ThreeRandomArticles from '@generics/ThreeRandomArticles'
 import ScrollToArticle from '@generics/ScrollToArticle'
+import MyCarousel from './Carousel/MyCarousel'
 
 //This component fetches and article clicked from any other page and with useParams takes the "id" found in the url to fetch the specific articles info. Also includes "FirstThreeArticles" which fetches all articles and slices the array keeping the first 6-8.
 const NewsDetailsArticleFull = () => {
@@ -184,7 +185,8 @@ else
 
                     </div>
 
-                    <ThreeRandomArticles />
+                    {/* <ThreeRandomArticles /> */}
+                    <MyCarousel />
 
                 </div>
             </section>
