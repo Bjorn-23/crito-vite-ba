@@ -16,14 +16,12 @@ export const ArticlesProvider = ({children}) => {
         getArticles()
     }, [])
 
-
     useEffect(() => {
         if (id !== undefined) {
         getArticle()
         return
         }
-    }, [id])
-    
+    }, [id])    
 
     const getArticles = async () => {
         const result = await fetch(apiUrl)

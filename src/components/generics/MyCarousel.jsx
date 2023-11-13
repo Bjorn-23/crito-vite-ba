@@ -2,14 +2,14 @@ import React, { useState, useEffect, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import { useArticles } from '../../contexts/ArticlesContext'
 
-import ScrollToArticle from './ScrollToArticle' //used as onClick event on Link element
+import ScrollToArticle from './ScrollToArticle'
 import FormatDate from './FormatDate'
 import ArticlesBox from './ArticlesBox'
 
 const MyCarousel = () => {
 
     const { id } = useParams()
-    const { articles } = useArticles()//---articles = the fetched value from API - derived from ArticlesContext.jsx
+    const { articles } = useArticles()
 
     const [number, setNumber] = useState(() => { return 1 })
     const intervalRef = useRef(null);

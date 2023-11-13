@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { format, parseISO } from 'date-fns' //use with all that say 789
-import { useArticles } from '../../contexts/ArticlesContext'
+import { useArticles } from '../contexts/ArticlesContext'
 
 import ScrollToArticle from '@generics/ScrollToArticle' //used as onClick event on Link element
 

@@ -7,7 +7,7 @@ import RecentPost from '@generics/RecentPost'
 import Button from '@generics/Button'
 
 import ScrollToArticle from '@generics/ScrollToArticle'
-import MyCarousel from './Carousel/MyCarousel'
+import MyCarousel from '../components/generics/MyCarousel'
 import FormatDate from './generics/FormatDate'
 
 
