@@ -3266,7 +3266,7 @@ body {
         cursor: pointer;
         font-size: rem(24);
         color: #19191980;
-        background: #19191930;
+        background: #e4e4e4;
         padding: 5px 12px;
         border-radius: 50%;
 
@@ -3285,7 +3285,9 @@ body {
     }
     .auto-play {
         left: 50%;
-        transform: translateX(-50%)
+        transform: translateX(-50%);
+        padding: 5px 15px;
+        border-radius: 25px;
     }
     .next {
         right: 43%;

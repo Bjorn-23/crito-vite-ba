@@ -37,9 +37,10 @@ export const ArticlesProvider = ({children}) => {
         const result = await fetch(`${apiUrl}/${id}`)
             if (result.status === 200)
             setArticle(await result.json())
-            console.log('article exists')
+            //console.log('article exists')
         }
-        else console.log('no article exists')
+        else //console.log('no article exists')
+            return
     }
 
     const clearArticle =  () => {

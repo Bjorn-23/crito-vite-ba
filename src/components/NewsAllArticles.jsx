@@ -1,19 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { parseISO, format } from 'date-fns'
 import { useArticles } from '../contexts/ArticlesContext'
+
 import SectionTitle from '@generics/SectionTitle'
+import FormatDate from './generics/FormatDate'
+import ArticlesBox from './generics/ArticlesBox'
+import ScrollToArticle from './generics/ScrollToArticle'
 
 const NewsAllArticles = () => {
   const { articles } = useArticles()
-
-  const formatDate = (isoDate) => {
-    const parsedDate = parseISO(isoDate);
-    const month = format(parsedDate, 'MMM');
-    const date = format(parsedDate, 'dd');
-    return { month, date };
-  };
-
 
   if (!articles)
     return (<P>loading...</P>)
@@ -29,7 +23,6 @@ const NewsAllArticles = () => {
 
             <div className="top-rgt">
               <div className="articles-btn-container">
-                {/* <Button type="transparentFat" title="Browse Articles" url="/news" /> */}
               </div>
             </div>
 
@@ -37,23 +30,12 @@ const NewsAllArticles = () => {
 
           <div className="middle grid-container">
 
-            {articles &&
-              articles.map((article) => (
-                <Link key={article.id} className="grid-item" to={`/news/${article.id}`} >
-                  <div className="img-wrapper">
-                    <img className="article-img relative" src={article.imageUrl} alt="altText" />
-                    <div className="date-wrapper">
-                      <div className="yellow-square absolute">
-                        <div className="date">{formatDate(article.published).date}</div>
-                        <p className="month">{formatDate(article.published).month}</p>
-                      </div>
-                    </div>
-                  </div>
-                  <p className="subject">{article.category}</p>
-                  <h3 className="article-title">{article.title}</h3>
-                  <p className="lorem">{article.content}</p>
-                </Link>
-              ))}
+            {
+              articles &&
+                articles.map((article, index) => 
+                  <ArticlesBox key={index} to={`/news/${article.id}`} onclick={(ScrollToArticle)} img={article.imageUrl} date={FormatDate(article.published).date} month={FormatDate(article.published).month} subject={article.subject} title={article.title} content={article.content} />
+                )
+            }
 
           </div>
 

@@ -2977,7 +2977,7 @@ body .container {
   cursor: pointer;
   font-size: 1.5rem;
   color: rgba(25, 25, 25, 0.5019607843);
-  background: rgba(25, 25, 25, 0.1882352941);
+  background: #e4e4e4;
   padding: 5px 12px;
   border-radius: 50%;
 }
@@ -2993,6 +2993,8 @@ body .container {
 .carousel .auto-play {
   left: 50%;
   transform: translateX(-50%);
+  padding: 5px 15px;
+  border-radius: 25px;
 }
 .carousel .next {
   right: 43%;

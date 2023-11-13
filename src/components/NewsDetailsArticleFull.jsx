@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { parseISO, format } from 'date-fns'
 import { useArticles } from '../contexts/ArticlesContext'
 
 import SectionTitle from '@generics/SectionTitle'
 import RecentPost from '@generics/RecentPost'
 import Button from '@generics/Button'
 
-// import ThreeRandomArticles from '@generics/ThreeRandomArticles'
 import ScrollToArticle from '@generics/ScrollToArticle'
 import MyCarousel from './Carousel/MyCarousel'
+import FormatDate from './generics/FormatDate'
+
 
 //This component fetches and article clicked from any other page and with useParams takes the "id" found in the url to fetch the specific articles info. Also includes "FirstThreeArticles" which fetches all articles and slices the array keeping the first 6-8.
 const NewsDetailsArticleFull = () => {
@@ -39,7 +39,6 @@ const NewsDetailsArticleFull = () => {
         { id: 6, url: '#', category: 'Education', hyphen: '-', postCount: '14', },
     ]
 
-
     const { id } = useParams()
     const { article, getArticle, clearArticle } = useArticles(null)
 
@@ -48,19 +47,11 @@ const NewsDetailsArticleFull = () => {
         return () => clearArticle
     }, [id])
 
-    const formatDate = (isoDate) => {
-        const parsedDate = parseISO(isoDate);
-        const year = format(parsedDate, 'yyyy');
-        const month = format(parsedDate, 'MMM');
-        const date = format(parsedDate, 'dd');
-        return { year, month, date };
-    };    
-
     useEffect(() => {
         ScrollToArticle()
     }, [id])
-
-
+        
+       
 if (!article) {
     return <p>Loading...</p>
 }
@@ -77,7 +68,7 @@ else
                                 <SectionTitle title={article.title} />
                             </div>
                             <div className="flex-txt">
-                                <p className="date">{formatDate(article.published).month} {formatDate(article.published).date}, {formatDate(article.published).year}</p>
+                                <p className="date">{FormatDate(article.published).month} {FormatDate(article.published).date}, {FormatDate(article.published).year}</p>
                                 <div className="yellow-dot"></div>
                                 <p className="category">{article.category}</p>
                                 <div className="yellow-dot"></div>
