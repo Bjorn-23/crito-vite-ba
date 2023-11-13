@@ -11,7 +11,6 @@ export default defineConfig({
       '@generics': path.resolve(__dirname, 'src/components/generics'),
       '@views': path.resolve(__dirname, 'src/views'),
       '@assets': path.resolve(__dirname, 'src/assets'),
-      '@scss': path.resolve(__dirname, 'src/components/scss'),
     }
   }
 })

@@ -1021,7 +1021,7 @@ body {
 
 
 // company-intro
-.company-intro {
+.about-company {
     margin: 30px 10px;
 
     .container {
@@ -2428,7 +2428,7 @@ body {
         position: relative;
 
         @media (min-width: rem(992)) {
-            padding: 90px 0;
+            padding: 60px 0;
         }
 
         nav {
@@ -2822,8 +2822,8 @@ body {
 }
 
 
-// articles-full
-.articles {
+// NewsDetails
+.News-details-articles-full{
     margin: 20px 20px;
 
     @media (min-width: rem(768)) {
@@ -3196,30 +3196,6 @@ body {
 }
 
 
-// results from subscribe form and message form.
-.results-section {
-    background-color: #f0efe9;
-
-    .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-
-        .results {
-            width: auto;
-            height: auto;
-            background-color: #f9d783;
-            border: 1px solid #f9d783;
-            border-radius: 25px;
-            padding: 50px;
-            margin-bottom: 40px;
-        }
-    }
-}
-
-
 // Error 404 Page Not Found
 .wrapper {
     .pageNotFound {
@@ -3254,7 +3230,15 @@ body {
 //carousel for threearticles
 .carousel {
     position: relative;
-    height: 500px;
+    height: 1200px; 
+    
+    @media (min-width: rem(768)) {
+        height: 900px;
+    }
+    @media (min-width: rem(1200)) {
+        height: 500px;
+    }
+    
 
     .carousel-button {
         text-align: center;
@@ -3269,9 +3253,20 @@ body {
         background: #e4e4e4;
         padding: 5px 12px;
         border-radius: 50%;
+        
+
+        @media (min-width: rem(768)) {
+            bottom: 0;
+        }
 
         &:hover {
             background-image: linear-gradient(to bottom right, #f9d783, #f8eed2 50%, #f9d783 75%);        
+            box-shadow: 0 9px 5px#d3d3d3;
+        }
+
+        &:active {
+            box-shadow: 0 5px 5px#6A6C71;
+            transform: translateY(4px);
         }
 
         &:focus {
@@ -3281,23 +3276,53 @@ body {
         
     }
     .prev {
-        left: 43%;
+        left: 15%;
+        @media (min-width: rem(768)) {
+            left: 38%;
+        }
+        @media (min-width: rem(992)) {
+            left: 41%;
+        }
+        @media (min-width: rem(1200)) {
+            left: 42%;
+        }
     }
     .auto-play {
         left: 50%;
         transform: translateX(-50%);
         padding: 5px 15px;
         border-radius: 25px;
+
+        &:active {
+            transform: translateY(4px) translateX(-50%);
+        }
+
+        @media (min-width: rem(768)) {
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 5px 20px;
+
+        }
     }
     .next {
-        right: 43%;
+        right: 15%;
+
+        @media (min-width: rem(768)) {
+            right: 38%;
+        }
+        @media (min-width: rem(992)) {
+            right: 41%;
+        }
+        @media (min-width: rem(1200)) {
+            right: 42%;
+        }
     }
    
    
     ul {
         margin: 0;
         padding: 0;
-        list-style: none;      
+        list-style: none;
 
         .slide {
             position: absolute;
@@ -3308,17 +3333,11 @@ body {
             transition-delay: 500ms;
             
             &.active {
-
                 opacity: 1;
                 transition-delay: 0ms;
                 z-index: 1;
-            }
-            // &[data-active] {
 
-            //     opacity: 1;
-            //     transition-delay: 0ms;
-            //     z-index: 1;
-            // }
+            }
 
             .grid-container {
                 display: grid;
@@ -3359,7 +3378,7 @@ body {
                             width: 100%;
                             height: auto;
                             max-width:  350px;
-                            max-height: 233px;
+                            max-height: 232px;
                             object-fit: cover;
                             object-position: 100% 50%;
                             border: 1px solid transparent;
@@ -3414,7 +3433,7 @@ body {
                 }
     
                 .grid-item:hover {
-                    opacity: 0.4;
+                    opacity: 0.6;
                     transition: 0.15s ease-in-out;
                 }
             }

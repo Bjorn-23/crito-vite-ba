@@ -1,11 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-
-
-
-
-
 const ArticlesBox = ({index, to, onclick, img, date, month, subject, title, content}) => {
 
     return (
@@ -24,7 +19,6 @@ const ArticlesBox = ({index, to, onclick, img, date, month, subject, title, cont
             <h3 className="article-title">{title}</h3>
             <p className="lorem">{content}</p>
         </Link>
-
     )
 }
 

@@ -32,21 +32,23 @@ const NewsAllArticles = () => {
 
             {
               articles &&
-                articles.map((article, index) => 
-                  <ArticlesBox key={index} to={`/news/${article.id}`} onclick={(ScrollToArticle)} img={article.imageUrl} date={FormatDate(article.published).date} month={FormatDate(article.published).month} subject={article.subject} title={article.title} content={article.content} />
-                )
+              articles.map((article, index) =>
+                <ArticlesBox key={index} to={`/news/${article.id}`} onclick={(ScrollToArticle)} img={article.imageUrl} date={FormatDate(article.published).date} month={FormatDate(article.published).month} subject={article.subject} title={article.title} content={article.content} />
+              )
             }
 
           </div>
 
           <div className="bottom">
-            <ol className="slide-dots">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" className="dot active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1" className="dot"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2" className="dot"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="3" className="dot"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="4" className="dot"></li>
-            </ol>
+            <ul className="page-selector">
+              <li className="selector"><strong><i className="fa-sharp fa-solid fa-chevron-left"></i></strong></li>
+              <li className="selector active">1</li>
+              <li className="selector">2</li>
+              <li className="selector">3</li>
+              <li className="selector">...</li>
+              <li className="selector">5</li>
+              <li className="selector"><strong><i className="fa-sharp fa-solid fa-chevron-right"></i></strong></li>
+            </ul>
           </div>
 
         </div>

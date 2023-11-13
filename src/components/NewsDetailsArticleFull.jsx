@@ -59,7 +59,7 @@ else
     return (
 
         <>
-            <article className="articles">
+            <article className="News-details-articles-full">
                 <div className="container grid-container">
 
                     <div className="top grid-item">
@@ -176,7 +176,7 @@ else
 
                     </div>
 
-                    {/* <ThreeRandomArticles /> */}
+
                     <MyCarousel />
 
                 </div>

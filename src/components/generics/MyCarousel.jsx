@@ -85,7 +85,7 @@ const MyCarousel = () => {
             <section aria-label='articles'>
                 <div className="carousel container" data-carousel>
                     <button className="carousel-button prev" onClick={prevButton}><i className="fa-solid fa-arrow-left"></i></button>
-                    <button className="carousel-button auto-play" onClick={onClickPlay}><i className="fa-solid fa-infinity"></i></button>
+                    <button className="carousel-button auto-play" onClick={onClickPlay}><i className="fa-solid fa-play-pause"></i></button>
                     <button className="carousel-button next" onClick={nextButton}><i className="fa-solid fa-arrow-right"></i></button>
                     <ul data-slides>
                         <li className={number === 1 ? "slide active" : "slide"} data-active>

@@ -8,7 +8,7 @@ import Button from '@generics/Button'
 
 const AboutCompanySection = () => {
     return (
-        <section className="company-intro">
+        <section className="about-company">
             <div className="container">
                 
                 <div className="sam-b-wrapper"><img src={img_SamB}
