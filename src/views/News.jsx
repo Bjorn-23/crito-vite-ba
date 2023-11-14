@@ -1,10 +1,9 @@
 import React from 'react'
 
-import Header from '../components/Header'
-
+import Header from '../generics/layout/Header'
 import BreadcrumbsSection from '@components/BreadcrumbsSection'
 import NewsAllArticles from '@components/NewsAllArticles'
-import Footer from '@components/Footer'
+import Footer from '../generics/layout/Footer'
 
 
 const News = () => {

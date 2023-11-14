@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Button from '@generics/Button'
+import Button from '../generics/utilities/Button'
 
 import img_manInSuit from '@assets/img/showcase/man-in-suit.png'
 import img_showcaseLines from '@assets/img/showcase/showcase-squiggle.svg'

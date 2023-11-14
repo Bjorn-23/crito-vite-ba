@@ -2,13 +2,13 @@ import React, { useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { useArticles } from '../contexts/ArticlesContext'
 
-import SectionTitle from '@generics/SectionTitle'
-import RecentPost from '@generics/RecentPost'
-import Button from '@generics/Button'
+import SectionTitle from '../generics/utilities/SectionTitle'
+import RecentPost from '../generics/features/RecentPost'
+import Button from '../generics/utilities/Button'
 
-import ScrollToArticle from '@generics/ScrollToArticle'
-import MyCarousel from '../components/generics/MyCarousel'
-import FormatDate from './generics/FormatDate'
+import ScrollToArticle from '../generics/utilities/ScrollToArticle'
+import MyCarousel from '../generics/utilities/MyCarousel'
+import FormatDate from '../generics/utilities//FormatDate'
 
 
 //This component fetches and article clicked from any other page and with useParams takes the "id" found in the url to fetch the specific articles info. Also includes "FirstThreeArticles" which fetches all articles and slices the array keeping the first 6-8.

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import SectionTitle from '@generics/SectionTitle'
-import Button from '@generics/Button'
+import SectionTitle from '../generics/utilities/SectionTitle'
+import Button from '../generics/utilities/Button'
 import MyCarousel from '../generics/utilities/MyCarousel'
 
 const ArticlesSection = () => {

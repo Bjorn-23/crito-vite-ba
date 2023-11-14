@@ -1,8 +1,8 @@
 import React from 'react'
 
-import SectionTitle from '@generics/SectionTitle'
-import Button from '@generics/Button'
-import TeamBox from '@generics/TeamBox'
+import SectionTitle from '../generics/utilities/SectionTitle'
+import Button from '../generics/utilities/Button'
+import TeamBox from '../generics/features/TeamBox'
 
 import img_Kristine from '@assets/img/team/k-palmer.png'
 import img_Mark from '@assets/img/team/m-aubri.png'

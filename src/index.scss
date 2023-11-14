@@ -1,4 +1,42 @@
-//-----CORE-COMPONENTS
+//-----CORE-AND-GENERIC-COMPONENTS
+@import './assets/scss/core/core';
+@import './assets/scss/generics/buttons';
+@import './assets/scss/generics/selectors';
+@import './assets/scss/generics/myCarousel';
+
+//-----GENERIC-SECTIONS
+@import './assets/scss/sections/header';
+@import './assets/scss/sections/footer';
+@import './assets/scss/sections/mobileNavSection';
+@import './assets/scss/sections/breadcrumbsSection';
+@import './assets/scss/sections/subscribeSection';
+@import './assets/scss/sections/ourServicesSection';
+
+//-----HOME-VIEW
+@import './assets/scss/sections/showcaseSection';
+@import './assets/scss/sections/clientsSection';
+@import './assets/scss/sections/featuresSection';
+@import './assets/scss/sections/aboutCompanySection';
+@import './assets/scss/sections/whyChooseUsSection';
+@import './assets/scss/sections/projectsSection';
+@import './assets/scss/sections/teamSection';
+@import './assets/scss/sections/testimonialsSections';
+@import './assets/scss/sections/articlesNewsSection';
+
+//-----SERVICES-VIEW
+@import './assets/scss/sections/servicesPageSection';
+
+//-----NEWS-SECTIONS
 
 
-//-----SECTION COMPONENTS
+//-----NEWS-DETAILS-VIEW
+@import './assets/scss/sections/newsDetailsArticleFullSection';
+
+//-----CONTACT-VIEW
+@import './assets/scss/sections/contacSection';
+
+//-----PAGE-NOT-FOUND-VIEW
+@import './assets/scss/sections/pageNotFoundSection'
+
+
+

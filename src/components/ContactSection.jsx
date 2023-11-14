@@ -1,7 +1,7 @@
 import React from 'react'
 
-import ContactForm from '@components/ContactForm'
-import ContactMap from '@components/ContactMap'
+import ContactForm from '../generics/features/ContactForm'
+import ContactMap from '../generics/features/ContactMap'
 
 const ContactSection = () => {
     return (

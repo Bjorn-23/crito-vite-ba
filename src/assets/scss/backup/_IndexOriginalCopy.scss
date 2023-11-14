@@ -488,7 +488,6 @@ body {
     }
 }
 
-
 // page-selector buttons at bottom of news.html
 .page-selector {
     display: flex;
@@ -537,8 +536,7 @@ body {
 
 }
 
-
-// yellow square with published date, top left in article pictures.
+// yellow square with published date, top left in article pictures.  PUT IN ARTICLES BOX
 .yellow-square {
     display: inline-block;
     background-image: linear-gradient(to bottom right, #f9d783, #f8eed2 50%, #f9d783 75%);

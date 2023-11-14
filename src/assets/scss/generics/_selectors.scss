@@ -1,0 +1,81 @@
+// for "carousel" - currently non functioning.
+.slide-dots {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #C4AF75;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+    .dot:hover {
+        background-color: #191919;
+    }
+
+    &.dot:active {
+        background-color: #d3d3d3;
+    }
+
+    .active {
+        background-color: #191919;
+
+        &.active:hover {
+            background-color: #fff;
+        }
+    }
+}
+
+// page-selector buttons at bottom of news.html
+.page-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 0;
+    padding-left: 0;
+
+    @media (min-width: rem(1200)) {
+        margin-top: 50px;
+    }
+
+    .selector {
+        cursor: pointer;
+        padding: 10px 15px;
+        margin: 0 5px;
+        background-color: #fff;
+        border: 1px solid #7c7c7c;
+        border-radius: 10px;
+        transition: background-color 0.3s ease-in-out;
+        list-style: none;
+
+        @media (min-width: rem(576)) {
+            padding: 10px 20px;
+        }
+    }
+
+    .selector:hover {
+        background-color: #f9d783;
+        color: #191919;
+        // transform: rotateZ(360deg);
+        // transition: 0.25s ease-in-out;
+    }
+
+    .active {
+        background-color: #191919;
+        color: #fff;
+
+        &.active:hover {
+            background-color: #d3d3d3;
+            color: #191919;
+        }
+    }
+
+}

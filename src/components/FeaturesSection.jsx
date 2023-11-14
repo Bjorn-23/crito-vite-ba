@@ -1,8 +1,8 @@
 import React from 'react'
 
-import SectionTitle from '@generics/SectionTitle'
-import Button from '@generics/Button'
-import FeaturesBox from '@generics/FeaturesBox'
+import SectionTitle from '../generics/utilities/SectionTitle'
+import Button from '../generics/utilities/Button'
+import FeaturesBox from '../generics/features/FeaturesBox'
 
 import img_Handshake from '@assets/img/features/handshake.svg'
 import img_Lightbulb from '@assets/img/features/lightbulb.svg'

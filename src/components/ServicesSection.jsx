@@ -1,8 +1,8 @@
 import React from 'react'
 
-import SectionTitle from '@generics/SectionTitle'
-import ServiceBox from '@generics/ServiceBox'
-import Button from './generics/Button'
+import SectionTitle from '../generics/utilities/SectionTitle'
+import ServiceBox from '../generics/features/ServiceBox'
+import Button from '../generics/utilities/Button'
 
 import img_ServiceLines from '@assets/img/services/white-squiggly-lines-services.svg'
 

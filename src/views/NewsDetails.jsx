@@ -1,11 +1,10 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
-import Header from '../components/Header'
-
+import Header from '../generics/layout/Header'
 import BreadcrumbsSection from '@components/BreadcrumbsSection'
 import NewsDetailsArticleFull from '@components/NewsDetailsArticleFull'
-import Footer from '@components/Footer'
+import Footer from '../generics/layout/Footer'
 
 const NewsDetails = () => {
 

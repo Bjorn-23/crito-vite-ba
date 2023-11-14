@@ -1,8 +1,8 @@
 import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-// import './index.css' //USE THIS AFTER SORTING THROUGH CODE
-import './components/scss/backup/indexOriginalCopy.css'
+import './index.css'
+
 
 import Home from '@views/Home'
 import Services from '@views/Services'
@@ -11,8 +11,8 @@ import NewsDetails from '@views/NewsDetails'
 import Contact from '@views/Contact'
 import NotFound from '@views/NotFound'
 import TestPage from '@views/TestPage'
-import AutoScrollToTop from '@generics/AutoScrollToTop'
-import ScrollToTop from '@generics/ScrollToTop'
+import AutoScrollToTop from './generics/utilities/AutoScrollToTop'
+import ScrollToTop from './generics/utilities/ScrollToTop'
 import { ArticlesProvider } from './contexts/ArticlesContext'
 
 

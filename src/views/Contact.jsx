@@ -1,10 +1,9 @@
 import React from 'react'
 
-import Header from '../components/Header'
-
+import Header from '../generics/layout/Header'
 import BreadcrumbsSection from '@components/BreadcrumbsSection'
-import Footer from '@components/Footer'
-import ContactContainer from '@components/ContactContainer'
+import ContactSection from '@components/ContactSection'
+import Footer from '../generics/layout/Footer'
 
 
 const Contact = () => {
@@ -13,7 +12,7 @@ const Contact = () => {
     <div className="wrapper">
       <Header />
       <BreadcrumbsSection url="/contact" page="Contact" />
-      <ContactContainer />
+      <ContactSection />
       <Footer />
     </div>
   )

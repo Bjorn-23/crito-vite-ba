@@ -2,8 +2,8 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
-import Button from '@generics/Button'
-import SocialMediaIcons from '../../components/generics/SocialMediaIcons'
+import Button from '../utilities/Button'
+import SocialMediaIcons from '../utilities/SocialMediaIcons'
 
 import img_critoLogo from '@assets/img/header/Logotype.svg'
 

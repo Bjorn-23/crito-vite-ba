@@ -1,8 +1,8 @@
 import React from 'react'
 
-import SectionTitle from '@generics/SectionTitle'
-import TestimonialsBox from '@generics/TestimonialsBox'
-import Button from '@generics/Button'
+import SectionTitle from '../generics/utilities/SectionTitle'
+import TestimonialsBox from '../generics/features/TestimonialsBox'
+import Button from '../generics/utilities/Button'
 
 import img_C from '@assets/img/testimonials/c-warren.png'
 import img_A from '@assets/img/testimonials/a-tulling.png'

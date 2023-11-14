@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-import Header from '../components/Header'
+import Header from '../generics/layout/Header'
 import ShowcaseSection from '@components/ShowcaseSection'
 import ClientsSection from '@components/ClientsSection'
 import FeaturesSection from '@components/FeaturesSection'
@@ -13,7 +13,7 @@ import TeamSection from '@components/TeamSection'
 import TestimonialsSection from '@components/TestimonialsSection'
 import ArticlesSection from '../components/ArticlesSection'
 import SubscribeSection from '@components/SubscribeSection'
-import Footer from '@components/Footer'
+import Footer from '../generics/layout/Footer'
 
 
 const Home = () => {

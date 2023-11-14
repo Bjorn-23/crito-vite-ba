@@ -1,10 +1,10 @@
 import React from 'react'
 import { useArticles } from '../contexts/ArticlesContext'
 
-import SectionTitle from '@generics/SectionTitle'
-import FormatDate from './generics/FormatDate'
-import ArticlesBox from './generics/ArticlesBox'
-import ScrollToArticle from './generics/ScrollToArticle'
+import SectionTitle from '../generics/utilities/SectionTitle'
+import FormatDate from '../generics/utilities/FormatDate'
+import ArticlesBox from '../generics/features/ArticlesBox'
+import ScrollToArticle from '../generics/utilities/ScrollToArticle'
 
 const NewsAllArticles = () => {
   const { articles } = useArticles()

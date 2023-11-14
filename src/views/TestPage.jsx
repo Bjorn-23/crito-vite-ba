@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import ArticlesBox from '../components/generics/ArticlesBox'
+import Header from '../generics/layout/Header'
+import ArticlesBox from '../generics/features/ArticlesBox'
+import Footer from '../generics/layout/Footer'
 
 
 const TestPage = () => {
