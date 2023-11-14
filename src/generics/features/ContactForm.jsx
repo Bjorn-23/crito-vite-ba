@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 
-import FormError from './generics/FormError'
+import FormError from '../utilities/FormError'
 
 const ContactForm = () => {
     const [feedback, setFeedback] = useState(undefined)

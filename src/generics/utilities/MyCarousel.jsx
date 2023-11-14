@@ -4,7 +4,7 @@ import { useArticles } from '../../contexts/ArticlesContext'
 
 import ScrollToArticle from './ScrollToArticle'
 import FormatDate from './FormatDate'
-import ArticlesBox from './ArticlesBox'
+import ArticlesBox from '../features/ArticlesBox'
 
 const MyCarousel = () => {
 

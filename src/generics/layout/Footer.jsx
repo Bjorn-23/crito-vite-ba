@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import ScrollToTop from './generics/ScrollToTop'
-import SocialMediaIcons from './generics/SocialMediaIcons'
+import ScrollToTop from '../../components/generics/ScrollToTop'
+import SocialMediaIcons from '../../components/generics/SocialMediaIcons'
 
 import img_FooterLogo from '@assets/img/footer/Logo-cs.svg'
 import img_DesignSquiggles from '@assets/img/footer/design-squiggles.svg'

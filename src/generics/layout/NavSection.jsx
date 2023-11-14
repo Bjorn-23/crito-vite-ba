@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 import Button from '@generics/Button'
-import SocialMediaIcons from './generics/SocialMediaIcons'
+import SocialMediaIcons from '../../components/generics/SocialMediaIcons'
 
 import img_critoLogo from '@assets/img/header/Logotype.svg'
 
