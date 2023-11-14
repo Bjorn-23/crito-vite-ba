@@ -320,6 +320,34 @@ Used in "AboutCompanySection" */
   transition: 0.3s ease-in;
 }
 
+.slide-dots {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.slide-dots .dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #C4AF75;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.slide-dots .dot:hover {
+  background-color: rgba(25, 25, 25, 0.5647058824);
+}
+.slide-dots.dot:active {
+  background-color: #d3d3d3;
+}
+.slide-dots .active {
+  background-color: #191919;
+}
+.slide-dots .active.active:hover {
+  background-color: #fff;
+}
+
 .page-selector {
   display: flex;
   justify-content: center;
