@@ -101,7 +101,7 @@ const ContactForm = () => {
                         <Field id="formTerms" className="formTerms" type="checkbox" name="terms" />
                     </div>
 
-                    <button type="submit" className="submit btn-yellow">Send Message<i
+                    <button type="submit" className="submit btn-yellow btn-main">Send Message<i
                         className="fa-solid fa-arrow-up-right"></i></button>
                 </Form>
 

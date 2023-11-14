@@ -11,7 +11,7 @@ import WhyChooseUsSection from '@components/WhyChooseUsSection'
 import ProjectsSection from '@components/ProjectsSection'
 import TeamSection from '@components/TeamSection'
 import TestimonialsSection from '@components/TestimonialsSection'
-import ArticlesSection from '../components/ArticlesSection'
+import ArticlesNewsSection from '../components/ArticlesNewsSection'
 import SubscribeSection from '@components/SubscribeSection'
 import Footer from '../generics/layout/Footer'
 
@@ -31,7 +31,7 @@ const Home = () => {
       <ProjectsSection />
       <TeamSection />
       <TestimonialsSection />
-      <ArticlesSection />
+      <ArticlesNewsSection />
       <SubscribeSection />
       <Footer />
     </>

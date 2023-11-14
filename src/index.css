@@ -134,9 +134,11 @@ body .container {
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
 }
 
-.btn-yellow {
-  background-color: #f9d783;
-  border: 1px solid #f9d783;
+/* Button design
+Main design comes from .btn-main.
+Color, background-color etc is defined by the next class ie. btn-yellow.
+*/
+.btn-main {
   border-radius: 35px;
   color: #191919;
   text-decoration: none;
@@ -145,118 +147,93 @@ body .container {
   font-size: 0.875rem;
 }
 @media (min-width: 62rem) {
-  .btn-yellow {
+  .btn-main {
     font-size: 1rem;
   }
 }
-.btn-yellow i {
+.btn-main i {
   margin-left: 8px;
   font-size: 0.9em;
+}
+.btn-main:hover {
+  box-shadow: 0 9px 5px #d3d3d3;
+}
+.btn-main:active {
+  box-shadow: 0 5px 5px #6A6C71;
+  transform: translateY(4px);
+}
+
+.btn-yellow {
+  background-color: #f9d783;
+  border: 1px solid #f9d783;
 }
 .btn-yellow:hover {
   background-color: #191919;
   border: 1px solid #191919;
   color: white;
-  box-shadow: 0 9px 5px #d3d3d3;
-}
-.btn-yellow:active {
-  box-shadow: 0 5px 5px #6A6C71;
-  transform: translateY(4px);
 }
 
 .btn-transparent {
   background-color: transparent;
   border: 1px solid black;
-  border-radius: 35px;
-  color: #191919;
-  text-decoration: none;
-  padding: 15px 25px;
-  font-weight: 600;
-  font-size: 0.875rem;
-}
-@media (min-width: 62rem) {
-  .btn-transparent {
-    font-size: 1rem;
-  }
-}
-.btn-transparent i {
-  margin-left: 8px;
-  font-size: 0.9em;
 }
 .btn-transparent:hover {
   background-color: #191919;
   border: 1px solid #191919;
   color: white;
-  box-shadow: 0 9px 5px #d3d3d3;
-}
-.btn-transparent:active {
-  box-shadow: 0 5px 5px #6A6C71;
-  transform: translateY(4px);
 }
 
 .btn-transparent-fat {
   background-color: transparent;
   border: 1px solid black;
-  border-radius: 35px;
-  color: #191919;
-  text-decoration: none;
   padding: 20px 35px;
-  font-weight: 400;
-  font-size: 0.875rem;
-}
-@media (min-width: 62rem) {
-  .btn-transparent-fat {
-    font-size: 1rem;
-  }
-}
-.btn-transparent-fat i {
-  margin-left: 8px;
-  font-size: 0.9em;
 }
 .btn-transparent-fat:hover {
   background-color: #191919;
   border: 1px solid #191919;
   color: white;
-  box-shadow: 0 9px 5px #d3d3d3;
-}
-.btn-transparent-fat:active {
-  box-shadow: 0 5px 5px #6A6C71;
-  transform: translateY(4px);
 }
 
 .btn-black {
   background-color: #191919;
   border: 1px solid #191919;
-  border-radius: 35px;
   color: white;
-  text-decoration: none;
-  padding: 15px 25px;
-  font-weight: 600;
-  font-size: 0.875rem;
-}
-@media (min-width: 62rem) {
-  .btn-black {
-    font-size: 1rem;
-  }
-}
-.btn-black i {
-  margin-left: 8px;
-  font-size: 0.9em;
 }
 .btn-black:hover {
   background-color: #f9d783;
   border: 1px solid #f9d783;
   color: black;
-  box-shadow: 0 9px 5px #d3d3d3;
 }
 .btn-black:active {
-  transform: translateY(4px);
   box-shadow: 0 5px 5px #626262;
 }
 .btn-black:focus {
   outline-color: red;
 }
 
+.btn-team {
+  border: 1px solid #191919;
+  display: block;
+  margin: 0 20px;
+}
+@media (min-width: 48rem) {
+  .btn-team {
+    display: inline-block;
+    margin: 0;
+  }
+}
+.btn-team:focus {
+  outline-color: #fff;
+}
+
+.btn-submit {
+  display: inline-block;
+  padding: 12px 25px;
+  margin: 8px;
+}
+
+/*Below buttons receive full styling from their own class
+Used in "AboutCompanySection" */
 .btn-video {
   background-color: transparent;
   color: #191919;
@@ -341,34 +318,6 @@ body .container {
 .hide-btn {
   display: none;
   transition: 0.3s ease-in;
-}
-
-.slide-dots {
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-.slide-dots .dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #C4AF75;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-.slide-dots .dot:hover {
-  background-color: #191919;
-}
-.slide-dots.dot:active {
-  background-color: #d3d3d3;
-}
-.slide-dots .active {
-  background-color: #191919;
-}
-.slide-dots .active.active:hover {
-  background-color: #fff;
 }
 
 .page-selector {
@@ -1134,11 +1083,6 @@ body .container {
   padding: 8px 25px;
   margin: 0.5em;
 }
-.subscribe .container .flex-wrapper .right form .btn-yellow {
-  display: inline-block;
-  padding: 12px 25px;
-  margin: 0.5em;
-}
 
 .our-services {
   position: relative;
@@ -1294,6 +1238,61 @@ body .container {
   .our-services .container .c-btm a {
     display: inline-block;
     margin: 0;
+  }
+}
+
+.yellow-square {
+  display: inline-block;
+  background-image: linear-gradient(to bottom right, #f9d783, #f8eed2 50%, #f9d783 75%);
+  color: #191919;
+  text-decoration: none;
+  text-align: center;
+  max-width: 25%;
+  max-height: auto;
+  padding: 5px 10px;
+}
+@media (min-width: 36rem) {
+  .yellow-square {
+    max-width: 30%;
+    max-height: auto;
+  }
+}
+@media (min-width: 62rem) {
+  .yellow-square {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+  }
+}
+@media (min-width: 75rem) {
+  .yellow-square {
+    width: 60px;
+    height: 60px;
+  }
+}
+.yellow-square .date {
+  font-family: "DM sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+@media (min-width: 62rem) {
+  .yellow-square .date {
+    font-size: 1rem;
+    margin-top: -3px;
+  }
+}
+@media (min-width: 75rem) {
+  .yellow-square .date {
+    font-size: 1.375rem;
+  }
+}
+.yellow-square .month {
+  margin: 0px;
+  font-size: 0.625rem;
+}
+@media (min-width: 62rem) {
+  .yellow-square .month {
+    font-size: 0.875rem;
   }
 }
 
@@ -1643,13 +1642,13 @@ body .container {
   0%, 100% {
     transform: scaleX(1);
   }
-  2.5% {
+  2% {
     transform: scaleX(-1);
   }
   5% {
     transform: scaleX(1);
   }
-  7.5% {
+  7% {
     transform: scaleX(-1);
   }
   10% {
@@ -2086,21 +2085,6 @@ body .container {
     margin-bottom: 0px;
   }
 }
-.team .container .top-wrapper .btn-team-wrapper .btn-team {
-  border: 1px solid #191919;
-  font-weight: 600;
-  display: block;
-  margin: 0 20px;
-}
-@media (min-width: 48rem) {
-  .team .container .top-wrapper .btn-team-wrapper .btn-team {
-    display: inline-block;
-    margin: 0;
-  }
-}
-.team .container .top-wrapper .btn-team-wrapper .btn-team:focus {
-  outline-color: #fff;
-}
 .team .container .slide-wrapper {
   padding-top: 30px;
 }
@@ -2405,37 +2389,6 @@ body .container {
   opacity: 0.4;
   transition: 0.15s ease-in-out;
 }
-.articles-news .container .slide-dots {
-  text-align: center;
-  margin-top: 30px;
-}
-@media (min-width) {
-  .articles-news .container .slide-dots {
-    margin-top: 50px;
-  }
-}
-.articles-news .container .slide-dots .dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #d3d3d3;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-.articles-news .container .slide-dots .dot:hover {
-  background-color: #f9d783;
-}
-.articles-news .container .slide-dots.dot:active {
-  background-color: #d3d3d3;
-}
-.articles-news .container .slide-dots .active {
-  background-color: #191919;
-}
-.articles-news .container .slide-dots .active.active:hover {
-  background-color: #f9d783;
-}
 
 .services-page {
   margin: 0;
@@ -2500,15 +2453,6 @@ body .container {
     grid-template-rows: auto auto;
     grid-template-areas: "top top" "left right";
     gap: 40px 80px;
-  }
-  .News-details-articles-full .grid-container .top {
-    grid-area: top;
-  }
-  .News-details-articles-full .grid-container .left {
-    grid-area: left;
-  }
-  .News-details-articles-full .grid-container .right {
-    grid-area: right;
   }
 }
 @media (min-width: 87.5rem) {

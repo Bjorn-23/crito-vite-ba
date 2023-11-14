@@ -1,4 +1,4 @@
-// articles & news
+// articlesNewsSection - Needs further mobile and tablet design
 .articles-news {
     padding: 20px 10px;
 
@@ -25,7 +25,6 @@
                 align-items: last baseline;
                 text-align: left;
             }
-
 
             .top-lft {
                 p {
@@ -54,7 +53,6 @@
                     .btn-transparent-fat {
                         // made it skinny
                         padding: 15px 35px;
-
                         display: block;
                         margin: 0 20px;
 
@@ -164,42 +162,6 @@
                 opacity: 0.4;
                 transition: 0.15s ease-in-out;
             }
-        }
-
-        .slide-dots {
-            text-align: center;
-            margin-top: 30px;
-
-            @media (min-width) {
-                margin-top: 50px;
-            }
-
-            .dot {
-                cursor: pointer;
-                height: 15px;
-                width: 15px;
-                margin: 0 2px;
-                background-color: #d3d3d3;
-                border-radius: 50%;
-                display: inline-block;
-                transition: background-color 0.6s ease;
-            }
-
-            .dot:hover {
-                background-color: #f9d783;
-            }
-
-            &.dot:active {
-                background-color: #d3d3d3;
-            }
-
-            .active {
-                background-color: #191919;
-
-                &.active:hover {
-                    background-color: #f9d783;
-                }
-            }
-        }
+        }        
     }
 }

@@ -1,4 +1,4 @@
-// subscribe section
+// subscribeSection
 .subscribe {
     background-color: #F0EFE9;
     position: relative;
@@ -68,8 +68,6 @@
             }
 
             .right {
-
-
                 @media (min-width: rem(768)) {
                     display: flex;
                     align-items: center;
@@ -96,14 +94,7 @@
                         padding: 8px 25px;
                         margin: 0.5em;
                     }
-
-                    .btn-yellow {
-                        display: inline-block;
-                        padding: 12px 25px;
-                        margin: 0.5em;
-                    }
                 }
-
             }
         }
     }

@@ -1,4 +1,4 @@
-// Mobile-menu
+// MobileNavSection
 .mobile-nav-wrapper {
     z-index: 1;
 
@@ -58,10 +58,6 @@
             &:hover {
                 background-color: #f9d783de;
                 color: #191919;
-                ;
-                // text-decoration: underline;
-                // text-decoration-thickness: 1px;
-                // text-underline-offset: 5px;
             }
         }
 
@@ -88,6 +84,8 @@
 }
 
 // changed cursor for hover on menu bars in mobile format
-.fa-bars:hover {
-    cursor: pointer;
+.fa-bars {    
+    &:hover {
+        cursor: pointer;
+    }
 }

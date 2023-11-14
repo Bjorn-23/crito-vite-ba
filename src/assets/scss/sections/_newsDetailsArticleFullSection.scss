@@ -1,4 +1,4 @@
-// NewsDetails
+// NewsDetailsArticleFull - Needs further mobile and tablet design
 .News-details-articles-full{
     margin: 20px 20px;
 
@@ -36,18 +36,6 @@
                 "top top"
                 "left right";
             gap: 40px 80px;
-
-            .top {
-                grid-area: top;
-            }
-
-            .left {
-                grid-area: left;
-            }
-
-            .right {
-                grid-area: right;
-            }
         }
 
         @media (min-width: rem(1400)) {

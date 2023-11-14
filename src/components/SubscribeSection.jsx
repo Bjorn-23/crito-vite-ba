@@ -1,6 +1,7 @@
 import React from 'react'
 
 import img_LinesSubscribe from '@assets/img/subscribe/design.svg'
+import Button from '../generics/utilities/Button'
 
 const SubscribeSection = () => {
     return (
@@ -15,8 +16,7 @@ const SubscribeSection = () => {
                         <form id="sub-form" method="get" action="form-results.html">
                             <input type="email" className="email" name="email" id="sub-email" autoComplete="on" placeholder="username@domain.com"
                                 required></input>
-                            <button type="submit" className="submit btn-yellow">Subscribe<i
-                                className="fa-regular fa-arrow-up-right"></i></button>
+                            <Button type="submit" url="#" title="Subscribe" />
                         </form>
                     </div>
                 </div>

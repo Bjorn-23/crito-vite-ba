@@ -68,12 +68,11 @@
 
                 @keyframes spinBox {
 
-                    0%,
-                    100% {
+                    0%, 100% {
                         transform: scaleX(1);
                     }
 
-                    2.5% {
+                    2% {
                         transform: scaleX(-1);
                     }
 
@@ -81,7 +80,7 @@
                         transform: scaleX(1);
                     }
 
-                    7.5% {
+                    7% {
                         transform: scaleX(-1);
                     }
 

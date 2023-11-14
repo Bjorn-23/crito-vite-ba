@@ -4,7 +4,7 @@ import SectionTitle from '../generics/utilities/SectionTitle'
 import Button from '../generics/utilities/Button'
 import MyCarousel from '../generics/utilities/MyCarousel'
 
-const ArticlesSection = () => {
+const ArticlesNewsSection = () => {
     return (
         <section className="articles-news">
             <div className="container">
@@ -30,4 +30,4 @@ const ArticlesSection = () => {
     )
 }
 
-export default ArticlesSection
+export default ArticlesNewsSection

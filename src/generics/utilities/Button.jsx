@@ -6,15 +6,17 @@ const Button = ({type, url, title}) => {
     const getButtonClassName = () => {
         switch(type) {
             case "yellow":
-                return 'btn-yellow'
+                return 'btn-yellow btn-main'
             case 'black':
-                return 'btn-black'
+                return 'btn-black btn-main'
             case 'transparentFat':
-                return 'btn-transparent-fat'
+                return 'btn-transparent-fat btn-main'
             case 'team':
-                return 'btn-yellow btn-team'
+                return 'btn-yellow btn-team btn-main'
+            case 'submit':
+                return 'btn-yellow btn-main btn-submit'
             default:
-                return 'btn-transparent'
+                return 'btn-transparent btn-main'
         }
 
     }
