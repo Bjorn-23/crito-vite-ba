@@ -15,7 +15,7 @@ const NotFound = () => {
       <div className="pageNotFound">
         <img src={img_lost} className="imgLost" alt="A confused man looking at a map and wondering where he is" />
         <h1>404 Page Not Found</h1>
-        <Link onClick={() => navigate(-1)} className="btn-yellow">Back</Link>
+        <Link onClick={() => navigate(-1)} className="btn-yellow btn-main">Back</Link>
       </div>
       <Footer />
 
